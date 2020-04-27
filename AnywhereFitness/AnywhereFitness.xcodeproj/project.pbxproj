@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1874F0CD24573B970026023D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CC24573B970026023D /* User.swift */; };
+		1874F0CF24573BB80026023D /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CE24573BB80026023D /* Bearer.swift */; };
+		18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */; };
+		18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE424574C0E00BD0C9E /* CourseController.swift */; };
+		18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */; };
+		18EF9AE9245753DA00BD0C9E /* Course+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE8245753DA00BD0C9E /* Course+Convenience.swift */; };
+		18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AEA24576A4800BD0C9E /* Course.xcdatamodeld */; };
 		4F3D478DBF218CFBF9557525 /* Pods_AnywhereFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDC2C639B76B14E446A49EA /* Pods_AnywhereFitness.framework */; };
 		E26493CD24553451009D759F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26493CC24553451009D759F /* AppDelegate.swift */; };
 		E26493CF24553451009D759F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26493CE24553451009D759F /* SceneDelegate.swift */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1874F0CC24573B970026023D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = AnywhereFitness/User.swift; sourceTree = SOURCE_ROOT; };
+		1874F0CE24573BB80026023D /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Bearer.swift; path = AnywhereFitness/Bearer.swift; sourceTree = SOURCE_ROOT; };
+		18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		18EF9AE424574C0E00BD0C9E /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseController.swift; path = AnywhereFitness/Models/CourseController.swift; sourceTree = SOURCE_ROOT; };
+		18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepresentation.swift; sourceTree = "<group>"; };
+		18EF9AE8245753DA00BD0C9E /* Course+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+Convenience.swift"; sourceTree = "<group>"; };
+		18EF9AEB24576A4800BD0C9E /* Course.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Course.xcdatamodel; sourceTree = "<group>"; };
 		4480C43FFB9EFBA4E575A7EE /* Pods-AnywhereFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.release.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.release.xcconfig"; sourceTree = "<group>"; };
 		598953BCE975DD71495483F8 /* Pods-AnywhereFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnywhereFitness.debug.xcconfig"; path = "Target Support Files/Pods-AnywhereFitness/Pods-AnywhereFitness.debug.xcconfig"; sourceTree = "<group>"; };
 		8FDC2C639B76B14E446A49EA /* Pods_AnywhereFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnywhereFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18EF9ADE2457496C00BD0C9E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */,
+				18EF9AEA24576A4800BD0C9E /* Course.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		A42CBE937262588E0B5897B7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,9 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				E26493E4245535EB009D759F /* Models */,
+				E26493E1245535D0009D759F /* Controllers */,
 				E26493E3245535E4009D759F /* Views */,
 				E26493E2245535DE009D759F /* View Controllers */,
-				E26493E1245535D0009D759F /* Controllers */,
 				E26493E02455347A009D759F /* Resources */,
 			);
 			path = AnywhereFitness;
@@ -104,6 +127,7 @@
 		E26493E1245535D0009D759F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18EF9AE424574C0E00BD0C9E /* CourseController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +151,11 @@
 		E26493E4245535EB009D759F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1874F0CC24573B970026023D /* User.swift */,
+				1874F0CE24573BB80026023D /* Bearer.swift */,
+				18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */,
+				18EF9AE8245753DA00BD0C9E /* Course+Convenience.swift */,
+				18EF9ADE2457496C00BD0C9E /* CoreData */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,8 +275,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EF9AE9245753DA00BD0C9E /* Course+Convenience.swift in Sources */,
+				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
+				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
+				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,
+				1874F0CD24573B970026023D /* User.swift in Sources */,
 				E26493E62455361C009D759F /* ViewController.swift in Sources */,
+				18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */,
 				E26493CD24553451009D759F /* AppDelegate.swift in Sources */,
+				18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +484,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18EF9AEA24576A4800BD0C9E /* Course.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18EF9AEB24576A4800BD0C9E /* Course.xcdatamodel */,
+			);
+			currentVersion = 18EF9AEB24576A4800BD0C9E /* Course.xcdatamodel */;
+			path = Course.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E26493C124553451009D759F /* Project object */;
 }
