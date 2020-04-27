@@ -46,7 +46,10 @@ class UserController {
             }
         }
     }
+
     // MARK: - Methods
+
+
     func signUp(with user: User, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         var request = postRequest(for: signUpURL)
 
