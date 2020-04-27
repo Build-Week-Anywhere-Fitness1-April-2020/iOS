@@ -28,7 +28,7 @@ enum Role: String, Codable {
 }
 
 enum Gender: String, Codable {
-    case male
-    case female
-    case nonbinary
+    case male = "Male"
+    case female = "Female"
+    case nonbinary = "Non-binary"
 }
