@@ -22,7 +22,7 @@ struct UserLogin: Codable {
     let username: String
     let email: String?
     let password: String
-    let role: String
+    let roles: [String]
 }
 
 enum Role: String, Codable {

@@ -35,7 +35,6 @@
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="HeZ-a9-Esn" eventType="touchUpInside" id="YvK-uu-Xgf"/>
-                                    <action selector="submitButtonTapped:" destination="HeZ-a9-Esn" eventType="touchUpInside" id="ipt-fK-bEb"/>
                                     <segue destination="4GW-y8-xZn" kind="show" id="Nk2-wD-ySP"/>
                                 </connections>
                             </button>
