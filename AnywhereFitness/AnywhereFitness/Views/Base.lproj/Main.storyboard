@@ -289,8 +289,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ujc-T5-TmW">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EI8-uw-1C7">
-                                                        <rect key="frame" x="166" y="0.0" width="82.5" height="29"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EI8-uw-1C7">
+                                                        <rect key="frame" x="172" y="0.0" width="70.5" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -304,7 +304,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                 <state key="normal" title="For Clients"/>
                                                                 <connections>
-                                                                    <segue destination="ElU-nN-6rm" kind="show" identifier="ClientSignupSegue" id="Nvq-dK-B84"/>
+                                                                    <action selector="clientSignup:" destination="Rbc-9F-GPL" eventType="touchUpInside" id="L7I-hP-GYc"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2O-OO-23K">
@@ -313,7 +313,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                 <state key="normal" title="For Instructors"/>
                                                                 <connections>
-                                                                    <segue destination="ElU-nN-6rm" kind="show" identifier="InstructorSignupSegue" id="Dgn-QR-TTj"/>
+                                                                    <action selector="instructorSignup:" destination="Rbc-9F-GPL" eventType="touchUpInside" id="pLb-TT-BVC"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -358,11 +358,36 @@
                     <navigationItem key="navigationItem" id="fet-Iz-ohZ"/>
                     <connections>
                         <outlet property="backgroundView" destination="OZH-g0-ukU" id="c8u-Jo-PQa"/>
+                        <outlet property="signinLabel" destination="EI8-uw-1C7" id="mLV-HG-er5"/>
+                        <segue destination="ElU-nN-6rm" kind="show" identifier="SignUpInstructorSegue" id="bTj-TF-CZ4"/>
+                        <segue destination="ElU-nN-6rm" kind="show" identifier="SignUpClientSegue" id="zSe-1g-GNI"/>
+                        <segue destination="2Sa-9D-hcy" kind="show" identifier="SignedInClientSegue" id="zFC-yo-yCQ"/>
+                        <segue destination="ncm-Vh-A3Y" kind="show" identifier="SignedInInstructorSegue" id="pUK-Lc-QPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnA-sY-j6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-414.49275362318843" y="40.848214285714285"/>
+        </scene>
+        <!--ClientMaster-->
+        <scene sceneID="2gN-Ua-0Dl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ClientMaster" id="2Sa-9D-hcy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Re9-4j-n0R"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1I-aa-11U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-34" y="411"/>
+        </scene>
+        <!--InstructorMaster-->
+        <scene sceneID="094-Tb-bBd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InstructorMaster" id="ncm-Vh-A3Y" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EKH-mI-krV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M50-Jz-ZQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="471"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jR7-9A-t0f">
@@ -386,6 +411,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dgn-QR-TTj"/>
+        <segue reference="bTj-TF-CZ4"/>
     </inferredMetricsTieBreakers>
 </document>

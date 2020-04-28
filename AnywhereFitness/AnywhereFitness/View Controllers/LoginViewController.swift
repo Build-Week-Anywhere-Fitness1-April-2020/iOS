@@ -25,11 +25,12 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
     var userController = UserController()
     var loginType = LoginType.signUp
-    var role = Role.client
+    var role: Role?
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
-        super.viewDidLoad()    }
+        super.viewDidLoad()
+    }
 
     // MARK: - Actions
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -58,6 +59,7 @@ class LoginViewController: UIViewController {
                         self.present(alertController, animated: true, completion: {
                             self.loginType = .signIn
                         })
+                        UserDefaults.standard.set("token", forKey: "bearerToken")
                     }
                 }
             }

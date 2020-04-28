@@ -10,25 +10,57 @@ import UIKit
 
 class LandingScreenViewController: UIViewController {
 
+    // MARK: - Properties
+
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var signinLabel: UILabel!
+
+    // MARK: - IBActions
+    @IBAction func clientSignup(_ sender: Any) {
+        if UserDefaults.standard.value(forKey: "bearerToken") != nil {
+            performSegue(withIdentifier: "SignedInClientSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "SignUpClientSegue", sender: self)
+        }
+    }
+
+    @IBAction func instructorSignup(_ sender: Any) {
+        if UserDefaults.standard.value(forKey: "bearerToken") != nil {
+            performSegue(withIdentifier: "SignedInInstructorSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "SignUpInstructorSegue", sender: self)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if UserDefaults.standard.value(forKey: "bearerToken") != nil {
+            signinLabel.text = "Sign In"
+        } else {
+            signinLabel.text = "Sign Up"
+        }
 
         backgroundView.setBackground()
 
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SignUpClientSegue" {
+            let loginVC = segue.destination as! LoginViewController
+            loginVC.role = Role.client
+        } else if segue.identifier == "SignUpInstructorSegue" {
+            let loginVC = segue.destination as! LoginViewController
+            loginVC.role = Role.instructor
+        }
+    }
 
 }
