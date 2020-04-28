@@ -32,7 +32,7 @@ extension Course {
                                     location: location,
                                     maxSize: Int(maxSize),
                                     classType: classType,
-                                    imageURL: imageURL,
+                                   imageURL: imageURL,
                                     courseDescription: courseDescription,
                                     cost: cost,
                                     registeredAttendees: [registeredAttendees],
