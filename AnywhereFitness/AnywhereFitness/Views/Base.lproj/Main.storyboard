@@ -10,7 +10,7 @@
         <!--Anywhere Fitness-->
         <scene sceneID="hXc-FF-KGa">
             <objects>
-                <viewController id="HeZ-a9-Esn" sceneMemberID="viewController">
+                <viewController id="HeZ-a9-Esn" customClass="LoginViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRE-wQ-YVc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="HeZ-a9-Esn" eventType="touchUpInside" id="ipt-fK-bEb"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email: " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6X-SI-23M">
                                 <rect key="frame" x="20" y="379" width="374" height="34"/>
@@ -110,6 +113,12 @@
                         <viewLayoutGuide key="safeArea" id="jQX-Vu-p5F"/>
                     </view>
                     <navigationItem key="navigationItem" title="Anywhere Fitness" id="YeI-VE-9M1"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Y6X-SI-23M" id="3b0-0W-LTe"/>
+                        <outlet property="nextButton" destination="lgz-Ht-oZ6" id="rt5-9e-MA7"/>
+                        <outlet property="passwordTextField" destination="9pk-wX-MRw" id="eEI-CR-CJb"/>
+                        <outlet property="usernameTextField" destination="1zl-Us-jaX" id="IGJ-rC-pOm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H3-4S-cTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

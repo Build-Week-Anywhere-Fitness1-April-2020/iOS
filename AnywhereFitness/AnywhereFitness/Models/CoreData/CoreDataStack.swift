@@ -12,7 +12,7 @@ import CoreData
 
 class CoreDataStack {
     static let shared = CoreDataStack()
-    
+
     lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Classes")
         container.loadPersistentStores { _, error in
@@ -24,7 +24,7 @@ class CoreDataStack {
 
         return container
     }()
-    
+
     var mainContext: NSManagedObjectContext {
         return container.viewContext
     }

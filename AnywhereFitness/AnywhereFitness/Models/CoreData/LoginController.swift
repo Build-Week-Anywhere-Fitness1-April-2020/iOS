@@ -9,20 +9,10 @@
 import Foundation
 import CoreData
 
-class UserController {
+class LoginController {
 
     // MARK: - Properties
     static var bearer: Bearer?
-    private let apiKey = ""
-    private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
-    private lazy var signUpURL = baseURL.appendingPathComponent("auth/register")
-    private lazy var signInURL = baseURL.appendingPathComponent("/auth/login")
-    private lazy var jsonEncoder: JSONEncoder = {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        return encoder
-    }()
-    private lazy var jsonDecoder = JSONDecoder()
 
     enum HTTPMethod: String {
         case get = "GET"
@@ -39,7 +29,7 @@ class UserController {
         case loggedIn(Bearer)
 
         static var isLoggedIn: Self {
-            if let bearer = UserController.bearer {
+            if let bearer = LoginController.bearer {
                 return loggedIn(bearer)
             } else {
                 return notLoggedIn
@@ -47,10 +37,21 @@ class UserController {
         }
     }
 
+    private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
+    private lazy var signUpURL = baseURL.appendingPathComponent("auth/register")
+    private lazy var signInURL = baseURL.appendingPathComponent("/auth/login")
+
+    private lazy var jsonEncoder: JSONEncoder = {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        return encoder
+    }()
+
+    private lazy var jsonDecoder = JSONDecoder()
+
     // MARK: - Methods
 
-
-    func signUp(with user: User, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+    func signUp(with user: UserLogin, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         var request = postRequest(for: signUpURL)
 
         do {
@@ -81,7 +82,7 @@ class UserController {
         }
     }
 
-    func signIn(with user: User, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+    func signIn(with user: UserLogin, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         var request = postRequest(for: signInURL)
 
         do {

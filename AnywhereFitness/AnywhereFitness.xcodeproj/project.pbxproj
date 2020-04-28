@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18366C7F2457C58700CB28DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18366C7E2457C58700CB28DC /* LoginViewController.swift */; };
+		18366C812457CE3B00CB28DC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18366C802457CE3B00CB28DC /* APIController.swift */; };
 		1874F0CD24573B970026023D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CC24573B970026023D /* User.swift */; };
 		1874F0CF24573BB80026023D /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CE24573BB80026023D /* Bearer.swift */; };
-		18C1998E245794D50013DB72 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1998D245794D50013DB72 /* UserController.swift */; };
-		18C19990245797C40013DB72 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1998F245797C40013DB72 /* APIController.swift */; };
+		18C1998E245794D50013DB72 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1998D245794D50013DB72 /* LoginController.swift */; };
 		18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */; };
 		18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE424574C0E00BD0C9E /* CourseController.swift */; };
 		18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */; };
@@ -25,10 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18366C7E2457C58700CB28DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		18366C802457CE3B00CB28DC /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		1874F0CC24573B970026023D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = AnywhereFitness/User.swift; sourceTree = SOURCE_ROOT; };
 		1874F0CE24573BB80026023D /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Bearer.swift; path = AnywhereFitness/Bearer.swift; sourceTree = SOURCE_ROOT; };
-		18C1998D245794D50013DB72 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = AnywhereFitness/Models/CoreData/UserController.swift; sourceTree = SOURCE_ROOT; };
-		18C1998F245797C40013DB72 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = AnywhereFitness/Models/CoreData/APIController.swift; sourceTree = SOURCE_ROOT; };
+		18C1998D245794D50013DB72 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = AnywhereFitness/Models/CoreData/LoginController.swift; sourceTree = SOURCE_ROOT; };
 		18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		18EF9AE424574C0E00BD0C9E /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseController.swift; path = AnywhereFitness/Models/CourseController.swift; sourceTree = SOURCE_ROOT; };
 		18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepresentation.swift; sourceTree = "<group>"; };
@@ -128,9 +130,9 @@
 		E26493E1245535D0009D759F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18C1998D245794D50013DB72 /* LoginController.swift */,
 				18EF9AE424574C0E00BD0C9E /* CourseController.swift */,
-				18C1998D245794D50013DB72 /* UserController.swift */,
-				18C1998F245797C40013DB72 /* APIController.swift */,
+				18366C802457CE3B00CB28DC /* APIController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,8 +140,8 @@
 		E26493E2245535DE009D759F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E26493E52455361C009D759F /* ViewController.swift */,
 				E26493E02455347A009D759F /* Resources */,
+				18366C7E2457C58700CB28DC /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -155,10 +157,10 @@
 		E26493E4245535EB009D759F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18EF9AE8245753DA00BD0C9E /* Course+Convenience.swift */,
+				18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */,
 				1874F0CC24573B970026023D /* User.swift */,
 				1874F0CE24573BB80026023D /* Bearer.swift */,
-				18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */,
-				18EF9AE8245753DA00BD0C9E /* Course+Convenience.swift */,
 				18EF9ADE2457496C00BD0C9E /* CoreData */,
 			);
 			path = Models;
@@ -279,14 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18366C7F2457C58700CB28DC /* LoginViewController.swift in Sources */,
 				18EF9AE9245753DA00BD0C9E /* Course+Convenience.swift in Sources */,
 				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
-				18C1998E245794D50013DB72 /* UserController.swift in Sources */,
+				18C1998E245794D50013DB72 /* LoginController.swift in Sources */,
 				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,
 				1874F0CD24573B970026023D /* User.swift in Sources */,
 				18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */,
-				18C19990245797C40013DB72 /* APIController.swift in Sources */,
+				18366C812457CE3B00CB28DC /* APIController.swift in Sources */,
 				E26493CD24553451009D759F /* AppDelegate.swift in Sources */,
 				18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
