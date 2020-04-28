@@ -179,10 +179,34 @@
                     <navigationItem key="navigationItem" title="Anywhere Fitness" id="gFc-uj-TrJ">
                         <barButtonItem key="backBarButtonItem" title="&lt;" id="10c-Uf-nuT"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="9Lt-30-OpC" kind="show" identifier="InstructorStoryboardSegue" id="RfP-EN-SBf"/>
+                        <segue destination="1Mr-5o-ppp" kind="show" identifier="ClientStoryboardSegue" id="eq2-sJ-mGf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VhV-Dz-S5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2035" y="41"/>
+        </scene>
+        <!--InstructorMaster-->
+        <scene sceneID="krE-Ms-4By">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InstructorMaster" id="9Lt-30-OpC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tNC-Yh-FSm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EN6-Qj-JxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2911" y="-157"/>
+        </scene>
+        <!--ClientMaster-->
+        <scene sceneID="5nI-58-Pn2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ClientMaster" id="1Mr-5o-ppp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="don-cR-FPC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o23-VI-dA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2910" y="18"/>
         </scene>
         <!--Landing Screen View Controller-->
         <scene sceneID="QYF-Q0-YQl">
