@@ -20,6 +20,8 @@
 		E26493D424553451009D759F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26493D224553451009D759F /* Main.storyboard */; };
 		E26493D624553453009D759F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26493D524553453009D759F /* Assets.xcassets */; };
 		E26493D924553453009D759F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26493D724553453009D759F /* LaunchScreen.storyboard */; };
+		E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */; };
+		E266C157245860CF00FC8E7D /* setBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C156245860CF00FC8E7D /* setBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		E26493D524553453009D759F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E26493D824553453009D759F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E26493DA24553453009D759F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = SOURCE_ROOT; };
+		E266C156245860CF00FC8E7D /* setBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = setBackground.swift; path = AnywhereFitness/Resources/setBackground.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		E26493E02455347A009D759F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E266C156245860CF00FC8E7D /* setBackground.swift */,
 				E26493CC24553451009D759F /* AppDelegate.swift */,
 				E26493CE24553451009D759F /* SceneDelegate.swift */,
 				E26493D524553453009D759F /* Assets.xcassets */,
@@ -133,6 +138,7 @@
 		E26493E2245535DE009D759F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			files = (
 				18EF9AE9245753DA00BD0C9E /* Course+Convenience.swift in Sources */,
 				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
+				E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
 				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,
 				1874F0CD24573B970026023D /* User.swift in Sources */,
@@ -281,6 +288,7 @@
 				E26493CD24553451009D759F /* AppDelegate.swift in Sources */,
 				18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
+				E266C157245860CF00FC8E7D /* setBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
