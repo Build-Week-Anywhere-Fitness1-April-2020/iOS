@@ -29,7 +29,7 @@ class UserController {
 
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
     private lazy var signUpURL = baseURL.appendingPathComponent("auth/register")
-    private lazy var signInURL = baseURL.appendingPathComponent("/auth/login")
+    private lazy var signInURL = baseURL.appendingPathComponent("auth/login")
 
     private lazy var jsonEncoder: JSONEncoder = {
         let encoder = JSONEncoder()
@@ -40,9 +40,8 @@ class UserController {
     private lazy var jsonDecoder = JSONDecoder()
 
     // MARK: - Methods
-    func signUp(with user: UserLogin, completion: @escaping (Error?)-> Void) {
-        let signUpURL = baseURL.appendingPathComponent("auth/register")
-
+    func signUp(with user: UserLogin, completion: @escaping (Error?) -> Void) {
+        
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
