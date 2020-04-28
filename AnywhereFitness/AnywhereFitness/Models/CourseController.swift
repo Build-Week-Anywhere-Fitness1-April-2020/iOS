@@ -31,7 +31,7 @@ class CourseController {
     func fetchCourses(completion: @escaping CompletionHandler = { _ in }) {
          let requestURL = baseURL.appendingPathExtension("classes")
 
-         URLSession.shared.dataTask(with: requestURL) { data, response, error in
+         URLSession.shared.dataTask(with: requestURL) { data, _, error in
              if let error = error {
                  NSLog("Error fetching classes: \(error)")
                  completion(.failure(.otherError))
