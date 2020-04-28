@@ -115,6 +115,7 @@
 				E26493E1245535D0009D759F /* Controllers */,
 				E26493E3245535E4009D759F /* Views */,
 				E26493E2245535DE009D759F /* View Controllers */,
+				E26493E02455347A009D759F /* Resources */,
 			);
 			path = AnywhereFitness;
 			sourceTree = "<group>";
@@ -129,7 +130,8 @@
 				E26493D724553453009D759F /* LaunchScreen.storyboard */,
 				E26493DA24553453009D759F /* Info.plist */,
 			);
-			path = Resources;
+			name = Resources;
+			path = "View Controllers/Resources";
 			sourceTree = "<group>";
 		};
 		E26493E1245535D0009D759F /* Controllers */ = {
@@ -145,7 +147,6 @@
 		E26493E2245535DE009D759F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E26493E02455347A009D759F /* Resources */,
 				18366C7E2457C58700CB28DC /* LoginViewController.swift */,
 				E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */,
 			);
