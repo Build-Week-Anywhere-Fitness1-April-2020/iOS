@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
             let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             name.isEmpty == false
             else { return }
-        let user = UserLogin(username: username, email: email, password: password, role: role.rawValue)
+        let user = UserLogin(username: username, email: email, password: password, roles: [role.rawValue])
 
         if loginType == .signUp {
             userController.signUp(with: user) { (error) in
@@ -51,7 +51,8 @@ class LoginViewController: UIViewController {
                     NSLog("Error occurred during sign up: \(error)")
                 } else {
                     DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Sign Up Successful", message: "Now please log in", preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "Sign Up Successful",
+                                                                message: "Now please log in", preferredStyle: .alert)
                         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true, completion: {
