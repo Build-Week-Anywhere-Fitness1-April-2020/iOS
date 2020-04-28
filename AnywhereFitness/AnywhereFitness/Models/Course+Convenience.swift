@@ -65,7 +65,6 @@ extension Course {
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
         self.init(context: context)
-
     }
 
     @discardableResult convenience init?(courseRepresentation: CourseRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {

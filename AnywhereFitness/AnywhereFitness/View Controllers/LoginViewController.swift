@@ -8,9 +8,9 @@
 
 import UIKit
 
-enum LoginType: String {
-    case signUp = "Sign Up"
-    case signIn = "Sign In"
+enum LoginType {
+    case signUp
+    case signIn
 }
 
 class LoginViewController: UIViewController {
@@ -18,11 +18,14 @@ class LoginViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
 
     // MARK: - Properties
-    var loginController = LoginController()
+    var userController = UserController()
+    var loginType = LoginType.signUp
+    var role = Role.client
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -35,42 +38,43 @@ class LoginViewController: UIViewController {
             let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             password.isEmpty == false,
             let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            email.isEmpty == false
+            email.isEmpty == false,
+            let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            name.isEmpty == false
             else { return }
+        let user = UserLogin(username: username, email: email, password: password, role: role.rawValue)
 
-        let user = UserLogin(username: username, password: password, email: email)
+        if loginType == .signUp {
+            userController.signUp(with: user) { (error) in
 
-//        LoginController.signUp(with )
-//
-//        (with: user, forLoginType: loginType) { loginResult in
-//            DispatchQueue.main.async {
-//                self.isFetching = false
-//                let alert: UIAlertController
-//                let action: () -> Void
-//
-//                switch loginResult {
-//                case .signUpSuccess:
-//                    alert = self.alert(title: "Success", message: loginResult.rawValue)
-//                    action = {
-//                        self.present(alert, animated: true)
-//                        self.loginTypeSegmentedControl.selectedSegmentIndex = 1
-//                        self.loginTypeSegmentedControl.sendActions(for: .valueChanged)
-//                    }
-//                case .signInSuccess:
-//                    action = { self.dismiss(animated: true) }
-//                case .signUpError, .signInError:
-//                    alert = self.alert(title: "Error", message: loginResult.rawValue)
-//                    action = { self.present(alert, animated: true) }
-//                }
-//
-//                action()
-//            }
-//        }
+                if let error = error {
+                    NSLog("Error occurred during sign up: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Sign Up Successful", message: "Now please log in", preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: true, completion: {
+                            self.loginType = .signIn
+                        })
+                    }
+                }
+            }
+        } else {
+            userController.signIn(with: user) { (error) in
+                if let error = error {
+                    print(error)
+                }
+
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
-
-    private func alert(title: String, message: String) -> UIAlertController {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        return alert
-    }
+}
+private func alert(title: String, message: String) -> UIAlertController {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    return alert
 }

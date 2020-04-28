@@ -9,10 +9,9 @@
 import Foundation
 
 struct User: Codable {
+    let name: String
     let identifier: Int
     let displayName: String
-    let name: String
-    let role: [String]
     let gender: String
     let location: String?
     var coursesEnrolled: [CourseRepresentation]
@@ -21,8 +20,9 @@ struct User: Codable {
 
 struct UserLogin: Codable {
     let username: String
-    let password: String
     let email: String?
+    let password: String
+    let role: String
 }
 
 enum Role: String, Codable {

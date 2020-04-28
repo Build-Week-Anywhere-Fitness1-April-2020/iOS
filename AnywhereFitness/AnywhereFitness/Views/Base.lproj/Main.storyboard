@@ -34,6 +34,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
+                                    <action selector="nextButtonTapped:" destination="HeZ-a9-Esn" eventType="touchUpInside" id="YvK-uu-Xgf"/>
                                     <action selector="submitButtonTapped:" destination="HeZ-a9-Esn" eventType="touchUpInside" id="ipt-fK-bEb"/>
                                     <segue destination="4GW-y8-xZn" kind="show" id="Nk2-wD-ySP"/>
                                 </connections>
@@ -117,9 +118,10 @@
                     <navigationItem key="navigationItem" title="Anywhere Fitness" id="YeI-VE-9M1"/>
                     <connections>
                         <outlet property="emailTextField" destination="Y6X-SI-23M" id="3b0-0W-LTe"/>
+                        <outlet property="nameTextField" destination="1zl-Us-jaX" id="4Ml-UP-bnp"/>
                         <outlet property="nextButton" destination="lgz-Ht-oZ6" id="rt5-9e-MA7"/>
                         <outlet property="passwordTextField" destination="9pk-wX-MRw" id="eEI-CR-CJb"/>
-                        <outlet property="usernameTextField" destination="1zl-Us-jaX" id="IGJ-rC-pOm"/>
+                        <outlet property="usernameTextField" destination="NS4-jm-f2U" id="GIT-gI-Qj7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H3-4S-cTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
