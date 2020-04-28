@@ -22,6 +22,8 @@ class LandingScreenViewController: UIViewController {
             performSegue(withIdentifier: "SignedInClientSegue", sender: self)
         } else {
             performSegue(withIdentifier: "SignUpClientSegue", sender: self)
+            let loginVC = LoginViewController()
+            loginVC.role = Role.client
         }
     }
 
@@ -55,10 +57,11 @@ class LandingScreenViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SignUpClientSegue" {
-            let loginVC = segue.destination as! LoginViewController
-            loginVC.role = Role.client
+            if let loginVC = segue.destination as? LoginViewController {
+                loginVC.role = Role.client
+            }
         } else if segue.identifier == "SignUpInstructorSegue" {
-            let loginVC = segue.destination as! LoginViewController
+            guard let loginVC = segue.destination as? LoginViewController else { return }
             loginVC.role = Role.instructor
         }
     }
