@@ -21,24 +21,14 @@ struct CourseRepresentation: Equatable, Codable {
     var imageURL: String
     var courseDescription: String
     var cost: Double
-    var registeredAttendees: [String]?
+    var registeredAttendees: String?
     var instructor: String
-    var days: [String]
+    var days: String
     var address: String  // Needs to be compatible with Apple Maps.
     var equipmentRequired: String
     var arrivalDescription: String
     var additionalInfo: String
 }
-
-//struct ImgOptions: Codable {
-//    var identifier: Int
-//    var url: String
-//}
-//
-//struct ClassTypes: Codable {
-//    var identifier: Int
-//    var type: Int  // Convert to String
-//}
 
 struct CourseRepresentations: Codable {
     let results: [CourseRepresentation]
