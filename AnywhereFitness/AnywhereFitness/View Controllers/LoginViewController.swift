@@ -25,11 +25,12 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
     var userController = UserController()
     var loginType = LoginType.signUp
-    var role = Role.client
+    var role: Role?
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
-        super.viewDidLoad()    }
+        super.viewDidLoad()
+    }
 
     // MARK: - Actions
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -40,7 +41,8 @@ class LoginViewController: UIViewController {
             let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             email.isEmpty == false,
             let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            name.isEmpty == false
+            name.isEmpty == false,
+            let role = role
             else { return }
         let user = UserLogin(username: username, email: email, password: password, roles: [role.rawValue])
 
@@ -53,11 +55,18 @@ class LoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         let alertController = UIAlertController(title: "Sign Up Successful",
                                                                 message: "Now please log in", preferredStyle: .alert)
-                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
+                            if role == Role.client {
+                                self.performSegue(withIdentifier: "ClientSegue", sender: self)
+                            } else {
+                                self.performSegue(withIdentifier: "InstructorSegue", sender: self)
+                            }
+                        }
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true, completion: {
                             self.loginType = .signIn
                         })
+                        UserDefaults.standard.set("token", forKey: "bearerToken")
                     }
                 }
             }
@@ -73,9 +82,4 @@ class LoginViewController: UIViewController {
             }
         }
     }
-}
-private func alert(title: String, message: String) -> UIAlertController {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .default))
-    return alert
 }

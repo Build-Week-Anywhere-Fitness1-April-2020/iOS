@@ -23,7 +23,7 @@ class UserController {
         case notSignedIn, failedFetch, badURL
     }
 
-    // MARK: - Propertiesa
+    // MARK: - Properties
     var courses: [Course] = []
     var bearer: Bearer?
 
