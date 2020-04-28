@@ -1,5 +1,5 @@
 //
-//  Bearer.swift
+//  APIController.swift
 //  AnywhereFitness
 //
 //  Created by Mark Poggi on 4/27/20.
@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct Bearer: Codable {
-    let token: String
+
+final class APIController {
 }
+
