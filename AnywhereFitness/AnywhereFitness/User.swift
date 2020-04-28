@@ -11,15 +11,18 @@ import Foundation
 struct User: Codable {
     let identifier: Int
     let displayName: String
-    let username: String
-    let password: String
     let name: String
-    let email: String
     let role: [String]
     let gender: String
     let location: String?
     var coursesEnrolled: [CourseRepresentation]
     var coursesTeaching: [CourseRepresentation]
+}
+
+struct UserLogin: Codable {
+    let username: String
+    let password: String
+    let email: String?
 }
 
 enum Role: String, Codable {
