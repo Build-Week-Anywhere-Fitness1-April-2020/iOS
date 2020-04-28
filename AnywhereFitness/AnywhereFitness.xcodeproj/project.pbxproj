@@ -11,7 +11,7 @@
 		18366C812457CE3B00CB28DC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18366C802457CE3B00CB28DC /* APIController.swift */; };
 		1874F0CD24573B970026023D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CC24573B970026023D /* User.swift */; };
 		1874F0CF24573BB80026023D /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CE24573BB80026023D /* Bearer.swift */; };
-		18C1998E245794D50013DB72 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1998D245794D50013DB72 /* LoginController.swift */; };
+		18C1998E245794D50013DB72 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1998D245794D50013DB72 /* UserController.swift */; };
 		18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */; };
 		18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE424574C0E00BD0C9E /* CourseController.swift */; };
 		18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */; };
@@ -35,7 +35,7 @@
 		18366C802457CE3B00CB28DC /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		1874F0CC24573B970026023D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = AnywhereFitness/User.swift; sourceTree = SOURCE_ROOT; };
 		1874F0CE24573BB80026023D /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Bearer.swift; path = AnywhereFitness/Bearer.swift; sourceTree = SOURCE_ROOT; };
-		18C1998D245794D50013DB72 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = AnywhereFitness/Models/CoreData/LoginController.swift; sourceTree = SOURCE_ROOT; };
+		18C1998D245794D50013DB72 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = AnywhereFitness/Models/CoreData/UserController.swift; sourceTree = SOURCE_ROOT; };
 		18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		18EF9AE424574C0E00BD0C9E /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseController.swift; path = AnywhereFitness/Models/CourseController.swift; sourceTree = SOURCE_ROOT; };
 		18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepresentation.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		E26493E1245535D0009D759F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18C1998D245794D50013DB72 /* LoginController.swift */,
+				18C1998D245794D50013DB72 /* UserController.swift */,
 				18EF9AE424574C0E00BD0C9E /* CourseController.swift */,
 				18366C802457CE3B00CB28DC /* APIController.swift */,
 			);
@@ -321,7 +321,7 @@
 				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
 				E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
-				18C1998E245794D50013DB72 /* LoginController.swift in Sources */,
+				18C1998E245794D50013DB72 /* UserController.swift in Sources */,
 				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,
 				1874F0CD24573B970026023D /* User.swift in Sources */,
 				18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */,

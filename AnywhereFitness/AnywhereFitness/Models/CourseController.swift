@@ -21,7 +21,6 @@ enum NetworkError: Error {
 class CourseController {
 
     // MARK: - Properties
-
     var searchedCourses: [CourseRepresentation] = []
 
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
@@ -29,10 +28,38 @@ class CourseController {
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
 
     // MARK: - Methods
+    func fetchCourses(completion: @escaping CompletionHandler = { _ in }) {
+         let requestURL = baseURL.appendingPathExtension("classes")
+
+         URLSession.shared.dataTask(with: requestURL) { data, response, error in
+             if let error = error {
+                 NSLog("Error fetching classes: \(error)")
+                 completion(.failure(.otherError))
+                 return
+             }
+
+             guard let data = data else {
+                 NSLog("No data returned from fetch")
+                 completion(.failure(.noData))
+                 return
+             }
+
+             do {
+         let courseRepresentations =
+             Array(try JSONDecoder().decode([String: CourseRepresentation].self, from: data).values)
+                 try self.updateCourses(with: courseRepresentations)
+
+                 completion(.success(true))
+             } catch {
+                 NSLog("Error decoding classes from server: \(error)")
+                 completion(.failure(.noDecode))
+             }
+         }.resume()
+     }
 
     func searchForCourse(with searchTerm: String, completion: @escaping (Error?) -> Void) {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let queryParameters = ["coursesquery": searchTerm]  // need to know what parameters should be passed for a search.
+        let queryParameters = ["classes": searchTerm]
         components?.queryItems = queryParameters.map({URLQueryItem(name: $0.key, value: $0.value)})
 
         guard let requestURL = components?.url else {
@@ -60,35 +87,6 @@ class CourseController {
             } catch {
                 NSLog("Error decoding JSON data: \(error)")
                 completion(error)
-            }
-        }.resume()
-    }
-
-    func fetchCoursesFromServer(completion: @escaping CompletionHandler = { _ in }) {
-        let requestURL = baseURL.appendingPathExtension("json")
-
-        URLSession.shared.dataTask(with: requestURL) { data, response, error in
-            if let error = error {
-                NSLog("Error fetching classes: \(error)")
-                completion(.failure(.otherError))
-                return
-            }
-
-            guard let data = data else {
-                NSLog("No data returned from fetch")
-                completion(.failure(.noData))
-                return
-            }
-
-            do {
-        let courseRepresentations =
-            Array(try JSONDecoder().decode([String: CourseRepresentation].self, from: data).values)
-                try self.updateCourses(with: courseRepresentations)
-
-                completion(.success(true))
-            } catch {
-                NSLog("Error decoding classes from server: \(error)")
-                completion(.failure(.noDecode))
             }
         }.resume()
     }
