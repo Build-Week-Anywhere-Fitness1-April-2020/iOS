@@ -25,13 +25,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgz-Ht-oZ6">
-                                <rect key="frame" x="20" y="612" width="374" height="50"/>
+                                <rect key="frame" x="20" y="613" width="374" height="50"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tfu-Dr-Nr8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="4GW-y8-xZn" kind="show" id="Nk2-wD-ySP"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email: " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6X-SI-23M">
                                 <rect key="frame" x="20" y="379" width="374" height="34"/>
@@ -91,6 +94,7 @@
                             <constraint firstItem="1zl-Us-jaX" firstAttribute="top" secondItem="CsG-ie-pd5" secondAttribute="bottom" constant="5" id="HDn-bP-AP1"/>
                             <constraint firstItem="1zl-Us-jaX" firstAttribute="leading" secondItem="jQX-Vu-p5F" secondAttribute="leading" constant="20" id="Mhk-C1-ux4"/>
                             <constraint firstItem="jQX-Vu-p5F" firstAttribute="trailing" secondItem="Y6X-SI-23M" secondAttribute="trailing" constant="20" id="O4j-8n-bKS"/>
+                            <constraint firstItem="lgz-Ht-oZ6" firstAttribute="top" secondItem="9pk-wX-MRw" secondAttribute="bottom" constant="40" id="Qio-Oa-XiT"/>
                             <constraint firstItem="Vpj-LM-ZiW" firstAttribute="leading" secondItem="jQX-Vu-p5F" secondAttribute="leading" constant="20" id="VSi-jw-cAU"/>
                             <constraint firstItem="jQX-Vu-p5F" firstAttribute="trailing" secondItem="1zl-Us-jaX" secondAttribute="trailing" constant="20" id="XoK-G9-a7w"/>
                             <constraint firstItem="Y6X-SI-23M" firstAttribute="leading" secondItem="jQX-Vu-p5F" secondAttribute="leading" constant="20" id="Z6s-xs-48U"/>
@@ -102,7 +106,6 @@
                             <constraint firstItem="CsG-ie-pd5" firstAttribute="top" secondItem="dMS-QR-PO4" secondAttribute="bottom" constant="80" id="jQz-9c-gke"/>
                             <constraint firstItem="dMS-QR-PO4" firstAttribute="leading" secondItem="jQX-Vu-p5F" secondAttribute="leading" constant="20" id="lC8-HU-v3S"/>
                             <constraint firstItem="xdm-XV-9Id" firstAttribute="leading" secondItem="jQX-Vu-p5F" secondAttribute="leading" constant="20" id="mub-yk-8iu"/>
-                            <constraint firstItem="jQX-Vu-p5F" firstAttribute="bottom" secondItem="lgz-Ht-oZ6" secondAttribute="bottom" constant="200" id="nui-yf-ala"/>
                             <constraint firstItem="xdm-XV-9Id" firstAttribute="top" secondItem="Y6X-SI-23M" secondAttribute="bottom" constant="20" id="owP-Au-P3I"/>
                             <constraint firstItem="9pk-wX-MRw" firstAttribute="leading" secondItem="jQX-Vu-p5F" secondAttribute="leading" constant="20" id="sNZ-D1-NYi"/>
                             <constraint firstItem="lgz-Ht-oZ6" firstAttribute="leading" secondItem="jQX-Vu-p5F" secondAttribute="leading" constant="20" id="tFY-Z2-Ehd"/>
@@ -114,6 +117,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H3-4S-cTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="472" y="31"/>
+        </scene>
+        <!--Anywhere Fitness-->
+        <scene sceneID="Ljv-OP-gbp">
+            <objects>
+                <viewController id="4GW-y8-xZn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zGn-tF-wmi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cF3-WK-RrQ">
+                                <rect key="frame" x="20" y="108" width="374" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="osn-IR-rmb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="79"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for signing up!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEW-zc-2xO">
+                                <rect key="frame" x="20" y="363" width="374" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="ce2-ma-XkB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-Zd-bLb">
+                                <rect key="frame" x="20" y="633" width="374" height="50"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="K9h-ki-fYp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <state key="normal" title="Let's Get Started"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nOE-je-7vq" firstAttribute="trailing" secondItem="EEW-zc-2xO" secondAttribute="trailing" constant="20" id="DX2-jo-SEB"/>
+                            <constraint firstItem="EEW-zc-2xO" firstAttribute="leading" secondItem="nOE-je-7vq" secondAttribute="leading" constant="20" id="GIu-uy-ajb"/>
+                            <constraint firstItem="nOE-je-7vq" firstAttribute="trailing" secondItem="cF3-WK-RrQ" secondAttribute="trailing" constant="20" id="Qrk-dL-cJQ"/>
+                            <constraint firstItem="cF3-WK-RrQ" firstAttribute="leading" secondItem="nOE-je-7vq" secondAttribute="leading" constant="20" id="WJ1-HU-NxB"/>
+                            <constraint firstItem="cF3-WK-RrQ" firstAttribute="top" secondItem="nOE-je-7vq" secondAttribute="top" constant="20" id="Za2-Xv-TFa"/>
+                            <constraint firstItem="EEW-zc-2xO" firstAttribute="centerY" secondItem="zGn-tF-wmi" secondAttribute="centerY" id="qRS-Fp-OS5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nOE-je-7vq"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Anywhere Fitness" id="gFc-uj-TrJ">
+                        <barButtonItem key="backBarButtonItem" title="&lt;" id="10c-Uf-nuT"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VhV-Dz-S5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="31"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jR7-9A-t0f">
