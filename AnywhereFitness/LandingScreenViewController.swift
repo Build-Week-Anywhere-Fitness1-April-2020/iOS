@@ -1,17 +1,22 @@
 //
-//  ViewController.swift
+//  LandingScreenViewController.swift
 //  AnywhereFitness
 //
-//  Created by Christopher Devito on 4/25/20.
+//  Created by Christopher Devito on 4/28/20.
 //  Copyright © 2020 Christopher Devito. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class LandingScreenViewController: UIViewController {
+
+    // MARK: - IBOutlets
+    @IBOutlet weak var backgroundView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        backgroundView.setBackground()
 
         // Do any additional setup after loading the view.
     }
