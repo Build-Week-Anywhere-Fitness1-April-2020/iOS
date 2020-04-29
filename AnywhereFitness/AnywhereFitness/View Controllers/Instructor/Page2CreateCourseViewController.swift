@@ -23,7 +23,8 @@ class Page2CreateCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        courseLevel.dataSource = self
+        courseLevel.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -32,7 +33,7 @@ class Page2CreateCourseViewController: UIViewController {
         guard let courseDescription = courseDescriptions.text,
             !courseDescription.isEmpty else { return }
 
-        let courseIntensity = courseLevel.selectedRow(inComponent: 0)
+        let courseIntensity = courseLevel.selectedRow(inComponent: 1)
 
         course?.courseDescription = courseDescription
         course?.intensity = courseIntensityArray[1][courseIntensity]
@@ -48,4 +49,19 @@ class Page2CreateCourseViewController: UIViewController {
        page3VC.courseController = courseController
     }
 
+}
+
+extension Page2CreateCourseViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        courseIntensityArray.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        courseIntensityArray[component].count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        courseIntensityArray[component][row]
+    }
 }

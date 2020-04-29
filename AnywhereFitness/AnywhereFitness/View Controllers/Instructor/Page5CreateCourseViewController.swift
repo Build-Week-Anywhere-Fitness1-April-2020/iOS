@@ -35,5 +35,6 @@ class Page5CreateCourseViewController: UIViewController {
         print("Make a class")
         print(course)
         courseController?.postClass(course: course)
+        performSegue(withIdentifier: "CreateClassLastSegue", sender: self)
     }
 }

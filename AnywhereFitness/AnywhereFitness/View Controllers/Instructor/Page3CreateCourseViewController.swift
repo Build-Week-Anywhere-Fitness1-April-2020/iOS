@@ -43,9 +43,9 @@ class Page3CreateCourseViewController: UIViewController {
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
 
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     // MARK: - IBAction
@@ -86,18 +86,21 @@ class Page3CreateCourseViewController: UIViewController {
 
     @IBAction func nextButtonTapped(_ sender: Any) {
         for index in 0..<dayButtons.count where days[index] {
-            guard let day = dayButtons[index].titleLabel?.text,
-                let costString = classCost.text,
-                !costString.isEmpty,
-                let timeStartString = classStartTime.text,
-                !timeStartString.isEmpty else { return }
-            let cost = Double(costString)
-            course?.cost = cost ?? 0.0
-            course?.equipmentRequired = classEquipment.text
+            guard let day = dayButtons[index].titleLabel?.text
+                 else { return }
             course?.days.append(day)
-
-            performSegue(withIdentifier: "CreateClassThirdSegue", sender: self)
         }
+
+        guard let costString = classCost.text,
+            !costString.isEmpty,
+            let timeStartString = classStartTime.text,
+            !timeStartString.isEmpty else { return }
+        let cost = Double(costString)
+        course?.cost = cost ?? 0.0
+        course?.equipmentRequired = classEquipment.text
+        course?.time = timeStartString
+        performSegue(withIdentifier: "CreateClassThirdSegue", sender: self)
+
     }
 
     // MARK: - Navigation
