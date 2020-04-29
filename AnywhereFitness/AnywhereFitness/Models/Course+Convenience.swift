@@ -88,9 +88,9 @@ extension Course {
                   instructor: courseRepresentation.instructor,
                   days: courseRepresentation.days,
                   address: courseRepresentation.address,
-                  equipmentRequired: courseRepresentation.equipmentRequired,
-                  arrivalDescription: courseRepresentation.arrivalDescription  ,
-                  additionalInfo: courseRepresentation.additionalInfo,
+                  equipmentRequired: courseRepresentation.equipmentRequired ?? "None",
+                  arrivalDescription: courseRepresentation.arrivalDescription ?? "None",
+                  additionalInfo: courseRepresentation.additionalInfo ?? "None",
                   context: context)
     }
 }

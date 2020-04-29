@@ -25,9 +25,11 @@ struct CourseRepresentation: Equatable, Codable {
     var instructor: String
     var days: String
     var address: String  // Needs to be compatible with Apple Maps.
-    var equipmentRequired: String
-    var arrivalDescription: String
-    var additionalInfo: String
+    var equipmentRequired: String?
+    var arrivalDescription: String?
+    var additionalInfo: String?
+
+    
 }
 
 struct CourseRepresentations: Codable {

@@ -157,6 +157,9 @@ class CourseController {
                                           arrivalDescription: arrivalDescription ?? "None",
                                           additionalInfo: additionalInfo ?? "None")
 
+
+
+
         let createClassURL = self.baseURL.appendingPathComponent("classes")
 
         guard let bearer = self.bearer else {
