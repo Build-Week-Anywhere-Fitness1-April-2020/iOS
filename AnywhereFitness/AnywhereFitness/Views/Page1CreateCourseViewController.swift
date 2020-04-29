@@ -10,10 +10,9 @@ import UIKit
 
 class Page1CreateCourseViewController: UIViewController {
 
-
     var course: CourseRepresentation?
     let courseController = CourseController()
-    let classTypeArray = [["Yoga", "Weightlifting", "Crossfit"]]
+    let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit"]]
 
     @IBOutlet weak var classTypeUIPicker: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
@@ -23,35 +22,42 @@ class Page1CreateCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.isEnabled = false
-
+        classTypeUIPicker.dataSource = self
+        classTypeUIPicker.delegate = self
     }
-    /*
+
      // MARK: - Navigation
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        guard let page2VC = segue.destination as? Page2CreateCourseViewController else { return }
+        page2VC.course = course
+        page2VC.courseController = courseController
      }
-     */
+
     @IBAction func nextButtonTapped(_ sender: Any) {
         guard let className = className.text,
+            !className.isEmpty,
             let durationString = classLength.text,
+            !durationString.isEmpty,
             let duration = Double(durationString),
             let maxSizeString = classSize.text,
+            !maxSizeString.isEmpty,
             let maxSize = Int(maxSizeString) else { return }
 
         let classType = classTypeUIPicker.selectedRow(inComponent: 0)
 
-        course = courseController.createCourse(name: className, duration: duration, maxSize: maxSize, classType: classTypeArray[0][classType])
+        course = courseController.createCourse(name: className,
+                                               duration: duration,
+                                               maxSize: maxSize,
+                                               classType: classTypeArray[0][classType])
+        performSegue(withIdentifier: "CreateClassFirstSegue", sender: self)
     }
 
 }
 extension Page1CreateCourseViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+        classTypeArray.count
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
