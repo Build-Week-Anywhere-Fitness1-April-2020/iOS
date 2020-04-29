@@ -683,6 +683,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="7wQ-ay-dtR"/>
                                     <segue destination="9Qy-wa-cNk" kind="show" id="eyK-zx-L2r"/>
                                 </connections>
                             </button>
@@ -752,14 +753,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qoo-UZ-qVb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZn-vR-3JX">
                                                 <rect key="frame" x="138.5" y="0.0" width="100" height="34"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="VxK-1k-7JA"/>
+                                                    <constraint firstAttribute="width" constant="100" id="6QL-H7-IPY"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -789,6 +791,9 @@
                                                 <state key="normal" title="Sunday">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sundayButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="lHs-MG-e4l"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxl-W2-nOG">
                                                 <rect key="frame" x="120" y="0.0" width="100" height="40"/>
@@ -888,6 +893,12 @@
                         <viewLayoutGuide key="safeArea" id="Flf-y5-CND"/>
                     </view>
                     <navigationItem key="navigationItem" id="3NP-UR-Zgz"/>
+                    <connections>
+                        <outlet property="classCost" destination="BOK-bY-iy7" id="7CW-m8-i2w"/>
+                        <outlet property="classEndTime" destination="GZn-vR-3JX" id="ASH-Az-WO6"/>
+                        <outlet property="classStartTime" destination="Nrf-vY-G9I" id="jyM-UR-Jvt"/>
+                        <outlet property="sundayButton" destination="QJo-Bb-PE9" id="CHp-gA-VUV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZH-5x-jRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
