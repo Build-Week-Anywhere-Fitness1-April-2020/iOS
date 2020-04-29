@@ -116,90 +116,57 @@ class CourseController {
         }.resume()
     }
 
-    func createCourse(identifier: String,
-                      name: String,
-                      time: String,
+    func createCourse(name: String,
                       duration: Double,
-                      startDate: String,
-                      intensity: String,
-                      location: String,
                       maxSize: Int,
-                      classType: String,
-                      imageURL: String,
-                      courseDescription: String,
-                      cost: Double,
-                      registeredAttendees: String?,
-                      instructor: String,
-                      days: String,
-                      address: String,
-                      equipmentRequired: String?,
-                      arrivalDescription: String?,
-                      additionalInfo: String?,
-                      completion: @escaping CompletionHandler = { _ in }) {
+                      classType: String) -> CourseRepresentation {
 
-        let course = CourseRepresentation(identifier: identifier,
-                                          name: name,
-                                          time: time,
+        let course = CourseRepresentation(name: name,
                                           duration: duration,
-                                          startDate: startDate,
-                                          intensity: intensity,
-                                          location: location,
                                           maxSize: maxSize,
-                                          classType: classType,
-                                          imageURL: imageURL,
-                                          courseDescription: courseDescription,
-                                          cost: cost,
-                                          registeredAttendees: registeredAttendees ?? "0",
-                                          instructor: instructor,
-                                          days: days,
-                                          address: address,
-                                          equipmentRequired: equipmentRequired ?? "None",
-                                          arrivalDescription: arrivalDescription ?? "None",
-                                          additionalInfo: additionalInfo ?? "None")
-
-
-
-
-        let createClassURL = self.baseURL.appendingPathComponent("classes")
-
-        guard let bearer = self.bearer else {
-            completion(.failure(.noRep))
-            return
-        }
-
-        var request = URLRequest(url: createClassURL)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
-
-        let jsonEncoder = JSONEncoder()
-
-        do {
-            let jsonData = try jsonEncoder.encode(course)
-            request.httpBody = jsonData
-        } catch {
-            NSLog("Error enconding user objects: \(error)")
-            completion(.failure(.noEncode))
-            return
-        }
-
-        URLSession.shared.dataTask(with: request) { (_, response, error) in
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(.failure(.noRep))
-                return
-            }
-            if let error = error {
-                NSLog("print \(error)")
-                completion(.failure(.otherError))
-                return
-            }
-            self.courses.append(course)
-        } .resume()
+                                          classType: classType)
+        return course
     }
+    //        let createClassURL = self.baseURL.appendingPathComponent("classes")
+    //
+    //        guard let bearer = self.bearer else {
+    //            completion(.failure(.noRep))
+    //            return
+    //        }
+    //
+    //        var request = URLRequest(url: createClassURL)
+    //        request.httpMethod = HTTPMethod.post.rawValue
+    //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    //        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+    //
+    //        let jsonEncoder = JSONEncoder()
+    //
+    //        do {
+    //            let jsonData = try jsonEncoder.encode(course)
+    //            request.httpBody = jsonData
+    //        } catch {
+    //            NSLog("Error enconding user objects: \(error)")
+    //            completion(.failure(.noEncode))
+    //            return
+    //        }
+    //
+    //        URLSession.shared.dataTask(with: request) { (_, response, error) in
+    //            if let response = response as? HTTPURLResponse,
+    //                response.statusCode != 200 {
+    //                completion(.failure(.noRep))
+    //                return
+    //            }
+    //            if let error = error {
+    //                NSLog("print \(error)")
+    //                completion(.failure(.otherError))
+    //                return
+    //            }
+    //            self.courses.append(course)
+    //        } .resume()
+    //    }
 
     private func updateCourses(with representations: [CourseRepresentation]) throws {
-        let identifiersToFetch = representations.compactMap {UUID(uuidString: $0.identifier!) }
+        let identifiersToFetch = representations.compactMap {UUID(uuidString: $0.identifier) }
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
 
         var coursesToCreate = representationsByID
