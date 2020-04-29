@@ -13,19 +13,25 @@ class Page4CreateCourseViewController: UIViewController {
     // MARK: - Properties
     var course: CourseRepresentation?
     var courseController: CourseController?
+    @IBOutlet weak var classAddress: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard let page3VC = segue.destination as? Page3CreateCourseViewController else { return }
-       page3VC.course = course
-       page3VC.courseController = courseController
+        guard let page5VC = segue.destination as? Page5CreateCourseViewController else { return }
+        page5VC.course = course
+        page5VC.courseController = courseController
     }
-
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        guard let classAddress = classAddress.text,
+            !classAddress.isEmpty else { return }
+        course?.address = classAddress
+        print(classAddress)
+         performSegue(withIdentifier: "CreateClassFourthSegue", sender: self)
+    }
 }

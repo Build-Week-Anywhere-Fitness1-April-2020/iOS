@@ -52,7 +52,6 @@ class Page1CreateCourseViewController: UIViewController {
                                                classType: classTypeArray[0][classType])
         performSegue(withIdentifier: "CreateClassFirstSegue", sender: self)
     }
-
 }
 extension Page1CreateCourseViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 

@@ -33,6 +33,7 @@ class Page3CreateCourseViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var classCost: UITextField!
     @IBOutlet weak var classStartTime: UITextField!
+    @IBOutlet weak var classEquipment: UITextView!
     @IBOutlet weak var classEndTime: UILabel!
     @IBOutlet weak var sundayButton: UIButton!
     @IBOutlet weak var mondayButton: UIButton!
@@ -45,7 +46,6 @@ class Page3CreateCourseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     // MARK: - IBAction
@@ -86,17 +86,25 @@ class Page3CreateCourseViewController: UIViewController {
 
     @IBAction func nextButtonTapped(_ sender: Any) {
         for index in 0..<dayButtons.count where days[index] {
-            guard let day = dayButtons[index].titleLabel?.text else { return }
+            guard let day = dayButtons[index].titleLabel?.text,
+                let costString = classCost.text,
+                !costString.isEmpty,
+                let timeStartString = classStartTime.text,
+                !timeStartString.isEmpty else { return }
+            let cost = Double(costString)
+            course?.cost = cost ?? 0.0
+            course?.equipmentRequired = classEquipment.text
             course?.days.append(day)
+
+            performSegue(withIdentifier: "CreateClassThirdSegue", sender: self)
         }
     }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard let page3VC = segue.destination as? Page3CreateCourseViewController else { return }
-       page3VC.course = course
-       page3VC.courseController = courseController
+        guard let page4VC = segue.destination as? Page4CreateCourseViewController else { return }
+        page4VC.course = course
+        page4VC.courseController = courseController
     }
-
 }
