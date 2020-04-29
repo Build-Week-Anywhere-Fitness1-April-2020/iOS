@@ -366,7 +366,7 @@
         <scene sceneID="Uhj-VY-EZR">
             <objects>
                 <viewController id="aE4-sA-7ow" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="lqa-ng-Pvy">
+                    <view key="view" contentMode="scaleToFill" id="lqa-ng-Pvy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -435,7 +435,8 @@
         <!--Anywhere Fitness-->
         <scene sceneID="uMp-sq-f90">
             <objects>
-                <viewController id="adE-Gt-epv" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9P-uH-H3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="adE-Gt-epv" customClass="Page1CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Fb-DF-yMQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -508,6 +509,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonTapped:" destination="adE-Gt-epv" eventType="touchUpInside" id="aYl-c0-7pa"/>
                                     <segue destination="LSk-nU-Go3" kind="show" id="2wE-KA-h5Q"/>
                                 </connections>
                             </button>
@@ -552,8 +554,14 @@
                         <viewLayoutGuide key="safeArea" id="NPz-Kj-DNL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Anywhere Fitness" id="3YN-Q3-iVW"/>
+                    <connections>
+                        <outlet property="classLength" destination="ALf-G2-uj4" id="eRo-ZF-PQe"/>
+                        <outlet property="className" destination="fn6-cQ-NtJ" id="TZI-6b-Ukp"/>
+                        <outlet property="classSize" destination="XDe-CQ-F2S" id="Nzb-2Z-KsL"/>
+                        <outlet property="classTypeUIPicker" destination="fQM-om-Rjr" id="cME-0u-Wz7"/>
+                        <outlet property="nextButton" destination="Czr-KL-jsU" id="kjj-8e-4TC"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J9P-uH-H3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1260.8695652173915" y="1162.5"/>
         </scene>
