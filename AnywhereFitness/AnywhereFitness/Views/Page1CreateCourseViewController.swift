@@ -44,12 +44,13 @@ class Page1CreateCourseViewController: UIViewController {
             !maxSizeString.isEmpty,
             let maxSize = Int(maxSizeString) else { return }
 
-        let classType = classTypeUIPicker.selectedRow(inComponent: 0)
+        let classType = classTypeUIPicker.selectedRow(inComponent: 1)
+        guard let instructorName: String = UserDefaults.standard.value(forKey: UserDefaultKeys.user.rawValue) as? String else { return }
 
         course = courseController.createCourse(name: className,
                                                duration: duration,
                                                maxSize: maxSize,
-                                               classType: classTypeArray[0][classType])
+                                               classType: classTypeArray[1][classType], instructor: instructorName)
         performSegue(withIdentifier: "CreateClassFirstSegue", sender: self)
     }
 }
