@@ -197,8 +197,8 @@
 		E266C15C2458890E00FC8E7D /* Instructor */ = {
 			isa = PBXGroup;
 			children = (
-				18E1DE8E24590B29004BABA3 /* Page1CreateCourseViewController.swift */,
 				E266C15E2458893D00FC8E7D /* InstructorHomeScreenViewController.swift */,
+				18E1DE8E24590B29004BABA3 /* Page1CreateCourseViewController.swift */,
 				E266C1642459232800FC8E7D /* Page2CreateCourseViewController.swift */,
 				E266C1662459282C00FC8E7D /* Page3CreateCourseViewController.swift */,
 				E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */,

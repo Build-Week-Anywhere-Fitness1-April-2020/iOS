@@ -127,43 +127,46 @@ class CourseController {
                                           classType: classType)
         return course
     }
-    //        let createClassURL = self.baseURL.appendingPathComponent("classes")
-    //
-    //        guard let bearer = self.bearer else {
-    //            completion(.failure(.noRep))
-    //            return
-    //        }
-    //
-    //        var request = URLRequest(url: createClassURL)
-    //        request.httpMethod = HTTPMethod.post.rawValue
-    //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    //        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
-    //
-    //        let jsonEncoder = JSONEncoder()
-    //
-    //        do {
-    //            let jsonData = try jsonEncoder.encode(course)
-    //            request.httpBody = jsonData
-    //        } catch {
-    //            NSLog("Error enconding user objects: \(error)")
-    //            completion(.failure(.noEncode))
-    //            return
-    //        }
-    //
-    //        URLSession.shared.dataTask(with: request) { (_, response, error) in
-    //            if let response = response as? HTTPURLResponse,
-    //                response.statusCode != 200 {
-    //                completion(.failure(.noRep))
-    //                return
-    //            }
-    //            if let error = error {
-    //                NSLog("print \(error)")
-    //                completion(.failure(.otherError))
-    //                return
-    //            }
-    //            self.courses.append(course)
-    //        } .resume()
-    //    }
+
+    func postClass(course: CourseRepresentation, completion: @escaping CompletionHandler = { _ in }) {
+
+            let createClassURL = self.baseURL.appendingPathComponent("classes")
+
+            guard let bearer = self.bearer else {
+                completion(.failure(.noRep))
+                return
+            }
+
+            var request = URLRequest(url: createClassURL)
+            request.httpMethod = HTTPMethod.post.rawValue
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+
+            let jsonEncoder = JSONEncoder()
+
+            do {
+                let jsonData = try jsonEncoder.encode(course)
+                request.httpBody = jsonData
+            } catch {
+                NSLog("Error enconding user objects: \(error)")
+                completion(.failure(.noEncode))
+                return
+            }
+
+            URLSession.shared.dataTask(with: request) { (_, response, error) in
+                if let response = response as? HTTPURLResponse,
+                    response.statusCode != 200 {
+                    completion(.failure(.noRep))
+                    return
+                }
+                if let error = error {
+                    NSLog("print \(error)")
+                    completion(.failure(.otherError))
+                    return
+                }
+                self.courses.append(course)
+            } .resume()
+        }
 
     private func updateCourses(with representations: [CourseRepresentation]) throws {
         let identifiersToFetch = representations.compactMap {UUID(uuidString: $0.identifier) }

@@ -906,7 +906,7 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="7wQ-ay-dtR"/>
-                                    <segue destination="9Qy-wa-cNk" kind="show" id="eyK-zx-L2r"/>
+                                    <segue destination="9Qy-wa-cNk" kind="show" identifier="CreateClassThirdSegue" id="eyK-zx-L2r"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1hU-VA-iOL">
@@ -1136,6 +1136,7 @@
                     <connections>
                         <outlet property="classCost" destination="BOK-bY-iy7" id="7CW-m8-i2w"/>
                         <outlet property="classEndTime" destination="GZn-vR-3JX" id="ASH-Az-WO6"/>
+                        <outlet property="classEquipment" destination="QhL-fM-brc" id="662-gw-gB5"/>
                         <outlet property="classStartTime" destination="Nrf-vY-G9I" id="jyM-UR-Jvt"/>
                         <outlet property="fridayButton" destination="Wa1-ad-ZMP" id="GU1-J8-Mbx"/>
                         <outlet property="mondayButton" destination="Oxl-W2-nOG" id="3Os-IG-my7"/>
@@ -1177,7 +1178,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gnx-wU-ePs" kind="show" id="8CL-7z-REf"/>
+                                    <action selector="nextButtonTapped:" destination="9Qy-wa-cNk" eventType="touchUpInside" id="3kA-yx-CCk"/>
+                                    <segue destination="gnx-wU-ePs" kind="show" identifier="CreateClassFourthSegue" id="8CL-7z-REf"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cDR-N2-omQ">
@@ -1212,6 +1214,9 @@
                         <viewLayoutGuide key="safeArea" id="GZC-pA-NeR"/>
                     </view>
                     <navigationItem key="navigationItem" id="AuB-dn-2Ob"/>
+                    <connections>
+                        <outlet property="classAddress" destination="Fed-pA-maX" id="BUp-Qz-ONI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7R-ek-RZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1244,6 +1249,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="finishButtonTapped:" destination="gnx-wU-ePs" eventType="touchUpInside" id="fbe-qo-kHD"/>
                                     <segue destination="3UL-46-EzX" kind="show" id="7HB-81-GH4"/>
                                 </connections>
                             </button>
@@ -1308,6 +1314,10 @@
                         <viewLayoutGuide key="safeArea" id="TBa-2B-Ldw"/>
                     </view>
                     <navigationItem key="navigationItem" id="WRu-hj-yvy"/>
+                    <connections>
+                        <outlet property="additionalInfo" destination="3Kf-z9-Cj5" id="Enp-xE-p5t"/>
+                        <outlet property="classArrive" destination="X4q-pW-aoN" id="UW2-xT-POr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIt-VU-tJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

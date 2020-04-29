@@ -14,20 +14,26 @@ class Page5CreateCourseViewController: UIViewController {
     var course: CourseRepresentation?
     var courseController: CourseController?
 
+    @IBOutlet weak var classArrive: UITextView!
+    @IBOutlet weak var additionalInfo: UITextView!
+
     // MARK: - IBOutlets
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard let page3VC = segue.destination as? Page3CreateCourseViewController else { return }
-       page3VC.course = course
-       page3VC.courseController = courseController
+    @IBAction func finishButtonTapped(_ sender: Any) {
+        guard let classArrive = classArrive.text,
+            !classArrive.isEmpty,
+            let additionalInfo = additionalInfo.text,
+            !additionalInfo.isEmpty else { return }
+        course?.arrivalDescription = classArrive
+        course?.additionalInfo = additionalInfo
+        guard let course = course else { return }
+        print("Make a class")
+        print(course)
+        courseController?.postClass(course: course)
     }
-
 }
