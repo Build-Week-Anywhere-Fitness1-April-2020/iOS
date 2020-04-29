@@ -67,7 +67,8 @@ extension Course {
         self.init(context: context)
     }
 
-    @discardableResult convenience init?(courseRepresentation: CourseRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init?(courseRepresentation: CourseRepresentation,
+                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
         guard let identifier = UUID(uuidString: courseRepresentation.identifier ?? "myid") else { return nil }
 
@@ -87,9 +88,9 @@ extension Course {
                   instructor: courseRepresentation.instructor,
                   days: courseRepresentation.days,
                   address: courseRepresentation.address,
-                  equipmentRequired: courseRepresentation.equipmentRequired,
-                  arrivalDescription: courseRepresentation.arrivalDescription  ,
-                  additionalInfo: courseRepresentation.additionalInfo,
+                  equipmentRequired: courseRepresentation.equipmentRequired ?? "None",
+                  arrivalDescription: courseRepresentation.arrivalDescription ?? "None",
+                  additionalInfo: courseRepresentation.additionalInfo ?? "None",
                   context: context)
     }
 }
