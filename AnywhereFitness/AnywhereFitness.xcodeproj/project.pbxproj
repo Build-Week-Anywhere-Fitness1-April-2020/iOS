@@ -34,6 +34,7 @@
 		E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */; };
 		E266C16D2459288300FC8E7D /* Page6CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */; };
 		E27747BA2459BE9000C5D0AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747B92459BE9000C5D0AB /* ProfileViewController.swift */; };
+		E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E27747B92459BE9000C5D0AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 		E266C15D2458891900FC8E7D /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				18E1DE8F24590B29004BABA3 /* Page1CreateCourseViewController.swift in Sources */,
 				E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
+				E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */,
 				E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */,
 				18C1998E245794D50013DB72 /* UserController.swift in Sources */,
 				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,

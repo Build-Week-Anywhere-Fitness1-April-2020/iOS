@@ -11,7 +11,7 @@
         <!--Home-->
         <scene sceneID="vQe-nE-APh">
             <objects>
-                <viewController id="QJ8-DF-kog" sceneMemberID="viewController">
+                <viewController id="QJ8-DF-kog" customClass="ClientHomeScreenViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2F-GA-CXf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
