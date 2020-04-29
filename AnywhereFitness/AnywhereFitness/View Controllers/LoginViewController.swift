@@ -66,11 +66,7 @@ class LoginViewController: UIViewController {
                         let alertController = UIAlertController(title: "Sign Up Successful",
                                                                 message: "Now please log in", preferredStyle: .alert)
                         let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
-                            if role == Role.client {
-                                self.performSegue(withIdentifier: "ClientSegue", sender: self)
-                            } else {
-                                self.performSegue(withIdentifier: "InstructorSegue", sender: self)
-                            }
+                            self.dismiss(animated: true, completion: nil)
                         }
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true, completion: {
@@ -88,7 +84,14 @@ class LoginViewController: UIViewController {
                 }
 
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+                    let alertController = UIAlertController(title: "Sign In Successful",
+                                                            message: "Lets go work out!", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    self.performSegue(withIdentifier: (role == Role.client) ? "ClientSegue" : "InstructorSegue",
+                                      sender: self)
+                    }
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
