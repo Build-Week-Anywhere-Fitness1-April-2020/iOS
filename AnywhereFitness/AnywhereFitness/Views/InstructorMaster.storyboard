@@ -481,23 +481,6 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gVP-cP-DHM">
-                                <rect key="frame" x="20" y="517.5" width="374" height="120.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbj-4R-NSN">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6X-bP-1Nj">
-                                        <rect key="frame" x="0.0" y="20.5" width="374" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="eT1-A1-1as"/>
-                                        </constraints>
-                                    </pickerView>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t0s-2w-VRz">
                                 <rect key="frame" x="20" y="228" width="374" height="120.5"/>
                                 <subviews>
@@ -528,27 +511,43 @@
                                     <segue destination="LSk-nU-Go3" kind="show" id="2wE-KA-h5Q"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-hn-Z6j">
+                                <rect key="frame" x="20" y="517.5" width="374" height="54.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoS-iM-5l1">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Class Name Here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fn6-cQ-NtJ">
+                                        <rect key="frame" x="0.0" y="20.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NPz-Kj-DNL" firstAttribute="trailing" secondItem="HoF-uh-ead" secondAttribute="trailing" constant="20" id="3BX-YK-08E"/>
                             <constraint firstItem="NPz-Kj-DNL" firstAttribute="trailing" secondItem="Aqt-V6-aUE" secondAttribute="trailing" constant="20" id="6ZW-pk-LN4"/>
                             <constraint firstItem="HoF-uh-ead" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="7PE-VD-5UB"/>
-                            <constraint firstItem="gVP-cP-DHM" firstAttribute="top" secondItem="JJL-dl-Cc2" secondAttribute="bottom" constant="20" id="A6x-68-YdJ"/>
                             <constraint firstItem="JJL-dl-Cc2" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="BU4-w5-ToA"/>
                             <constraint firstItem="Aqt-V6-aUE" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="Bgb-kJ-yZG"/>
                             <constraint firstItem="Aqt-V6-aUE" firstAttribute="top" secondItem="t0s-2w-VRz" secondAttribute="bottom" constant="20" id="EFd-CI-aSc"/>
                             <constraint firstItem="NPz-Kj-DNL" firstAttribute="trailing" secondItem="t0s-2w-VRz" secondAttribute="trailing" constant="20" id="LPj-co-zWL"/>
                             <constraint firstItem="t0s-2w-VRz" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="LgS-0m-eQg"/>
-                            <constraint firstItem="NPz-Kj-DNL" firstAttribute="trailing" secondItem="gVP-cP-DHM" secondAttribute="trailing" constant="20" id="Of0-7I-0ow"/>
                             <constraint firstItem="HoF-uh-ead" firstAttribute="top" secondItem="NPz-Kj-DNL" secondAttribute="top" constant="20" id="Tyi-DV-K80"/>
+                            <constraint firstItem="c6d-hn-Z6j" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="WPE-vL-Gpj"/>
+                            <constraint firstItem="c6d-hn-Z6j" firstAttribute="top" secondItem="JJL-dl-Cc2" secondAttribute="bottom" constant="20" id="XMu-M1-wKo"/>
                             <constraint firstItem="NPz-Kj-DNL" firstAttribute="bottom" secondItem="Czr-KL-jsU" secondAttribute="bottom" constant="20" id="YBd-f2-k6R"/>
                             <constraint firstItem="t0s-2w-VRz" firstAttribute="top" secondItem="HoF-uh-ead" secondAttribute="bottom" constant="40" id="d0A-SO-itR"/>
                             <constraint firstItem="JJL-dl-Cc2" firstAttribute="top" secondItem="Aqt-V6-aUE" secondAttribute="bottom" constant="20" id="iST-li-MEv"/>
                             <constraint firstItem="Czr-KL-jsU" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="jGw-55-7en"/>
+                            <constraint firstItem="NPz-Kj-DNL" firstAttribute="trailing" secondItem="c6d-hn-Z6j" secondAttribute="trailing" constant="20" id="ms2-La-7Cw"/>
                             <constraint firstItem="NPz-Kj-DNL" firstAttribute="trailing" secondItem="Czr-KL-jsU" secondAttribute="trailing" constant="20" id="wSa-Uc-KdI"/>
                             <constraint firstItem="NPz-Kj-DNL" firstAttribute="trailing" secondItem="JJL-dl-Cc2" secondAttribute="trailing" constant="20" id="wsp-yc-PrC"/>
-                            <constraint firstItem="gVP-cP-DHM" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="zNX-eJ-r0W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NPz-Kj-DNL"/>
                     </view>
@@ -588,24 +587,8 @@
                                     <segue destination="u4E-s1-ppd" kind="show" id="5VS-nO-EjQ"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-hn-Z6j">
-                                <rect key="frame" x="20" y="228" width="374" height="54.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoS-iM-5l1">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Class Name Here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fn6-cQ-NtJ">
-                                        <rect key="frame" x="0.0" y="20.5" width="374" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-VF-X6F">
-                                <rect key="frame" x="20" y="302.5" width="374" height="200"/>
+                                <rect key="frame" x="20" y="228" width="374" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qy-8g-wkB">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -625,20 +608,37 @@
                                     <constraint firstAttribute="height" constant="200" id="fZl-5n-nQg"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gVP-cP-DHM">
+                                <rect key="frame" x="20" y="448" width="374" height="120.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbj-4R-NSN">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6X-bP-1Nj">
+                                        <rect key="frame" x="0.0" y="20.5" width="374" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="eT1-A1-1as"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NdK-jL-xfJ" firstAttribute="bottom" secondItem="O4O-vp-Wt7" secondAttribute="bottom" constant="20" id="3fx-cu-vix"/>
-                            <constraint firstItem="t2h-VF-X6F" firstAttribute="top" secondItem="c6d-hn-Z6j" secondAttribute="bottom" constant="20" id="EtM-uq-Ljs"/>
+                            <constraint firstItem="NdK-jL-xfJ" firstAttribute="trailing" secondItem="gVP-cP-DHM" secondAttribute="trailing" constant="20" id="4Jn-XG-ksa"/>
+                            <constraint firstItem="gVP-cP-DHM" firstAttribute="top" secondItem="t2h-VF-X6F" secondAttribute="bottom" constant="20" id="7SS-2k-4wF"/>
+                            <constraint firstItem="t2h-VF-X6F" firstAttribute="top" secondItem="BAy-wt-40l" secondAttribute="bottom" constant="40" id="D3P-8l-UMi"/>
                             <constraint firstItem="O4O-vp-Wt7" firstAttribute="leading" secondItem="Qjx-cq-EhM" secondAttribute="leading" constant="20" id="F23-Qf-8aY"/>
                             <constraint firstItem="NdK-jL-xfJ" firstAttribute="trailing" secondItem="t2h-VF-X6F" secondAttribute="trailing" constant="20" id="FSy-8E-rvv"/>
+                            <constraint firstItem="gVP-cP-DHM" firstAttribute="leading" secondItem="NdK-jL-xfJ" secondAttribute="leading" constant="20" id="Q9K-DG-kAj"/>
                             <constraint firstItem="t2h-VF-X6F" firstAttribute="leading" secondItem="NdK-jL-xfJ" secondAttribute="leading" constant="20" id="QYc-v9-iPF"/>
                             <constraint firstItem="NdK-jL-xfJ" firstAttribute="trailing" secondItem="O4O-vp-Wt7" secondAttribute="trailing" constant="20" id="UJD-Ln-1Ev"/>
-                            <constraint firstItem="c6d-hn-Z6j" firstAttribute="leading" secondItem="NdK-jL-xfJ" secondAttribute="leading" constant="20" id="WOA-xO-4E1"/>
                             <constraint firstItem="BAy-wt-40l" firstAttribute="leading" secondItem="NdK-jL-xfJ" secondAttribute="leading" constant="20" id="aLB-Ej-lfM"/>
-                            <constraint firstItem="NdK-jL-xfJ" firstAttribute="trailing" secondItem="c6d-hn-Z6j" secondAttribute="trailing" constant="20" id="d3D-Oo-j2d"/>
                             <constraint firstItem="BAy-wt-40l" firstAttribute="top" secondItem="NdK-jL-xfJ" secondAttribute="top" constant="20" id="fNB-Ou-6Ni"/>
-                            <constraint firstItem="c6d-hn-Z6j" firstAttribute="top" secondItem="BAy-wt-40l" secondAttribute="bottom" constant="40" id="gRX-Pu-jL2"/>
                             <constraint firstItem="NdK-jL-xfJ" firstAttribute="trailing" secondItem="BAy-wt-40l" secondAttribute="trailing" constant="20" id="wDG-To-m9D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NdK-jL-xfJ"/>
