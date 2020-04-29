@@ -21,15 +21,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
 
     // MARK: - Properties
     var userController = UserController()
-    var loginType = LoginType.signUp
+    var loginType: LoginType?
     var role: Role?
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if loginType == LoginType.signIn {
+            emailTextField.isHidden = true
+            nameTextField.isHidden = true
+            nameLabel.isHidden = true
+            emailLabel.isHidden = true
+        }
     }
 
     // MARK: - Actions

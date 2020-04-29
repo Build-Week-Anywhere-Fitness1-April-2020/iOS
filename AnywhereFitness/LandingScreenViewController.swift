@@ -11,27 +11,29 @@ import UIKit
 class LandingScreenViewController: UIViewController {
 
     // MARK: - Properties
+    var role: [Role]?
 
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var signinLabel: UILabel!
+    
 
     // MARK: - IBActions
     @IBAction func clientSignup(_ sender: Any) {
+        role = [Role.client]
         if UserDefaults.standard.value(forKey: "bearerToken") != nil {
-            performSegue(withIdentifier: "SignedInClientSegue", sender: self)
+            performSegue(withIdentifier: "SignInSegue", sender: self)
         } else {
-            performSegue(withIdentifier: "SignUpClientSegue", sender: self)
-            let loginVC = LoginViewController()
-            loginVC.role = Role.client
+            performSegue(withIdentifier: "SignUpSegue", sender: self)
         }
     }
 
     @IBAction func instructorSignup(_ sender: Any) {
+        role = [Role.instructor]
         if UserDefaults.standard.value(forKey: "bearerToken") != nil {
-            performSegue(withIdentifier: "SignedInInstructorSegue", sender: self)
+            performSegue(withIdentifier: "SignInSegue", sender: self)
         } else {
-            performSegue(withIdentifier: "SignUpInstructorSegue", sender: self)
+            performSegue(withIdentifier: "SignUpSegue", sender: self)
         }
     }
 
@@ -45,8 +47,6 @@ class LandingScreenViewController: UIViewController {
         }
 
         backgroundView.setBackground()
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -56,14 +56,16 @@ class LandingScreenViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SignUpClientSegue" {
-            if let loginVC = segue.destination as? LoginViewController {
-                loginVC.role = Role.client
-            }
-        } else if segue.identifier == "SignUpInstructorSegue" {
-            guard let loginVC = segue.destination as? LoginViewController else { return }
-            loginVC.role = Role.instructor
+        if segue.identifier == "SignUpSegue" {
+            guard let signUpVC = segue.destination as? LoginViewController,
+                let role = role else { return }
+            signUpVC.role = role[0]
+            signUpVC.loginType = .signUp
+        } else if segue.identifier == "SignInSegue" {
+            guard let loginVC = segue.destination as? LoginViewController,
+                let role = role else { return }
+            loginVC.role = role[0]
+            loginVC.loginType = .signIn
         }
     }
-
 }
