@@ -805,6 +805,9 @@
                                                 <state key="normal" title="Monday">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="mondayButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="U2Q-S3-9cx"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbG-x8-NCu">
                                                 <rect key="frame" x="240" y="0.0" width="100" height="40"/>
@@ -816,6 +819,9 @@
                                                 <state key="normal" title="Tuesday">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tuesdayButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="8TD-0T-Ix8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -832,6 +838,9 @@
                                                 <state key="normal" title="Wednesday">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="wednesdayButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="Ak4-lP-dqt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPo-j4-n2X">
                                                 <rect key="frame" x="120" y="0.0" width="100" height="40"/>
@@ -843,6 +852,9 @@
                                                 <state key="normal" title="Thursday">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="thursdayButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="ZBV-ks-dpN"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wa1-ad-ZMP">
                                                 <rect key="frame" x="240" y="0.0" width="100" height="40"/>
@@ -854,6 +866,9 @@
                                                 <state key="normal" title="Friday">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="fridayButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="tBj-yU-zxc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -867,6 +882,9 @@
                                         <state key="normal" title="Saturday">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saturdayButtonTapped:" destination="u4E-s1-ppd" eventType="touchUpInside" id="BcG-kf-vfQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -897,7 +915,13 @@
                         <outlet property="classCost" destination="BOK-bY-iy7" id="7CW-m8-i2w"/>
                         <outlet property="classEndTime" destination="GZn-vR-3JX" id="ASH-Az-WO6"/>
                         <outlet property="classStartTime" destination="Nrf-vY-G9I" id="jyM-UR-Jvt"/>
+                        <outlet property="fridayButton" destination="Wa1-ad-ZMP" id="GU1-J8-Mbx"/>
+                        <outlet property="mondayButton" destination="Oxl-W2-nOG" id="3Os-IG-my7"/>
+                        <outlet property="saturdayButton" destination="KOO-7s-J9H" id="b1W-aR-VWe"/>
                         <outlet property="sundayButton" destination="QJo-Bb-PE9" id="CHp-gA-VUV"/>
+                        <outlet property="thursdayButton" destination="tPo-j4-n2X" id="MMC-jS-Jr8"/>
+                        <outlet property="tuesdayButton" destination="ZbG-x8-NCu" id="7GV-rt-Mpa"/>
+                        <outlet property="wednesdayButton" destination="X1U-d3-6dd" id="3sB-CC-A1B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZH-5x-jRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
