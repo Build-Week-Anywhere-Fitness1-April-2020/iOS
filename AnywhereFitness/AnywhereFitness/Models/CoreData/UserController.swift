@@ -41,7 +41,7 @@ class UserController {
 
     // MARK: - Methods
     func signUp(with user: UserLogin, completion: @escaping (Error?) -> Void) {
-        
+
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -125,5 +125,4 @@ class UserController {
             }
         }.resume()
     }
-
 }

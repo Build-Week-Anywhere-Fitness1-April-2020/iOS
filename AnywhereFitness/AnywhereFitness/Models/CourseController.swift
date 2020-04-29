@@ -18,77 +18,184 @@ enum NetworkError: Error {
     case noRep
 }
 
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case delete = "DELETE"
+}
+
 class CourseController {
 
     // MARK: - Properties
-    var searchedCourses: [CourseRepresentation] = []
-
+    var courses: [CourseRepresentation] = []
+    var bearer: Bearer?
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
 
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
 
     // MARK: - Methods
     func fetchCourses(completion: @escaping CompletionHandler = { _ in }) {
-         let requestURL = baseURL.appendingPathExtension("classes")
 
-         URLSession.shared.dataTask(with: requestURL) { data, _, error in
-             if let error = error {
-                 NSLog("Error fetching classes: \(error)")
-                 completion(.failure(.otherError))
-                 return
-             }
+        guard let bearer = bearer else {
+            print("bearer for fetching courses is missing")
+            return
+        }
 
-             guard let data = data else {
-                 NSLog("No data returned from fetch")
-                 completion(.failure(.noData))
-                 return
-             }
+        let requestURL = baseURL.appendingPathExtension("classes")
 
-             do {
-         let courseRepresentations =
-             Array(try JSONDecoder().decode([String: CourseRepresentation].self, from: data).values)
-                 try self.updateCourses(with: courseRepresentations)
+        var request = URLRequest(url: requestURL)
 
-                 completion(.success(true))
-             } catch {
-                 NSLog("Error decoding classes from server: \(error)")
-                 completion(.failure(.noDecode))
-             }
-         }.resume()
-     }
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
 
-    func searchForCourse(with searchTerm: String, completion: @escaping (Error?) -> Void) {
+        URLSession.shared.dataTask(with: request) { data, response, error in
+
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(.failure(.noRep))
+            }
+
+            if let error = error {
+                NSLog("Error fetching classes: \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+
+            guard let data = data else {
+                NSLog("No data returned from fetch")
+                completion(.failure(.noData))
+                return
+            }
+
+            do {
+                let courseRepresentations =
+                    Array(try JSONDecoder().decode([String: CourseRepresentation].self, from: data).values)
+                try self.updateCourses(with: courseRepresentations)
+                completion(.success(true))
+            } catch {
+                NSLog("Error decoding classes from server: \(error)")
+                completion(.failure(.noDecode))
+            }
+        }.resume()
+    }
+
+    func searchForCourse(with searchTerm: String, completion: @escaping CompletionHandler = { _ in }) {
+
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let queryParameters = ["classes": searchTerm]
         components?.queryItems = queryParameters.map({URLQueryItem(name: $0.key, value: $0.value)})
 
         guard let requestURL = components?.url else {
-            completion(NSError())
+            completion(.failure(.otherError))
             return
         }
 
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             if let error = error {
                 NSLog("Error searching for class with search term \(searchTerm): \(error)")
-                completion(error)
+                completion(.failure(.otherError))
                 return
             }
 
             guard let data = data else {
                 NSLog("No data returned from data task")
-                completion(NSError())
+                completion(.failure(.noData))
                 return
             }
 
             do {
                 let courseRepresentations = try JSONDecoder().decode(CourseRepresentations.self, from: data).results
-                self.searchedCourses = courseRepresentations
-                completion(nil)
+                self.courses = courseRepresentations
+                completion(.success(true))
             } catch {
                 NSLog("Error decoding JSON data: \(error)")
-                completion(error)
+                completion(.failure(.noDecode))
             }
         }.resume()
+    }
+
+    func createCourse(identifier: String,
+                      name: String,
+                      time: String,
+                      duration: Double,
+                      startDate: String,
+                      intensity: String,
+                      location: String,
+                      maxSize: Int,
+                      classType: String,
+                      imageURL: String,
+                      courseDescription: String,
+                      cost: Double,
+                      registeredAttendees: String?,
+                      instructor: String,
+                      days: String,
+                      address: String,
+                      equipmentRequired: String?,
+                      arrivalDescription: String?,
+                      additionalInfo: String?,
+                      completion: @escaping CompletionHandler = { _ in }) {
+
+        let course = CourseRepresentation(identifier: identifier,
+                                          name: name,
+                                          time: time,
+                                          duration: duration,
+                                          startDate: startDate,
+                                          intensity: intensity,
+                                          location: location,
+                                          maxSize: maxSize,
+                                          classType: classType,
+                                          imageURL: imageURL,
+                                          courseDescription: courseDescription,
+                                          cost: cost,
+                                          registeredAttendees: registeredAttendees ?? "0",
+                                          instructor: instructor,
+                                          days: days,
+                                          address: address,
+                                          equipmentRequired: equipmentRequired ?? "None",
+                                          arrivalDescription: arrivalDescription ?? "None",
+                                          additionalInfo: additionalInfo ?? "None")
+
+
+
+
+        let createClassURL = self.baseURL.appendingPathComponent("classes")
+
+        guard let bearer = self.bearer else {
+            completion(.failure(.noRep))
+            return
+        }
+
+        var request = URLRequest(url: createClassURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+
+        let jsonEncoder = JSONEncoder()
+
+        do {
+            let jsonData = try jsonEncoder.encode(course)
+            request.httpBody = jsonData
+        } catch {
+            NSLog("Error enconding user objects: \(error)")
+            completion(.failure(.noEncode))
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(.failure(.noRep))
+                return
+            }
+            if let error = error {
+                NSLog("print \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            self.courses.append(course)
+        } .resume()
     }
 
     private func updateCourses(with representations: [CourseRepresentation]) throws {
@@ -120,6 +227,7 @@ class CourseController {
             }
         }
     }
+
     private func update(course: Course, with representation: CourseRepresentation) {
         course.name = representation.name
         course.time = representation.time
