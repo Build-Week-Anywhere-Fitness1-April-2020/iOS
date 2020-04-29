@@ -35,6 +35,12 @@
 		E266C16D2459288300FC8E7D /* Page6CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */; };
 		E27747BA2459BE9000C5D0AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747B92459BE9000C5D0AB /* ProfileViewController.swift */; };
 		E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */; };
+		E27747C0245A163E00C5D0AB /* SearchPage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */; };
+		E27747C2245A16B500C5D0AB /* SearchDetail1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */; };
+		E27747C4245A16D500C5D0AB /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C3245A16D500C5D0AB /* SearchResultsViewController.swift */; };
+		E27747C6245A16F200C5D0AB /* SearchScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C5245A16F200C5D0AB /* SearchScheduleViewController.swift */; };
+		E27747C8245A170600C5D0AB /* SearchReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C7245A170600C5D0AB /* SearchReserveViewController.swift */; };
+		E27747CA245A171C00C5D0AB /* SearchConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +76,12 @@
 		E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E27747B92459BE9000C5D0AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeScreenViewController.swift; sourceTree = "<group>"; };
+		E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage1ViewController.swift; sourceTree = "<group>"; };
+		E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail1ViewController.swift; sourceTree = "<group>"; };
+		E27747C3245A16D500C5D0AB /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		E27747C5245A16F200C5D0AB /* SearchScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScheduleViewController.swift; sourceTree = "<group>"; };
+		E27747C7245A170600C5D0AB /* SearchReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReserveViewController.swift; sourceTree = "<group>"; };
+		E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +227,12 @@
 			isa = PBXGroup;
 			children = (
 				E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */,
+				E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */,
+				E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */,
+				E27747C3245A16D500C5D0AB /* SearchResultsViewController.swift */,
+				E27747C5245A16F200C5D0AB /* SearchScheduleViewController.swift */,
+				E27747C7245A170600C5D0AB /* SearchReserveViewController.swift */,
+				E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -344,6 +362,7 @@
 				E266C1652459232800FC8E7D /* Page2CreateCourseViewController.swift in Sources */,
 				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
 				18E1DE8F24590B29004BABA3 /* Page1CreateCourseViewController.swift in Sources */,
+				E27747C8245A170600C5D0AB /* SearchReserveViewController.swift in Sources */,
 				E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
 				E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */,
@@ -351,13 +370,18 @@
 				18C1998E245794D50013DB72 /* UserController.swift in Sources */,
 				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,
 				1874F0CD24573B970026023D /* User.swift in Sources */,
+				E27747C0245A163E00C5D0AB /* SearchPage1ViewController.swift in Sources */,
 				18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */,
+				E27747C6245A16F200C5D0AB /* SearchScheduleViewController.swift in Sources */,
 				E26493CD24553451009D759F /* AppDelegate.swift in Sources */,
 				18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */,
 				E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */,
 				E27747BA2459BE9000C5D0AB /* ProfileViewController.swift in Sources */,
+				E27747CA245A171C00C5D0AB /* SearchConfirmationViewController.swift in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
 				E266C157245860CF00FC8E7D /* setBackground.swift in Sources */,
+				E27747C2245A16B500C5D0AB /* SearchDetail1ViewController.swift in Sources */,
+				E27747C4245A16D500C5D0AB /* SearchResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
