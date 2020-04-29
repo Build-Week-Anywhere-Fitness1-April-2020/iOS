@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18366C7F2457C58700CB28DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18366C7E2457C58700CB28DC /* LoginViewController.swift */; };
-		18366C812457CE3B00CB28DC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18366C802457CE3B00CB28DC /* APIController.swift */; };
 		1874F0CD24573B970026023D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CC24573B970026023D /* User.swift */; };
 		1874F0CF24573BB80026023D /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CE24573BB80026023D /* Bearer.swift */; };
 		18C1998E245794D50013DB72 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1998D245794D50013DB72 /* UserController.swift */; };
@@ -32,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		18366C7E2457C58700CB28DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		18366C802457CE3B00CB28DC /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		1874F0CC24573B970026023D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = AnywhereFitness/User.swift; sourceTree = SOURCE_ROOT; };
 		1874F0CE24573BB80026023D /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Bearer.swift; path = AnywhereFitness/Bearer.swift; sourceTree = SOURCE_ROOT; };
 		18C1998D245794D50013DB72 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = AnywhereFitness/Models/CoreData/UserController.swift; sourceTree = SOURCE_ROOT; };
@@ -145,7 +143,6 @@
 			children = (
 				18C1998D245794D50013DB72 /* UserController.swift */,
 				18EF9AE424574C0E00BD0C9E /* CourseController.swift */,
-				18366C802457CE3B00CB28DC /* APIController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,7 +322,6 @@
 				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,
 				1874F0CD24573B970026023D /* User.swift in Sources */,
 				18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */,
-				18366C812457CE3B00CB28DC /* APIController.swift in Sources */,
 				E26493CD24553451009D759F /* AppDelegate.swift in Sources */,
 				18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
