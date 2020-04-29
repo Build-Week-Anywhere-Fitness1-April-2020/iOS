@@ -10,6 +10,12 @@ import UIKit
 
 class SearchScheduleViewController: UIViewController {
 
+
+    // MARK: - Properties
+      var course: CourseRepresentation?
+      let courseController = CourseController()
+
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,6 +10,16 @@ import UIKit
 
 class SearchDetail1ViewController: UIViewController {
 
+    // MARK: - Properties
+    var course: CourseRepresentation?
+    var allCourses: [String] = []
+    let courseController = CourseController()
+
+    // MARK: - IBOutlets
+
+
+
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +27,6 @@ class SearchDetail1ViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -25,6 +34,9 @@ class SearchDetail1ViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
+
+
+
+

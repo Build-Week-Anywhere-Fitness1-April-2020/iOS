@@ -10,21 +10,22 @@ import UIKit
 
 class ClientHomeScreenViewController: UIViewController {
 
+    // MARK: - Properties
+    let courseController = CourseController.shared
+
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       super.viewDidLoad()
+        updateViews()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateViews() {
+        courseController.fetchCourses { (result) in
+            if let courses = try? result.get() {
+                DispatchQueue.main.async {
+                    self.courseController.allCourses = courses
+                }
+            }
+        }
     }
-    */
-
 }
