@@ -11,13 +11,12 @@ import UIKit
 class InstructorHomeScreenViewController: UIViewController {
 
     @IBOutlet weak var backgroundImage: UIView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImage.setBackground()
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation

@@ -9,10 +9,9 @@
 import UIKit
 
 class Page6CreateCourseViewController: UIViewController {
-    
+
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundImage: UIView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
