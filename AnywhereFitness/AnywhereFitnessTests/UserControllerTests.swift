@@ -49,8 +49,7 @@ class UserControllerTests: XCTestCase {
     }
 
     func testSignIn() {
-        let user = UserLogin(username: "itsmeyo",
-                             email: "itsmeyo@myplace.com",
+        let user = UserSignIn(userName: "itsmeyo",
                              password: "yepitsme",
                              roles: [Role.instructor.rawValue])
         let expectation = self.expectation(description: "Wait for sign in confirmation")
