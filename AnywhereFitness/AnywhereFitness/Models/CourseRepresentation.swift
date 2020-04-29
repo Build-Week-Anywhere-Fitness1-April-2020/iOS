@@ -9,9 +9,10 @@
 import Foundation
 
 struct CourseRepresentation: Equatable, Codable {
-    var identifier: String?
+
+    var identifier: String
     var name: String
-    var time: String // Will need to be compatible with database.
+    var time: String
     var duration: Double
     var startDate: String
     var intensity: String
@@ -21,15 +22,54 @@ struct CourseRepresentation: Equatable, Codable {
     var imageURL: String
     var courseDescription: String
     var cost: Double
-    var registeredAttendees: String?
+    var registeredAttendees: String
     var instructor: String
     var days: String
-    var address: String  // Needs to be compatible with Apple Maps.
-    var equipmentRequired: String?
-    var arrivalDescription: String?
-    var additionalInfo: String?
+    var address: String
+    var equipmentRequired: String
+    var arrivalDescription: String
+    var additionalInfo: String
 
-    
+    internal init(identifier: String = "",
+                  name: String,
+                  time: String = "",
+                  duration: Double,
+                  startDate: String = "",
+                  intensity: String = "",
+                  location: String = "",
+                  maxSize: Int,
+                  classType: String,
+                  imageURL: String = "",
+                  courseDescription: String = "",
+                  cost: Double = 0,
+                  registeredAttendees: String = "",
+                  instructor: String = "",
+                  days: String = "",
+                  address: String = "",
+                  equipmentRequired: String = "",
+                  arrivalDescription: String = "",
+                  additionalInfo: String = "") {
+
+        self.identifier = identifier
+        self.name = name
+        self.time = time
+        self.duration = duration
+        self.startDate = startDate
+        self.intensity = intensity
+        self.location = location
+        self.maxSize = maxSize
+        self.classType = classType
+        self.imageURL = imageURL
+        self.courseDescription = courseDescription
+        self.cost = cost
+        self.registeredAttendees = registeredAttendees
+        self.instructor = instructor
+        self.days = days
+        self.address = address
+        self.equipmentRequired = equipmentRequired
+        self.arrivalDescription = arrivalDescription
+        self.additionalInfo = additionalInfo
+    }
 }
 
 struct CourseRepresentations: Codable {
