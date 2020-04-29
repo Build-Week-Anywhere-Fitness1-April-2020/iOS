@@ -9,17 +9,16 @@
 import UIKit
 
 class Page4CreateCourseViewController: UIViewController {
-    
+
     // MARK: - Properties
     var course: CourseRepresentation?
     var courseController: CourseController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     // MARK: - Navigation
 

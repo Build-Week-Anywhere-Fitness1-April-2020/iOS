@@ -71,7 +71,7 @@ extension Course {
     @discardableResult convenience init?(courseRepresentation: CourseRepresentation,
                                          context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
-        guard let identifier = UUID(uuidString: courseRepresentation.identifier ?? "myid")
+        guard let identifier = UUID(uuidString: courseRepresentation.identifier)
             else { return nil }
         let days = courseRepresentation.days.joined(separator: ",")
 
@@ -87,13 +87,13 @@ extension Course {
                   imageURL: courseRepresentation.imageURL,
                   courseDescription: courseRepresentation.courseDescription,
                   cost: courseRepresentation.cost,
-                  registeredAttendees: courseRepresentation.registeredAttendees ?? "None",
+                  registeredAttendees: courseRepresentation.registeredAttendees,
                   instructor: courseRepresentation.instructor,
                   days: days,
                   address: courseRepresentation.address,
-                  equipmentRequired: courseRepresentation.equipmentRequired ?? "None",
-                  arrivalDescription: courseRepresentation.arrivalDescription ?? "None",
-                  additionalInfo: courseRepresentation.additionalInfo ?? "None",
+                  equipmentRequired: courseRepresentation.equipmentRequired,
+                  arrivalDescription: courseRepresentation.arrivalDescription,
+                  additionalInfo: courseRepresentation.additionalInfo,
                   context: context)
     }
 }

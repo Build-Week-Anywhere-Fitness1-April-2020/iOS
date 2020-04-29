@@ -25,7 +25,8 @@ class Page3CreateCourseViewController: UIViewController {
         return temp
     }()
     lazy var dayButtons: [UIButton] = {
-        var temp: [UIButton] = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton]
+        var temp: [UIButton] = [sundayButton, mondayButton, tuesdayButton,
+                                wednesdayButton, thursdayButton, fridayButton, saturdayButton]
         return temp
     }()
 
@@ -40,7 +41,7 @@ class Page3CreateCourseViewController: UIViewController {
     @IBOutlet weak var thursdayButton: UIButton!
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,27 +63,27 @@ class Page3CreateCourseViewController: UIViewController {
         tuesday.toggle()
         tuesdayButton.backgroundColor = tuesday ? .systemOrange : .systemGray
     }
-    
+
     @IBAction func wednesdayButtonTapped(_ sender: Any) {
         wednesday.toggle()
         wednesdayButton.backgroundColor = wednesday ? .systemOrange : .systemGray
     }
-    
+
     @IBAction func thursdayButtonTapped(_ sender: Any) {
         thursday.toggle()
         thursdayButton.backgroundColor = thursday ? .systemOrange : .systemGray
     }
-    
+
     @IBAction func fridayButtonTapped(_ sender: Any) {
         friday.toggle()
         fridayButton.backgroundColor = friday ? .systemOrange : .systemGray
     }
-    
+
     @IBAction func saturdayButtonTapped(_ sender: Any) {
         saturday.toggle()
         saturdayButton.backgroundColor = saturday ? .systemOrange : .systemGray
     }
-    
+
     @IBAction func nextButtonTapped(_ sender: Any) {
         for index in 0..<dayButtons.count where days[index] {
             guard let day = dayButtons[index].titleLabel?.text else { return }

@@ -207,7 +207,7 @@ class CourseController {
         course.imageURL = representation.imageURL
         course.courseDescription = representation.courseDescription
         course.cost = representation.cost
-        course.registeredAttendees = representation.registeredAttendees ?? "None"
+        course.registeredAttendees = representation.registeredAttendees
         course.instructor = representation.instructor
         let days = representation.days.joined(separator: ",")
         course.days = days
