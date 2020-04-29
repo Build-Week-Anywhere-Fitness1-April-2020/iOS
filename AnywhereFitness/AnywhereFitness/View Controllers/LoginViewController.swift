@@ -46,16 +46,19 @@ class LoginViewController: UIViewController {
             username.isEmpty == false,
             let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             password.isEmpty == false,
-            let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            email.isEmpty == false,
-            let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            name.isEmpty == false,
             let role = role
             else { return }
-        let user = UserLogin(username: username, email: email, password: password, roles: [role.rawValue])
-        UserDefaults.standard.set("\(name)", forKey: UserDefaultKeys.user.rawValue)
+        
+        
 
         if loginType == .signUp {
+            guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            email.isEmpty == false,
+            let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+                name.isEmpty == false else { return }
+            UserDefaults.standard.set("\(name)", forKey: UserDefaultKeys.user.rawValue)
+            let user = UserLogin(username: username, email: email, password: password, roles: [role.rawValue])
+
             userController.signUp(with: user) { (error) in
 
                 if let error = error {
@@ -80,6 +83,7 @@ class LoginViewController: UIViewController {
                 }
             }
         } else {
+            let 
             userController.signIn(with: user) { (error) in
                 if let error = error {
                     print(error)

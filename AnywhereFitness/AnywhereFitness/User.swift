@@ -15,41 +15,18 @@ struct User: Codable {
     let gender: String
     let location: String?
     var coursesEnrolled: [CourseRepresentation]
-    
-    
-    struct User: Codable {
-        let name: String
-        let identifier: Int
-        let displayName: String
-        let gender: String
-        let location: String?
-        var coursesEnrolled: [CourseRepresentation]
-        var coursesTeaching: [CourseRepresentation]
-    }
-
-    struct UserLogin: Codable {
-        let username: String
-        let email: String?
-        let password: String
-        let roles: [String]
-    }
-
-    enum Role: String, Codable {
-        case instructor
-        case client
-    }
-
-    enum Gender: String, Codable {
-        case male = "Male"
-        case female = "Female"
-        case nonbinary = "Non-binary"
-    }
     var coursesTeaching: [CourseRepresentation]
 }
 
 struct UserLogin: Codable {
     let username: String
     let email: String?
+    let password: String
+    let roles: [String]
+}
+
+struct UserSignIn: Codable {
+    let userName: String
     let password: String
     let roles: [String]
 }
