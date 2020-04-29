@@ -385,27 +385,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFE-av-5iK">
-                                <rect key="frame" x="0.0" y="271" width="414" height="625"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="625" id="br1-3w-a6v"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Kps-r3-JWR"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="6A0-Qh-0Vb"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LFE-av-5iK" firstAttribute="leading" secondItem="rKp-MQ-tAM" secondAttribute="leading" id="Gfz-lE-CjF"/>
-                            <constraint firstItem="rKp-MQ-tAM" firstAttribute="bottom" secondItem="LFE-av-5iK" secondAttribute="bottom" id="HN9-lj-esG"/>
                             <constraint firstItem="KOY-Jy-Xh8" firstAttribute="top" secondItem="fSA-IQ-pxH" secondAttribute="bottom" constant="80" id="LgA-r5-Vig"/>
                             <constraint firstItem="fSA-IQ-pxH" firstAttribute="leading" secondItem="lqa-ng-Pvy" secondAttribute="leading" constant="20" id="NzZ-7G-Md6"/>
-                            <constraint firstItem="LFE-av-5iK" firstAttribute="top" secondItem="KOY-Jy-Xh8" secondAttribute="bottom" id="PEE-0C-Idv"/>
                             <constraint firstItem="fSA-IQ-pxH" firstAttribute="top" secondItem="rKp-MQ-tAM" secondAttribute="top" constant="20" id="X1c-OC-eoF"/>
-                            <constraint firstItem="LFE-av-5iK" firstAttribute="width" secondItem="lqa-ng-Pvy" secondAttribute="width" id="XUO-Zx-0SV"/>
                             <constraint firstItem="KOY-Jy-Xh8" firstAttribute="leading" secondItem="rKp-MQ-tAM" secondAttribute="leading" constant="20" id="YEV-fw-tKI"/>
                             <constraint firstItem="rKp-MQ-tAM" firstAttribute="trailing" secondItem="KOY-Jy-Xh8" secondAttribute="trailing" constant="20" id="af6-7l-6rL"/>
-                            <constraint firstItem="rKp-MQ-tAM" firstAttribute="trailing" secondItem="LFE-av-5iK" secondAttribute="trailing" id="b93-Li-k2x"/>
                             <constraint firstItem="rKp-MQ-tAM" firstAttribute="trailing" secondItem="fSA-IQ-pxH" secondAttribute="trailing" constant="20" id="zSk-r8-bHl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rKp-MQ-tAM"/>
@@ -419,14 +406,29 @@
         <!--Profile-->
         <scene sceneID="LgG-TD-DCB">
             <objects>
-                <viewController id="Pwo-kd-pHp" sceneMemberID="viewController">
+                <viewController id="Pwo-kd-pHp" customClass="ProfileViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nKA-VE-q3F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLc-Hm-Uqi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uLc-Hm-Uqi" firstAttribute="top" secondItem="SIW-dy-WcL" secondAttribute="top" id="PXY-Gq-a0m"/>
+                            <constraint firstItem="uLc-Hm-Uqi" firstAttribute="leading" secondItem="SIW-dy-WcL" secondAttribute="leading" id="ZFI-wO-JNe"/>
+                            <constraint firstItem="SIW-dy-WcL" firstAttribute="trailing" secondItem="uLc-Hm-Uqi" secondAttribute="trailing" id="dcR-mW-4la"/>
+                            <constraint firstItem="SIW-dy-WcL" firstAttribute="bottom" secondItem="uLc-Hm-Uqi" secondAttribute="bottom" id="qy3-nO-umj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SIW-dy-WcL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="1nv-uv-W7u"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="uLc-Hm-Uqi" id="YA8-VH-6Mc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F02-ti-Fux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

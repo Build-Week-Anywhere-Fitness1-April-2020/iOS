@@ -18,7 +18,7 @@ class Page2CreateCourseViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var courseDescriptions: UITextView!
     @IBOutlet weak var courseLevel: UIPickerView!
-    
+
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class Page2CreateCourseViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
     // MARK: - IBActions
     @IBAction func nextButtonTapped(_ sender: Any) {
         guard let courseDescription = courseDescriptions.text,
@@ -39,7 +39,7 @@ class Page2CreateCourseViewController: UIViewController {
 
         performSegue(withIdentifier: "CreateClassSecondSegue", sender: self)
     }
-    
+
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
