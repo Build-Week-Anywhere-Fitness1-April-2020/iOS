@@ -28,6 +28,11 @@
 		E266C1592458819D00FC8E7D /* InstructorMaster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */; };
 		E266C15B245881B300FC8E7D /* ClientMaster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E266C15A245881B300FC8E7D /* ClientMaster.storyboard */; };
 		E266C15F2458893D00FC8E7D /* InstructorHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C15E2458893D00FC8E7D /* InstructorHomeScreenViewController.swift */; };
+		E266C1652459232800FC8E7D /* Page2CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C1642459232800FC8E7D /* Page2CreateCourseViewController.swift */; };
+		E266C1672459282C00FC8E7D /* Page3CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C1662459282C00FC8E7D /* Page3CreateCourseViewController.swift */; };
+		E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */; };
+		E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */; };
+		E266C16D2459288300FC8E7D /* Page6CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InstructorMaster.storyboard; sourceTree = "<group>"; };
 		E266C15A245881B300FC8E7D /* ClientMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClientMaster.storyboard; sourceTree = "<group>"; };
 		E266C15E2458893D00FC8E7D /* InstructorHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorHomeScreenViewController.swift; sourceTree = "<group>"; };
+		E266C1642459232800FC8E7D /* Page2CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E266C1662459282C00FC8E7D /* Page3CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6CreateCourseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +197,11 @@
 			children = (
 				18E1DE8E24590B29004BABA3 /* Page1CreateCourseViewController.swift */,
 				E266C15E2458893D00FC8E7D /* InstructorHomeScreenViewController.swift */,
+				E266C1642459232800FC8E7D /* Page2CreateCourseViewController.swift */,
+				E266C1662459282C00FC8E7D /* Page3CreateCourseViewController.swift */,
+				E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */,
+				E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */,
+				E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */,
 			);
 			path = Instructor;
 			sourceTree = "<group>";
@@ -317,17 +332,22 @@
 			files = (
 				18366C7F2457C58700CB28DC /* LoginViewController.swift in Sources */,
 				18EF9AE9245753DA00BD0C9E /* Course+Convenience.swift in Sources */,
+				E266C1672459282C00FC8E7D /* Page3CreateCourseViewController.swift in Sources */,
+				E266C16D2459288300FC8E7D /* Page6CreateCourseViewController.swift in Sources */,
 				E266C15F2458893D00FC8E7D /* InstructorHomeScreenViewController.swift in Sources */,
+				E266C1652459232800FC8E7D /* Page2CreateCourseViewController.swift in Sources */,
 				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
 				18E1DE8F24590B29004BABA3 /* Page1CreateCourseViewController.swift in Sources */,
 				E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
+				E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */,
 				18C1998E245794D50013DB72 /* UserController.swift in Sources */,
 				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,
 				1874F0CD24573B970026023D /* User.swift in Sources */,
 				18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */,
 				E26493CD24553451009D759F /* AppDelegate.swift in Sources */,
 				18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */,
+				E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
 				E266C157245860CF00FC8E7D /* setBackground.swift in Sources */,
 			);

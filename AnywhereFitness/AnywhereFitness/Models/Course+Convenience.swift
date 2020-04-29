@@ -23,6 +23,7 @@ extension Course {
             let days = days,
             let address = address
             else { return nil }
+        let daysArray = days.components(separatedBy: ",")
         return CourseRepresentation(identifier: identifier.uuidString,
                                     name: name,
                                     time: time,
@@ -37,7 +38,7 @@ extension Course {
                                     cost: cost,
                                     registeredAttendees: registeredAttendees,
                                     instructor: instructor,
-                                    days: days,
+                                    days: daysArray,
                                     address: address,
                                     equipmentRequired: equipmentRequired ?? "None",
                                     arrivalDescription: arrivalDescription ?? "Come ready and excited for class!!",
@@ -70,7 +71,9 @@ extension Course {
     @discardableResult convenience init?(courseRepresentation: CourseRepresentation,
                                          context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
-        guard let identifier = UUID(uuidString: courseRepresentation.identifier ?? "myid") else { return nil }
+        guard let identifier = UUID(uuidString: courseRepresentation.identifier ?? "myid")
+            else { return nil }
+        let days = courseRepresentation.days.joined(separator: ",")
 
         self.init(identifier: identifier,
                   name: courseRepresentation.name,
@@ -86,7 +89,7 @@ extension Course {
                   cost: courseRepresentation.cost,
                   registeredAttendees: courseRepresentation.registeredAttendees ?? "None",
                   instructor: courseRepresentation.instructor,
-                  days: courseRepresentation.days,
+                  days: days,
                   address: courseRepresentation.address,
                   equipmentRequired: courseRepresentation.equipmentRequired ?? "None",
                   arrivalDescription: courseRepresentation.arrivalDescription ?? "None",

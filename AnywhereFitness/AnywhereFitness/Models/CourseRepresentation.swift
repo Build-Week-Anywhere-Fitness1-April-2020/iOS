@@ -24,7 +24,7 @@ struct CourseRepresentation: Equatable, Codable {
     var cost: Double
     var registeredAttendees: String
     var instructor: String
-    var days: String
+    var days: [String]
     var address: String
     var equipmentRequired: String
     var arrivalDescription: String
@@ -44,7 +44,7 @@ struct CourseRepresentation: Equatable, Codable {
                   cost: Double = 0,
                   registeredAttendees: String = "",
                   instructor: String = "",
-                  days: String = "",
+                  days: [String] = [],
                   address: String = "",
                   equipmentRequired: String = "",
                   arrivalDescription: String = "",
