@@ -435,8 +435,7 @@
         <!--Anywhere Fitness-->
         <scene sceneID="uMp-sq-f90">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J9P-uH-H3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="adE-Gt-epv" customClass="Page1CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="adE-Gt-epv" customClass="Page1CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Fb-DF-yMQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -451,7 +450,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Aqt-V6-aUE">
-                                <rect key="frame" x="20" y="368.5" width="374" height="54.5"/>
+                                <rect key="frame" x="20" y="338" width="374" height="54.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCo-mQ-pn1">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -467,7 +466,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JJL-dl-Cc2">
-                                <rect key="frame" x="20" y="443" width="374" height="54.5"/>
+                                <rect key="frame" x="20" y="412.5" width="374" height="54.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Length (In Minutes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FD0-mg-can">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -483,16 +482,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t0s-2w-VRz">
-                                <rect key="frame" x="20" y="228" width="374" height="120.5"/>
+                                <rect key="frame" x="20" y="218" width="374" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krz-Kz-A3U">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQM-om-Rjr">
-                                        <rect key="frame" x="0.0" y="20.5" width="374" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="V6J-Tc-wYG"/>
                                         </constraints>
@@ -501,7 +494,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czr-KL-jsU">
                                 <rect key="frame" x="20" y="753" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="29U-I3-wch"/>
                                 </constraints>
@@ -510,11 +503,10 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="adE-Gt-epv" eventType="touchUpInside" id="aYl-c0-7pa"/>
-                                    <segue destination="LSk-nU-Go3" kind="show" id="2wE-KA-h5Q"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-hn-Z6j">
-                                <rect key="frame" x="20" y="517.5" width="374" height="54.5"/>
+                                <rect key="frame" x="20" y="487" width="374" height="54.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoS-iM-5l1">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -544,7 +536,7 @@
                             <constraint firstItem="c6d-hn-Z6j" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="WPE-vL-Gpj"/>
                             <constraint firstItem="c6d-hn-Z6j" firstAttribute="top" secondItem="JJL-dl-Cc2" secondAttribute="bottom" constant="20" id="XMu-M1-wKo"/>
                             <constraint firstItem="NPz-Kj-DNL" firstAttribute="bottom" secondItem="Czr-KL-jsU" secondAttribute="bottom" constant="20" id="YBd-f2-k6R"/>
-                            <constraint firstItem="t0s-2w-VRz" firstAttribute="top" secondItem="HoF-uh-ead" secondAttribute="bottom" constant="40" id="d0A-SO-itR"/>
+                            <constraint firstItem="t0s-2w-VRz" firstAttribute="top" secondItem="HoF-uh-ead" secondAttribute="bottom" constant="30" id="d0A-SO-itR"/>
                             <constraint firstItem="JJL-dl-Cc2" firstAttribute="top" secondItem="Aqt-V6-aUE" secondAttribute="bottom" constant="20" id="iST-li-MEv"/>
                             <constraint firstItem="Czr-KL-jsU" firstAttribute="leading" secondItem="NPz-Kj-DNL" secondAttribute="leading" constant="20" id="jGw-55-7en"/>
                             <constraint firstItem="NPz-Kj-DNL" firstAttribute="trailing" secondItem="c6d-hn-Z6j" secondAttribute="trailing" constant="20" id="ms2-La-7Cw"/>
@@ -558,17 +550,19 @@
                         <outlet property="classLength" destination="ALf-G2-uj4" id="eRo-ZF-PQe"/>
                         <outlet property="className" destination="fn6-cQ-NtJ" id="TZI-6b-Ukp"/>
                         <outlet property="classSize" destination="XDe-CQ-F2S" id="Nzb-2Z-KsL"/>
-                        <outlet property="classTypeUIPicker" destination="fQM-om-Rjr" id="cME-0u-Wz7"/>
-                        <outlet property="nextButton" destination="Czr-KL-jsU" id="kjj-8e-4TC"/>
+                        <outlet property="classTypeUIPicker" destination="fQM-om-Rjr" id="7M1-sK-Xcm"/>
+                        <outlet property="nextButton" destination="Czr-KL-jsU" id="iX4-mh-Tpe"/>
+                        <segue destination="LSk-nU-Go3" kind="show" identifier="CreateClassFirstSegue" id="NvQ-Nx-bR4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9P-uH-H3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1260.8695652173915" y="1162.5"/>
         </scene>
         <!--Anywhere Fitness-->
         <scene sceneID="Ge9-mU-11d">
             <objects>
-                <viewController id="LSk-nU-Go3" sceneMemberID="viewController">
+                <viewController id="LSk-nU-Go3" customClass="Page2CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qjx-cq-EhM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -584,7 +578,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4O-vp-Wt7">
                                 <rect key="frame" x="20" y="753" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BXB-UU-fQh"/>
                                 </constraints>
@@ -592,7 +586,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="u4E-s1-ppd" kind="show" id="5VS-nO-EjQ"/>
+                                    <action selector="nextButtonTapped:" destination="LSk-nU-Go3" eventType="touchUpInside" id="dec-Ou-Jhr"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-VF-X6F">
@@ -652,15 +646,20 @@
                         <viewLayoutGuide key="safeArea" id="NdK-jL-xfJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Anywhere Fitness" id="5Zm-cY-PTf"/>
+                    <connections>
+                        <outlet property="courseDescriptions" destination="C1n-pU-tar" id="XaR-tV-CSA"/>
+                        <outlet property="courseLevel" destination="V6X-bP-1Nj" id="USQ-Bi-chO"/>
+                        <segue destination="u4E-s1-ppd" kind="show" identifier="CreateClassSecondSegue" id="erl-vd-fJv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVV-L8-mh2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1996" y="1163"/>
         </scene>
-        <!--View Controller-->
+        <!--Page3 Create Course View Controller-->
         <scene sceneID="Ccd-pz-Y4D">
             <objects>
-                <viewController id="u4E-s1-ppd" sceneMemberID="viewController">
+                <viewController id="u4E-s1-ppd" customClass="Page3CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IgI-6u-R3f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -676,7 +675,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b92-tm-9zv">
                                 <rect key="frame" x="20" y="753" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="wGA-QQ-pSB"/>
                                 </constraints>
@@ -894,10 +893,10 @@
             </objects>
             <point key="canvasLocation" x="2737.68115942029" y="1162.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Page4 Create Course View Controller-->
         <scene sceneID="Aph-Ma-NZx">
             <objects>
-                <viewController id="9Qy-wa-cNk" sceneMemberID="viewController">
+                <viewController id="9Qy-wa-cNk" customClass="Page4CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b9g-tR-9CQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -913,7 +912,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcJ-aq-Ip4">
                                 <rect key="frame" x="20" y="753" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="wR5-5g-YML"/>
                                 </constraints>
@@ -961,10 +960,10 @@
             </objects>
             <point key="canvasLocation" x="3468" y="1161"/>
         </scene>
-        <!--View Controller-->
+        <!--Page5 Create Course View Controller-->
         <scene sceneID="0TL-26-cac">
             <objects>
-                <viewController id="gnx-wU-ePs" sceneMemberID="viewController">
+                <viewController id="gnx-wU-ePs" customClass="Page5CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C0p-Dj-Fn3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -980,7 +979,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeP-jT-Zsz">
                                 <rect key="frame" x="20" y="753" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DnZ-dJ-DhN"/>
                                 </constraints>
@@ -1057,10 +1056,10 @@
             </objects>
             <point key="canvasLocation" x="4199" y="1167"/>
         </scene>
-        <!--View Controller-->
+        <!--Page6 Create Course View Controller-->
         <scene sceneID="eof-Vq-tmh">
             <objects>
-                <viewController id="3UL-46-EzX" sceneMemberID="viewController">
+                <viewController id="3UL-46-EzX" customClass="Page6CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cqi-67-cf7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1077,6 +1076,9 @@
                                         <state key="normal" title="View/Manage Classes">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="viewClassesTapped:" destination="3UL-46-EzX" eventType="touchUpInside" id="avY-Nb-9qb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9Q-nG-n45">
                                         <rect key="frame" x="20" y="665" width="374" height="40"/>
@@ -1087,6 +1089,9 @@
                                         <state key="normal" title="Add Another Class">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addClassTapped:" destination="3UL-46-EzX" eventType="touchUpInside" id="l7C-yv-kQr"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Steps: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-3W-r9A">
                                         <rect key="frame" x="20" y="529" width="374" height="36"/>
@@ -1145,6 +1150,10 @@
                         <viewLayoutGuide key="safeArea" id="ljA-xF-hqi"/>
                     </view>
                     <navigationItem key="navigationItem" id="WUV-Um-Nya"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="F2x-aT-KTz" id="Qb3-YS-5h3"/>
+                        <segue destination="KVL-F1-457" kind="show" identifier="ManageClassesSegue" id="tpH-8b-XVA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdI-a5-jqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1156,6 +1165,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KVL-F1-457" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" id="QiZ-Gy-8wx"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fqg-Xl-sSn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nib-rp-Jbk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1191,6 +1201,9 @@
             <point key="canvasLocation" x="519" y="1163"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tpH-8b-XVA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="house" catalog="system" width="128" height="110"/>
