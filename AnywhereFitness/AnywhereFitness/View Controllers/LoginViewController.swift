@@ -48,8 +48,6 @@ class LoginViewController: UIViewController {
             password.isEmpty == false,
             let role = role
             else { return }
-        
-        
 
         if loginType == .signUp {
             guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
