@@ -119,12 +119,14 @@ class CourseController {
     func createCourse(name: String,
                       duration: Double,
                       maxSize: Int,
-                      classType: String) -> CourseRepresentation {
+                      classType: String,
+                      instructor: String) -> CourseRepresentation {
 
         let course = CourseRepresentation(name: name,
                                           duration: duration,
                                           maxSize: maxSize,
-                                          classType: classType)
+                                          classType: classType,
+                                          instructor: instructor)
         return course
     }
 

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Yoga Image.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

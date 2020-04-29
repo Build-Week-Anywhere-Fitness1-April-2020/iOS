@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
             let role = role
             else { return }
         let user = UserLogin(username: username, email: email, password: password, roles: [role.rawValue])
+        UserDefaults.standard.set("\(name)", forKey: UserDefaultKeys.user.rawValue)
 
         if loginType == .signUp {
             userController.signUp(with: user) { (error) in
