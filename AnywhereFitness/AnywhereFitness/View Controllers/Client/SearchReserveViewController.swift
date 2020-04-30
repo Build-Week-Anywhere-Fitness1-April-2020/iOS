@@ -54,6 +54,8 @@ class SearchReserveViewController: UIViewController {
             backgroundView.setBackground(toImageNamed: "WeightliftingImage")
         } else if course.classType == "Crossfit" {
             backgroundView.setBackground(toImageNamed: "BoxingImage")
+        } else if course.classType == "Pilates" {
+            backgroundView.setBackground(toImageNamed: "PilatesImage")
         } else {
             backgroundView.setBackground()
         }

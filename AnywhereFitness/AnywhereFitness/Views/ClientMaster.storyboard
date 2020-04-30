@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHp-A4-56H">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
@@ -31,6 +31,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="bPq-9c-Hmk"/>
                     <navigationItem key="navigationItem" id="IC0-j8-NiL"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="kHp-A4-56H" id="mLy-Hw-4Jm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1UJ-uC-KYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -779,10 +782,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="YV7-s4-2p9"/>
                     <connections>
-                        <outlet property="backgroundVIew" destination="kom-2u-QkJ" id="cbo-8m-gxt"/>
+                        <outlet property="backgroundView" destination="kom-2u-QkJ" id="cbo-8m-gxt"/>
                         <outlet property="classTitleLabel" destination="iwg-fZ-OgZ" id="TLj-qk-kFi"/>
                         <outlet property="dayLabel" destination="GqJ-WQ-bHQ" id="8zg-7k-ixT"/>
                         <outlet property="timeLabel" destination="0cs-gS-qco" id="1Qj-hs-foI"/>
+                        <segue destination="QJ8-DF-kog" kind="show" id="8Oa-ld-r78"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlB-pH-OCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -858,6 +862,9 @@
             <point key="canvasLocation" x="1440.5797101449277" y="1215.4017857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8Oa-ld-r78"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="house" catalog="system" width="128" height="110"/>

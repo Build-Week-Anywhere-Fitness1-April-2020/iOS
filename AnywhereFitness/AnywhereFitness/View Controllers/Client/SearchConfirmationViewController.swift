@@ -22,8 +22,11 @@ class SearchConfirmationViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func doneButtonTapped(_ sender: Any) {
+        tabBarController?.selectedIndex = 0
     }
+    
     @IBAction func addAnotherClassButtonTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     // MARK: - View Lifecycle
@@ -43,6 +46,8 @@ class SearchConfirmationViewController: UIViewController {
             backgroundView.setBackground(toImageNamed: "WeightliftingImage")
         } else if course.classType == "Crossfit" {
             backgroundView.setBackground(toImageNamed: "BoxingImage")
+        } else if course.classType == "Pilates" {
+            backgroundView.setBackground(toImageNamed: "PilatesImage")
         } else {
             backgroundView.setBackground()
         }

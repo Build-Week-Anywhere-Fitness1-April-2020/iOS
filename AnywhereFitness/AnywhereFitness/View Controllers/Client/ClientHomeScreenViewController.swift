@@ -13,6 +13,9 @@ class ClientHomeScreenViewController: UIViewController {
     // MARK: - Properties
     let courseController = CourseController.shared
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var backgroundView: UIView!
+
     // MARK: - View Lifecycle
     override func viewDidLoad() {
        super.viewDidLoad()
@@ -20,6 +23,7 @@ class ClientHomeScreenViewController: UIViewController {
     }
 
     func updateViews() {
+        backgroundView.setBackground()
         courseController.fetchCourses { (result) in
             if let courses = try? result.get() {
                 DispatchQueue.main.async {
