@@ -73,7 +73,7 @@ class UserController {
         }.resume()
     }
 
-    func signIn(with user: UserLogin, completion: @escaping (Error?) -> Void) {
+    func signIn(with user: UserSignIn, completion: @escaping (Error?) -> Void) {
         let signInURL = baseURL.appendingPathComponent("auth/login")
 
         var request = URLRequest(url: signInURL)
