@@ -55,34 +55,47 @@ class CourseController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
 
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(.failure(.noRep))
-            }
+//        URLSession.shared.dataTask(with: request) { data, response, error in
+//
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode != 200 {
+//                completion(.failure(.noRep))
+//            }
+//
+//            if let error = error {
+//                NSLog("Error fetching classes: \(error)")
+//                completion(.failure(.otherError))
+//                return
+//            }
+//
+//            guard let data = data else {
+//                NSLog("No data returned from fetch")
+//                completion(.failure(.noData))
+//                return
+//            }
+//
+//            do {
+//                let courseRepresentations =
+//                    Array(try JSONDecoder().decode([String: CourseRepresentation].self, from: data).values)
+//                try self.updateCourses(with: courseRepresentations)
+//                completion(.success(true))
+//            } catch {
+//                NSLog("Error decoding classes from server: \(error)")
+//                completion(.failure(.noDecode))
+//            }
+//        }.resume()
+        guard let data = Data(base64Encoded: jsonData) else { return }
+        do {
+            let courseRepresentations =
+                Array(try JSONDecoder().decode([CourseRepresentation].self, from: data))
+            try self.updateCourses(with: courseRepresentations)
+            completion(.success(true))
+        } catch {
+            NSLog("Error decoding classes from server: \(error)")
+            completion(.failure(.noDecode))
+        }
 
-            if let error = error {
-                NSLog("Error fetching classes: \(error)")
-                completion(.failure(.otherError))
-                return
-            }
-
-            guard let data = data else {
-                NSLog("No data returned from fetch")
-                completion(.failure(.noData))
-                return
-            }
-
-            do {
-                let courseRepresentations =
-                    Array(try JSONDecoder().decode([String: CourseRepresentation].self, from: data).values)
-                try self.updateCourses(with: courseRepresentations)
-            } catch {
-                NSLog("Error decoding classes from server: \(error)")
-                completion(.failure(.noDecode))
-            }
-        }.resume()
     }
 
     func searchForCourse(with searchTerm: String, completion: @escaping CompletionHandler = { _ in }) {
