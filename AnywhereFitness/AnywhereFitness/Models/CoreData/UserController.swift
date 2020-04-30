@@ -46,7 +46,6 @@ class UserController {
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        //request.setValue("application/json", forHTTPHeaderField: "Accept")
 
         let jsonEncoder = JSONEncoder()
 
