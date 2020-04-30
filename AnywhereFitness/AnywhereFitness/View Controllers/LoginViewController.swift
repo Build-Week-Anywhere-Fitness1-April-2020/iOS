@@ -78,7 +78,7 @@ class LoginViewController: UIViewController {
                 }
             }
         } else {
-            let user = UserSignIn(userName: username, password: password, roles: [role.rawValue])
+            let user = UserSignIn(username: username, password: password, role: role.rawValue)
             userController.signIn(with: user) { (error) in
                 if let error = error {
                     print(error)

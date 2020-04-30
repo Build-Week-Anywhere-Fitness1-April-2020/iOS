@@ -11,20 +11,20 @@ import CoreData
 
 extension Course {
     var courseRepresentation: CourseRepresentation? {
-        guard let identifier = identifier,
-            let name = name, let time = time,
+        guard let name = name,
+            let time = time,
             let startDate = startDate,
             let location = location,
             let classType = classType,
-            let imageURL = imageURL,
+            let imgURL = imgURL,
             let courseDescription = courseDescription,
-            let registeredAttendees = registeredAttendees,
             let instructor = instructor,
             let days = days,
             let address = address
             else { return nil }
+        //let identifier = identifier
         let daysArray = days.components(separatedBy: ",")
-        return CourseRepresentation(identifier: identifier.uuidString,
+        return CourseRepresentation(identifier: Int(identifier),
                                     name: name,
                                     time: time,
                                     duration: duration,
@@ -33,10 +33,9 @@ extension Course {
                                     location: location,
                                     maxSize: Int(maxSize),
                                     classType: classType,
-                                    imageURL: imageURL,
+                                    imgURL: imgURL,
                                     courseDescription: courseDescription,
                                     cost: cost,
-                                    registeredAttendees: registeredAttendees,
                                     instructor: instructor,
                                     days: daysArray,
                                     address: address,
@@ -44,7 +43,7 @@ extension Course {
                                     arrivalDescription: arrivalDescription ?? "Come ready and excited for class!!",
                                     additionalInfo: additionalInfo ?? "None")}
 
-    @discardableResult convenience init(identifier: UUID = UUID(),
+    @discardableResult convenience init(identifier: Int = 0,
                                         name: String,
                                         time: String,
                                         duration: Double,
@@ -53,16 +52,15 @@ extension Course {
                                         location: String,
                                         maxSize: Int,
                                         classType: String,
-                                        imageURL: String,
+                                        imgURL: String,
                                         courseDescription: String,
                                         cost: Double,
-                                        registeredAttendees: String,
                                         instructor: String,
                                         days: String,
                                         address: String,
                                         equipmentRequired: String,
                                         arrivalDescription: String,
-                                        additionalInfo: String,
+                                        additionalInfo: String?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
         self.init(context: context)
@@ -71,8 +69,7 @@ extension Course {
     @discardableResult convenience init?(courseRepresentation: CourseRepresentation,
                                          context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
-        guard let identifier = UUID(uuidString: courseRepresentation.identifier)
-            else { return nil }
+        let identifier = courseRepresentation.identifier
         let days = courseRepresentation.days.joined(separator: ",")
 
         self.init(identifier: identifier,
@@ -84,10 +81,9 @@ extension Course {
                   location: courseRepresentation.location,
                   maxSize: courseRepresentation.maxSize,
                   classType: courseRepresentation.classType,
-                  imageURL: courseRepresentation.imageURL,
+                  imgURL: courseRepresentation.imgURL,
                   courseDescription: courseRepresentation.courseDescription,
                   cost: courseRepresentation.cost,
-                  registeredAttendees: courseRepresentation.registeredAttendees,
                   instructor: courseRepresentation.instructor,
                   days: days,
                   address: courseRepresentation.address,

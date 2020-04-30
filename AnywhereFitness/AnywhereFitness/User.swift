@@ -28,9 +28,9 @@ struct UserLogin: Codable {
 }
 
 struct UserSignIn: Codable {
-    let userName: String
+    let username: String
     let password: String
-    let roles: [String]
+    let role: String
 }
 
 enum Role: String, Codable {

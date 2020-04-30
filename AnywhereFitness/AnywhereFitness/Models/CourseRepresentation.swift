@@ -10,7 +10,7 @@ import Foundation
 
 struct CourseRepresentation: Equatable, Codable {
 
-    var identifier: String
+    var identifier: Int
     var name: String
     var time: String
     var duration: Double
@@ -19,18 +19,17 @@ struct CourseRepresentation: Equatable, Codable {
     var location: String
     var maxSize: Int
     var classType: String
-    var imageURL: String
+    var imgURL: String
     var courseDescription: String
     var cost: Double
-    var registeredAttendees: String
     var instructor: String
     var days: [String]
     var address: String
     var equipmentRequired: String
     var arrivalDescription: String
-    var additionalInfo: String
+    var additionalInfo: String?
 
-    internal init(identifier: String = "",
+    internal init(identifier: Int = 0,
                   name: String,
                   time: String = "",
                   duration: Double,
@@ -39,10 +38,9 @@ struct CourseRepresentation: Equatable, Codable {
                   location: String = "",
                   maxSize: Int,
                   classType: String,
-                  imageURL: String = "",
+                  imgURL: String = "",
                   courseDescription: String = "",
                   cost: Double = 0,
-                  registeredAttendees: String = "",
                   instructor: String = "",
                   days: [String] = [],
                   address: String = "",
@@ -59,10 +57,9 @@ struct CourseRepresentation: Equatable, Codable {
         self.location = location
         self.maxSize = maxSize
         self.classType = classType
-        self.imageURL = imageURL
+        self.imgURL = imgURL
         self.courseDescription = courseDescription
         self.cost = cost
-        self.registeredAttendees = registeredAttendees
         self.instructor = instructor
         self.days = days
         self.address = address
