@@ -11,7 +11,8 @@ import CoreData
 
 extension Course {
     var courseRepresentation: CourseRepresentation? {
-        guard let name = name,
+        guard let identifier = Int(identifier ?? "0"),
+            let name = name,
             let time = time,
             let startDate = startDate,
             let location = location,
@@ -22,9 +23,9 @@ extension Course {
             let days = days,
             let address = address
             else { return nil }
-        //let identifier = identifier
+
         let daysArray = days.components(separatedBy: ",")
-        return CourseRepresentation(identifier: Int(identifier),
+        return CourseRepresentation(identifier: identifier,
                                     name: name,
                                     time: time,
                                     duration: duration,
