@@ -23,7 +23,6 @@
 		E26493D424553451009D759F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26493D224553451009D759F /* Main.storyboard */; };
 		E26493D624553453009D759F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26493D524553453009D759F /* Assets.xcassets */; };
 		E26493D924553453009D759F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26493D724553453009D759F /* LaunchScreen.storyboard */; };
-		E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */; };
 		E266C157245860CF00FC8E7D /* setBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C156245860CF00FC8E7D /* setBackground.swift */; };
 		E266C1592458819D00FC8E7D /* InstructorMaster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */; };
 		E266C15B245881B300FC8E7D /* ClientMaster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E266C15A245881B300FC8E7D /* ClientMaster.storyboard */; };
@@ -33,6 +32,7 @@
 		E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */; };
 		E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */; };
 		E266C16D2459288300FC8E7D /* Page6CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */; };
+		E27555FE245B760A000EB0DE /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */; };
 		E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */; };
 		E27747C0245A163E00C5D0AB /* SearchPage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */; };
 		E27747C2245A16B500C5D0AB /* SearchDetail1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */; };
@@ -87,6 +87,7 @@
 		E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandingScreenViewController.swift; path = "AnywhereFitness/View Controllers/Main/LandingScreenViewController.swift"; sourceTree = "<group>"; };
 		E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeScreenViewController.swift; sourceTree = "<group>"; };
 		E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage1ViewController.swift; sourceTree = "<group>"; };
 		E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail1ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 		E26493C024553451009D759F = {
 			isa = PBXGroup;
 			children = (
+				E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */,
 				E26493CB24553451009D759F /* AnywhereFitness */,
 				E27747D0245A195600C5D0AB /* AnywhereFitnessTests */,
 				E26493CA24553451009D759F /* Products */,
@@ -430,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E27555FE245B760A000EB0DE /* LandingScreenViewController.swift in Sources */,
 				18366C7F2457C58700CB28DC /* LoginViewController.swift in Sources */,
 				18EF9AE9245753DA00BD0C9E /* Course+Convenience.swift in Sources */,
 				E27747E0245A4E9C00C5D0AB /* mockData.swift in Sources */,
@@ -440,7 +443,6 @@
 				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
 				18E1DE8F24590B29004BABA3 /* Page1CreateCourseViewController.swift in Sources */,
 				E27747C8245A170600C5D0AB /* SearchReserveViewController.swift in Sources */,
-				E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
 				E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */,
 				E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */,
