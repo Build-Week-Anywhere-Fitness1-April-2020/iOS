@@ -29,6 +29,13 @@ struct CourseRepresentation: Equatable, Codable {
     var arrivalDescription: String
     var additionalInfo: String?
 
+    private enum CodingKeys: String, CodingKey {
+        case identifier = "id"
+        case name, time, duration, intensity, location, maxSize, classType
+        case imgURL = "imgUrl"
+        case equipmentRequired, arrivalDescription, additionalInfo, cost, courseDescription, address, startDate, instructor, days
+    }
+
     internal init(identifier: Int = 0,
                   name: String,
                   time: String = "",
@@ -67,6 +74,7 @@ struct CourseRepresentation: Equatable, Codable {
         self.arrivalDescription = arrivalDescription
         self.additionalInfo = additionalInfo
     }
+
 }
 
 struct CourseRepresentations: Codable {
