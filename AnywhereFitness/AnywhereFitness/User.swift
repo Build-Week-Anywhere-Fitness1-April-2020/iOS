@@ -20,7 +20,7 @@ struct User: Codable {
 
 struct UserLogin: Codable {
     let username: String
-    let email: String?
+    let email: String
     let password: String
     let gender: String
     let displayName: String

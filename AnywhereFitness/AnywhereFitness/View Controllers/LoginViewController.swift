@@ -50,12 +50,13 @@ class LoginViewController: UIViewController {
             else { return }
 
         if loginType == .signUp {
-            guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            guard let email = emailTextField.text,
             email.isEmpty == false,
-            let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            let name = nameTextField.text,
                 name.isEmpty == false else { return }
             UserDefaults.standard.set("\(name)", forKey: UserDefaultKeys.user.rawValue)
-            let user = UserLogin(username: username, email: email, password: password, gender: Gender.male.rawValue, displayName: name, roles: [role.rawValue])
+            let user = UserLogin(username: username, email: email, password: password,
+                                 gender: Gender.male.rawValue, displayName: name, roles: [role.rawValue])
 
             userController.signUp(with: user) { (error) in
 
