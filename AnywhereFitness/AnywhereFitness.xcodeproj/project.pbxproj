@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		18366C7F2457C58700CB28DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18366C7E2457C58700CB28DC /* LoginViewController.swift */; };
-		18366C812457CE3B00CB28DC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18366C802457CE3B00CB28DC /* APIController.swift */; };
 		1874F0CD24573B970026023D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CC24573B970026023D /* User.swift */; };
 		1874F0CF24573BB80026023D /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874F0CE24573BB80026023D /* Bearer.swift */; };
 		18C1998E245794D50013DB72 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1998D245794D50013DB72 /* UserController.swift */; };
+		18E1DE8F24590B29004BABA3 /* Page1CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1DE8E24590B29004BABA3 /* Page1CreateCourseViewController.swift */; };
 		18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */; };
 		18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE424574C0E00BD0C9E /* CourseController.swift */; };
 		18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */; };
@@ -28,14 +28,42 @@
 		E266C1592458819D00FC8E7D /* InstructorMaster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */; };
 		E266C15B245881B300FC8E7D /* ClientMaster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E266C15A245881B300FC8E7D /* ClientMaster.storyboard */; };
 		E266C15F2458893D00FC8E7D /* InstructorHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C15E2458893D00FC8E7D /* InstructorHomeScreenViewController.swift */; };
+		E266C1652459232800FC8E7D /* Page2CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C1642459232800FC8E7D /* Page2CreateCourseViewController.swift */; };
+		E266C1672459282C00FC8E7D /* Page3CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C1662459282C00FC8E7D /* Page3CreateCourseViewController.swift */; };
+		E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */; };
+		E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */; };
+		E266C16D2459288300FC8E7D /* Page6CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */; };
+		E27747BA2459BE9000C5D0AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747B92459BE9000C5D0AB /* ProfileViewController.swift */; };
+		E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */; };
+		E27747C0245A163E00C5D0AB /* SearchPage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */; };
+		E27747C2245A16B500C5D0AB /* SearchDetail1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */; };
+		E27747C4245A16D500C5D0AB /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C3245A16D500C5D0AB /* SearchResultsViewController.swift */; };
+		E27747C6245A16F200C5D0AB /* SearchScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C5245A16F200C5D0AB /* SearchScheduleViewController.swift */; };
+		E27747C8245A170600C5D0AB /* SearchReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C7245A170600C5D0AB /* SearchReserveViewController.swift */; };
+		E27747CA245A171C00C5D0AB /* SearchConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */; };
+		E27747D2245A195600C5D0AB /* AnywhereFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747D1245A195600C5D0AB /* AnywhereFitnessTests.swift */; };
+		E27747DA245A1AB600C5D0AB /* UserControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747D9245A1AB600C5D0AB /* UserControllerTests.swift */; };
+		E27747DC245A1AC800C5D0AB /* CourseControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DB245A1AC800C5D0AB /* CourseControllerTests.swift */; };
+		E27747DE245A4C2600C5D0AB /* classes.json in Resources */ = {isa = PBXBuildFile; fileRef = E27747DD245A4C2600C5D0AB /* classes.json */; };
+		E27747E0245A4E9C00C5D0AB /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DF245A4E9C00C5D0AB /* mockData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E27747D4245A195600C5D0AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E26493C124553451009D759F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E26493C824553451009D759F;
+			remoteInfo = AnywhereFitness;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		18366C7E2457C58700CB28DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		18366C802457CE3B00CB28DC /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		1874F0CC24573B970026023D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = AnywhereFitness/User.swift; sourceTree = SOURCE_ROOT; };
 		1874F0CE24573BB80026023D /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Bearer.swift; path = AnywhereFitness/Bearer.swift; sourceTree = SOURCE_ROOT; };
 		18C1998D245794D50013DB72 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = AnywhereFitness/Models/CoreData/UserController.swift; sourceTree = SOURCE_ROOT; };
+		18E1DE8E24590B29004BABA3 /* Page1CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Page1CreateCourseViewController.swift; path = AnywhereFitness/Views/Page1CreateCourseViewController.swift; sourceTree = SOURCE_ROOT; };
 		18EF9AE224574A7000BD0C9E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		18EF9AE424574C0E00BD0C9E /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseController.swift; path = AnywhereFitness/Models/CourseController.swift; sourceTree = SOURCE_ROOT; };
 		18EF9AE624574DBA00BD0C9E /* CourseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepresentation.swift; sourceTree = "<group>"; };
@@ -56,6 +84,26 @@
 		E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InstructorMaster.storyboard; sourceTree = "<group>"; };
 		E266C15A245881B300FC8E7D /* ClientMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClientMaster.storyboard; sourceTree = "<group>"; };
 		E266C15E2458893D00FC8E7D /* InstructorHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorHomeScreenViewController.swift; sourceTree = "<group>"; };
+		E266C1642459232800FC8E7D /* Page2CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E266C1662459282C00FC8E7D /* Page3CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6CreateCourseViewController.swift; sourceTree = "<group>"; };
+		E27747B92459BE9000C5D0AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeScreenViewController.swift; sourceTree = "<group>"; };
+		E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage1ViewController.swift; sourceTree = "<group>"; };
+		E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail1ViewController.swift; sourceTree = "<group>"; };
+		E27747C3245A16D500C5D0AB /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		E27747C5245A16F200C5D0AB /* SearchScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScheduleViewController.swift; sourceTree = "<group>"; };
+		E27747C7245A170600C5D0AB /* SearchReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReserveViewController.swift; sourceTree = "<group>"; };
+		E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfirmationViewController.swift; sourceTree = "<group>"; };
+		E27747CF245A195600C5D0AB /* AnywhereFitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnywhereFitnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E27747D1245A195600C5D0AB /* AnywhereFitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnywhereFitnessTests.swift; sourceTree = "<group>"; };
+		E27747D3245A195600C5D0AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E27747D9245A1AB600C5D0AB /* UserControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserControllerTests.swift; sourceTree = "<group>"; };
+		E27747DB245A1AC800C5D0AB /* CourseControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseControllerTests.swift; sourceTree = "<group>"; };
+		E27747DD245A4C2600C5D0AB /* classes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classes.json; sourceTree = "<group>"; };
+		E27747DF245A4E9C00C5D0AB /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +112,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3D478DBF218CFBF9557525 /* Pods_AnywhereFitness.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E27747CC245A195600C5D0AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				E26493CB24553451009D759F /* AnywhereFitness */,
+				E27747D0245A195600C5D0AB /* AnywhereFitnessTests */,
 				E26493CA24553451009D759F /* Products */,
 				A42CBE937262588E0B5897B7 /* Pods */,
 				BC3F4FEDDB3B129C217FC1DE /* Frameworks */,
@@ -110,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				E26493C924553451009D759F /* AnywhereFitness.app */,
+				E27747CF245A195600C5D0AB /* AnywhereFitnessTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +192,8 @@
 				E26493D524553453009D759F /* Assets.xcassets */,
 				E26493D724553453009D759F /* LaunchScreen.storyboard */,
 				E26493DA24553453009D759F /* Info.plist */,
+				E27747DD245A4C2600C5D0AB /* classes.json */,
+				E27747DF245A4E9C00C5D0AB /* mockData.swift */,
 			);
 			name = Resources;
 			path = "View Controllers/Resources";
@@ -145,7 +204,6 @@
 			children = (
 				18C1998D245794D50013DB72 /* UserController.swift */,
 				18EF9AE424574C0E00BD0C9E /* CourseController.swift */,
-				18366C802457CE3B00CB28DC /* APIController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +245,13 @@
 			isa = PBXGroup;
 			children = (
 				E266C15E2458893D00FC8E7D /* InstructorHomeScreenViewController.swift */,
+				18E1DE8E24590B29004BABA3 /* Page1CreateCourseViewController.swift */,
+				E266C1642459232800FC8E7D /* Page2CreateCourseViewController.swift */,
+				E266C1662459282C00FC8E7D /* Page3CreateCourseViewController.swift */,
+				E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */,
+				E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */,
+				E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */,
+				E27747B92459BE9000C5D0AB /* ProfileViewController.swift */,
 			);
 			path = Instructor;
 			sourceTree = "<group>";
@@ -194,8 +259,26 @@
 		E266C15D2458891900FC8E7D /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */,
+				E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */,
+				E27747C3245A16D500C5D0AB /* SearchResultsViewController.swift */,
+				E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */,
+				E27747C5245A16F200C5D0AB /* SearchScheduleViewController.swift */,
+				E27747C7245A170600C5D0AB /* SearchReserveViewController.swift */,
+				E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		E27747D0245A195600C5D0AB /* AnywhereFitnessTests */ = {
+			isa = PBXGroup;
+			children = (
+				E27747D1245A195600C5D0AB /* AnywhereFitnessTests.swift */,
+				E27747D3245A195600C5D0AB /* Info.plist */,
+				E27747D9245A1AB600C5D0AB /* UserControllerTests.swift */,
+				E27747DB245A1AC800C5D0AB /* CourseControllerTests.swift */,
+			);
+			path = AnywhereFitnessTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +303,24 @@
 			productReference = E26493C924553451009D759F /* AnywhereFitness.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E27747CE245A195600C5D0AB /* AnywhereFitnessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E27747D6245A195600C5D0AB /* Build configuration list for PBXNativeTarget "AnywhereFitnessTests" */;
+			buildPhases = (
+				E27747CB245A195600C5D0AB /* Sources */,
+				E27747CC245A195600C5D0AB /* Frameworks */,
+				E27747CD245A195600C5D0AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E27747D5245A195600C5D0AB /* PBXTargetDependency */,
+			);
+			name = AnywhereFitnessTests;
+			productName = AnywhereFitnessTests;
+			productReference = E27747CF245A195600C5D0AB /* AnywhereFitnessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -232,6 +333,10 @@
 				TargetAttributes = {
 					E26493C824553451009D759F = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					E27747CE245A195600C5D0AB = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = E26493C824553451009D759F;
 					};
 				};
 			};
@@ -249,6 +354,7 @@
 			projectRoot = "";
 			targets = (
 				E26493C824553451009D759F /* AnywhereFitness */,
+				E27747CE245A195600C5D0AB /* AnywhereFitnessTests */,
 			);
 		};
 /* End PBXProject section */
@@ -260,9 +366,17 @@
 			files = (
 				E26493D924553453009D759F /* LaunchScreen.storyboard in Resources */,
 				E266C15B245881B300FC8E7D /* ClientMaster.storyboard in Resources */,
+				E27747DE245A4C2600C5D0AB /* classes.json in Resources */,
 				E26493D624553453009D759F /* Assets.xcassets in Resources */,
 				E26493D424553451009D759F /* Main.storyboard in Resources */,
 				E266C1592458819D00FC8E7D /* InstructorMaster.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E27747CD245A195600C5D0AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,23 +431,55 @@
 			files = (
 				18366C7F2457C58700CB28DC /* LoginViewController.swift in Sources */,
 				18EF9AE9245753DA00BD0C9E /* Course+Convenience.swift in Sources */,
+				E27747E0245A4E9C00C5D0AB /* mockData.swift in Sources */,
+				E266C1672459282C00FC8E7D /* Page3CreateCourseViewController.swift in Sources */,
+				E266C16D2459288300FC8E7D /* Page6CreateCourseViewController.swift in Sources */,
 				E266C15F2458893D00FC8E7D /* InstructorHomeScreenViewController.swift in Sources */,
+				E266C1652459232800FC8E7D /* Page2CreateCourseViewController.swift in Sources */,
 				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
+				18E1DE8F24590B29004BABA3 /* Page1CreateCourseViewController.swift in Sources */,
+				E27747C8245A170600C5D0AB /* SearchReserveViewController.swift in Sources */,
 				E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
+				E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */,
+				E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */,
 				18C1998E245794D50013DB72 /* UserController.swift in Sources */,
 				18EF9AE524574C0E00BD0C9E /* CourseController.swift in Sources */,
 				1874F0CD24573B970026023D /* User.swift in Sources */,
+				E27747C0245A163E00C5D0AB /* SearchPage1ViewController.swift in Sources */,
 				18EF9AE724574DBA00BD0C9E /* CourseRepresentation.swift in Sources */,
-				18366C812457CE3B00CB28DC /* APIController.swift in Sources */,
+				E27747C6245A16F200C5D0AB /* SearchScheduleViewController.swift in Sources */,
 				E26493CD24553451009D759F /* AppDelegate.swift in Sources */,
 				18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */,
+				E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */,
+				E27747BA2459BE9000C5D0AB /* ProfileViewController.swift in Sources */,
+				E27747CA245A171C00C5D0AB /* SearchConfirmationViewController.swift in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
 				E266C157245860CF00FC8E7D /* setBackground.swift in Sources */,
+				E27747C2245A16B500C5D0AB /* SearchDetail1ViewController.swift in Sources */,
+				E27747C4245A16D500C5D0AB /* SearchResultsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E27747CB245A195600C5D0AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E27747DA245A1AB600C5D0AB /* UserControllerTests.swift in Sources */,
+				E27747D2245A195600C5D0AB /* AnywhereFitnessTests.swift in Sources */,
+				E27747DC245A1AC800C5D0AB /* CourseControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E27747D5245A195600C5D0AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E26493C824553451009D759F /* AnywhereFitness */;
+			targetProxy = E27747D4245A195600C5D0AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E26493D224553451009D759F /* Main.storyboard */ = {
@@ -475,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8825K9HH49;
 				INFOPLIST_FILE = "$(SRCROOT)/AnywhereFitness/View Controllers/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,7 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8825K9HH49;
 				INFOPLIST_FILE = "$(SRCROOT)/AnywhereFitness/View Controllers/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,6 +650,46 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E27747D7245A195600C5D0AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8825K9HH49;
+				INFOPLIST_FILE = AnywhereFitnessTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.christopherdevito.AnywhereFitnessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnywhereFitness.app/AnywhereFitness";
+			};
+			name = Debug;
+		};
+		E27747D8245A195600C5D0AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8825K9HH49;
+				INFOPLIST_FILE = AnywhereFitnessTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.christopherdevito.AnywhereFitnessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnywhereFitness.app/AnywhereFitness";
 			};
 			name = Release;
 		};
@@ -524,6 +710,15 @@
 			buildConfigurations = (
 				E26493DE24553453009D759F /* Debug */,
 				E26493DF24553453009D759F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E27747D6245A195600C5D0AB /* Build configuration list for PBXNativeTarget "AnywhereFitnessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E27747D7245A195600C5D0AB /* Debug */,
+				E27747D8245A195600C5D0AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

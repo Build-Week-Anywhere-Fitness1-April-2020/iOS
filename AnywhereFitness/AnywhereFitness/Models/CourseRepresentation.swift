@@ -9,25 +9,72 @@
 import Foundation
 
 struct CourseRepresentation: Equatable, Codable {
-    var identifier: String?
+
+    var identifier: Int
     var name: String
-    var time: String // Will need to be compatible with database.
+    var time: String
     var duration: Double
     var startDate: String
     var intensity: String
     var location: String
     var maxSize: Int
     var classType: String
-    var imageURL: String
+    var imgURL: String
     var courseDescription: String
     var cost: Double
-    var registeredAttendees: String?
     var instructor: String
-    var days: String
-    var address: String  // Needs to be compatible with Apple Maps.
+    var days: [String]
+    var address: String
     var equipmentRequired: String
     var arrivalDescription: String
-    var additionalInfo: String
+    var additionalInfo: String?
+
+    private enum CodingKeys: String, CodingKey {
+        case identifier = "id"
+        case name, time, duration, intensity, location, maxSize, classType
+        case imgURL = "imgUrl"
+        case equipmentRequired, arrivalDescription, additionalInfo, cost, courseDescription, address, startDate, instructor, days
+    }
+
+    internal init(identifier: Int = 0,
+                  name: String,
+                  time: String = "",
+                  duration: Double,
+                  startDate: String = "",
+                  intensity: String = "",
+                  location: String = "",
+                  maxSize: Int,
+                  classType: String,
+                  imgURL: String = "",
+                  courseDescription: String = "",
+                  cost: Double = 0,
+                  instructor: String = "",
+                  days: [String] = [],
+                  address: String = "",
+                  equipmentRequired: String = "",
+                  arrivalDescription: String = "",
+                  additionalInfo: String = "") {
+
+        self.identifier = identifier
+        self.name = name
+        self.time = time
+        self.duration = duration
+        self.startDate = startDate
+        self.intensity = intensity
+        self.location = location
+        self.maxSize = maxSize
+        self.classType = classType
+        self.imgURL = imgURL
+        self.courseDescription = courseDescription
+        self.cost = cost
+        self.instructor = instructor
+        self.days = days
+        self.address = address
+        self.equipmentRequired = equipmentRequired
+        self.arrivalDescription = arrivalDescription
+        self.additionalInfo = additionalInfo
+    }
+
 }
 
 struct CourseRepresentations: Codable {

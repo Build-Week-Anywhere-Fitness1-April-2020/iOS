@@ -21,15 +21,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
 
     // MARK: - Properties
     var userController = UserController()
-    var loginType = LoginType.signUp
+    var loginType: LoginType?
     var role: Role?
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if loginType == LoginType.signIn {
+            emailTextField.isHidden = true
+            nameTextField.isHidden = true
+            nameLabel.isHidden = true
+            emailLabel.isHidden = true
+        }
     }
 
     // MARK: - Actions
@@ -38,15 +46,18 @@ class LoginViewController: UIViewController {
             username.isEmpty == false,
             let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             password.isEmpty == false,
-            let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            email.isEmpty == false,
-            let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            name.isEmpty == false,
             let role = role
             else { return }
-        let user = UserLogin(username: username, email: email, password: password, roles: [role.rawValue])
 
         if loginType == .signUp {
+            guard let email = emailTextField.text,
+            email.isEmpty == false,
+            let name = nameTextField.text,
+                name.isEmpty == false else { return }
+            UserDefaults.standard.set("\(name)", forKey: UserDefaultKeys.user.rawValue)
+            let user = UserLogin(username: username, email: email, password: password,
+                                 gender: Gender.male.rawValue, displayName: name, roles: [role.rawValue])
+
             userController.signUp(with: user) { (error) in
 
                 if let error = error {
@@ -56,11 +67,7 @@ class LoginViewController: UIViewController {
                         let alertController = UIAlertController(title: "Sign Up Successful",
                                                                 message: "Now please log in", preferredStyle: .alert)
                         let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
-                            if role == Role.client {
-                                self.performSegue(withIdentifier: "ClientSegue", sender: self)
-                            } else {
-                                self.performSegue(withIdentifier: "InstructorSegue", sender: self)
-                            }
+                            self.dismiss(animated: true, completion: nil)
                         }
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true, completion: {
@@ -71,13 +78,21 @@ class LoginViewController: UIViewController {
                 }
             }
         } else {
+            let user = UserSignIn(username: username, password: password, role: role.rawValue)
             userController.signIn(with: user) { (error) in
                 if let error = error {
                     print(error)
                 }
 
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+                    let alertController = UIAlertController(title: "Sign In Successful",
+                                                            message: "Lets go work out!", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    self.performSegue(withIdentifier: (role == Role.client) ? "ClientSegue" : "InstructorSegue",
+                                      sender: self)
+                    }
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }

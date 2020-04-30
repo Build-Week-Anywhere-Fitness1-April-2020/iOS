@@ -26,6 +26,7 @@ class UserController {
     // MARK: - Properties
     var courses: [Course] = []
     var bearer: Bearer?
+    static let shared = UserController()
 
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
     private lazy var signUpURL = baseURL.appendingPathComponent("auth/register")
@@ -41,7 +42,7 @@ class UserController {
 
     // MARK: - Methods
     func signUp(with user: UserLogin, completion: @escaping (Error?) -> Void) {
-        
+
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -73,14 +74,11 @@ class UserController {
         }.resume()
     }
 
-    func signIn(with user: UserLogin, completion: @escaping (Error?) -> Void) {
-        let signInURL = baseURL.appendingPathComponent("auth/login")
+    func signIn(with user: UserSignIn, completion: @escaping (Error?) -> Void) {
 
         var request = URLRequest(url: signInURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let jsonEncoder = JSONEncoder()
 
         do {
             let jsonData = try jsonEncoder.encode(user)
@@ -93,7 +91,7 @@ class UserController {
 
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode != 201 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
@@ -108,13 +106,27 @@ class UserController {
                 return
             }
 
-            let jsonDecoder = JSONDecoder()
+            struct UserIdentifier: Decodable {
+                let user: Identifier
+                
+                struct Identifier: Decodable {
+                    let identifier: Int
+                    
+                    enum CodingKeys: String, CodingKey {
+                        case identifier = "id"
+
+                    }
+                }
+
+                
+            }
 
             do {
-                let bearer = try jsonDecoder.decode(Bearer.self, from: data)
-                self.bearer = bearer
-
-                print(self.bearer!)
+                let bearer = try self.jsonDecoder.decode(Bearer.self, from: data)
+                let identification = try self.jsonDecoder.decode(UserIdentifier.self, from: data)
+                UserController.shared.bearer = bearer
+                let identifier = identification.user.identifier
+                UserDefaults.standard.set(identifier, forKey: "userID")
 
                 completion(nil)
 
@@ -125,5 +137,4 @@ class UserController {
             }
         }.resume()
     }
-
 }

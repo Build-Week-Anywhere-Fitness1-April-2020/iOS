@@ -20,9 +20,22 @@ struct User: Codable {
 
 struct UserLogin: Codable {
     let username: String
-    let email: String?
+    let email: String
     let password: String
+    let gender: String
+    let displayName: String
     let roles: [String]
+}
+
+struct UserSignIn: Codable {
+    let username: String
+    let password: String
+    let role: String
+}
+
+struct AddAttendee: Codable {
+    let accountID: Int
+    let classID: Int
 }
 
 enum Role: String, Codable {
@@ -34,4 +47,8 @@ enum Gender: String, Codable {
     case male = "Male"
     case female = "Female"
     case nonbinary = "Non-binary"
+}
+
+enum UserDefaultKeys: String {
+    case user = "User Name"
 }

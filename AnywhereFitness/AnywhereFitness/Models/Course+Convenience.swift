@@ -11,19 +11,21 @@ import CoreData
 
 extension Course {
     var courseRepresentation: CourseRepresentation? {
-        guard let identifier = identifier,
-            let name = name, let time = time,
+        guard let identifier = Int(identifier ?? "0"),
+            let name = name,
+            let time = time,
             let startDate = startDate,
             let location = location,
             let classType = classType,
-            let imageURL = imageURL,
+            let imgURL = imgURL,
             let courseDescription = courseDescription,
-            let registeredAttendees = registeredAttendees,
             let instructor = instructor,
             let days = days,
             let address = address
             else { return nil }
-        return CourseRepresentation(identifier: identifier.uuidString,
+
+        let daysArray = days.components(separatedBy: ",")
+        return CourseRepresentation(identifier: identifier,
                                     name: name,
                                     time: time,
                                     duration: duration,
@@ -32,18 +34,17 @@ extension Course {
                                     location: location,
                                     maxSize: Int(maxSize),
                                     classType: classType,
-                                    imageURL: imageURL,
+                                    imgURL: imgURL,
                                     courseDescription: courseDescription,
                                     cost: cost,
-                                    registeredAttendees: registeredAttendees,
                                     instructor: instructor,
-                                    days: days,
+                                    days: daysArray,
                                     address: address,
                                     equipmentRequired: equipmentRequired ?? "None",
                                     arrivalDescription: arrivalDescription ?? "Come ready and excited for class!!",
                                     additionalInfo: additionalInfo ?? "None")}
 
-    @discardableResult convenience init(identifier: UUID = UUID(),
+    @discardableResult convenience init(identifier: String,
                                         name: String,
                                         time: String,
                                         duration: Double,
@@ -52,24 +53,43 @@ extension Course {
                                         location: String,
                                         maxSize: Int,
                                         classType: String,
-                                        imageURL: String,
+                                        imgURL: String,
                                         courseDescription: String,
                                         cost: Double,
-                                        registeredAttendees: String,
                                         instructor: String,
                                         days: String,
                                         address: String,
                                         equipmentRequired: String,
                                         arrivalDescription: String,
-                                        additionalInfo: String,
+                                        additionalInfo: String?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-
+        
         self.init(context: context)
+        self.identifier = identifier
+        self.name = name
+        self.time = time
+        self.duration = duration
+        self.startDate = startDate
+        self.intensity = intensity
+        self.location = location
+        self.maxSize = Int16(maxSize)
+        self.classType = classType
+        self.imgURL = imgURL
+        self.courseDescription = courseDescription
+        self.cost = cost
+        self.instructor = instructor
+        self.days = days
+        self.address = address
+        self.equipmentRequired = equipmentRequired
+        self.arrivalDescription = arrivalDescription
+        self.additionalInfo = additionalInfo
     }
 
-    @discardableResult convenience init?(courseRepresentation: CourseRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init?(courseRepresentation: CourseRepresentation,
+                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
-        guard let identifier = UUID(uuidString: courseRepresentation.identifier ?? "myid") else { return nil }
+        let identifier = String(courseRepresentation.identifier)
+        let days = courseRepresentation.days.joined(separator: ",")
 
         self.init(identifier: identifier,
                   name: courseRepresentation.name,
@@ -80,15 +100,14 @@ extension Course {
                   location: courseRepresentation.location,
                   maxSize: courseRepresentation.maxSize,
                   classType: courseRepresentation.classType,
-                  imageURL: courseRepresentation.imageURL,
+                  imgURL: courseRepresentation.imgURL,
                   courseDescription: courseRepresentation.courseDescription,
                   cost: courseRepresentation.cost,
-                  registeredAttendees: courseRepresentation.registeredAttendees ?? "None",
                   instructor: courseRepresentation.instructor,
-                  days: courseRepresentation.days,
+                  days: days,
                   address: courseRepresentation.address,
                   equipmentRequired: courseRepresentation.equipmentRequired,
-                  arrivalDescription: courseRepresentation.arrivalDescription  ,
+                  arrivalDescription: courseRepresentation.arrivalDescription,
                   additionalInfo: courseRepresentation.additionalInfo,
                   context: context)
     }

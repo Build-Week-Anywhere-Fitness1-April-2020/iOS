@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Course" representedClassName="Course" syncable="YES" codeGenerationType="class">
-        <attribute name="additionalInfo" attributeType="String"/>
+        <attribute name="additionalInfo" optional="YES" attributeType="String"/>
         <attribute name="address" attributeType="String"/>
         <attribute name="arrivalDescription" attributeType="String"/>
         <attribute name="classType" attributeType="String"/>
@@ -10,18 +10,17 @@
         <attribute name="days" attributeType="String"/>
         <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="equipmentRequired" attributeType="String"/>
-        <attribute name="identifier" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="imageURL" attributeType="String"/>
+        <attribute name="identifier" attributeType="String"/>
+        <attribute name="imgURL" attributeType="String"/>
         <attribute name="instructor" attributeType="String"/>
         <attribute name="intensity" attributeType="String"/>
         <attribute name="location" attributeType="String"/>
         <attribute name="maxSize" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="registeredAttendees" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
         <attribute name="startDate" attributeType="String"/>
         <attribute name="time" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-54" positionY="-9" width="128" height="328"/>
+        <element name="Course" positionX="-54" positionY="-9" width="128" height="313"/>
     </elements>
 </model>
