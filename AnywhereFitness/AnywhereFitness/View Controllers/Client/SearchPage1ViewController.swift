@@ -22,7 +22,8 @@ class SearchPage1ViewController: UIViewController {
     @IBOutlet weak var classTypeUIPicker: UIPickerView!
     @IBOutlet weak var courseLevel: UIPickerView!
     @IBOutlet weak var locationTextField: UITextField!
-
+    @IBOutlet var backgroundView: UIView!
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class SearchPage1ViewController: UIViewController {
         courseLevel.delegate = self
         classTypeUIPicker.dataSource = self
         classTypeUIPicker.delegate = self
+        backgroundView.setBackground()
     }
 
     // MARK: - IBActions
@@ -44,13 +46,15 @@ class SearchPage1ViewController: UIViewController {
             && $0.intensity == myLevel
             && $0.location == myLocation }
         print(mySearchResults)
-
+        performSegue(withIdentifier: "SearchSegue1", sender: self)
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let page2VC = segue.destination as? SearchResultsViewController else { return }
-        page2VC.courses = mySearchResults
+        if segue.identifier == "SearchSegue1" {
+            guard let page2VC = segue.destination as? SearchResultsViewController else { return }
+            page2VC.courses = mySearchResults
+        }
     }
 }
 
