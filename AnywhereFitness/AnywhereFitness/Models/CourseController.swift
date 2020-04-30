@@ -79,10 +79,10 @@ class CourseController {
 //                completion(.failure(.noDecode))
 //            }
 //        }.resume()
-        let data = jsonData
+        guard let data = Data(base64Encoded: jsonData) else { return }
         do {
             let courseRepresentations =
-                Array(try JSONDecoder().decode([String: CourseRepresentation].self, from: data).values)
+                Array(try JSONDecoder().decode([CourseRepresentation].self, from: data))
             try self.updateCourses(with: courseRepresentations)
             completion(.success(true))
         } catch {
