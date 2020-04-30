@@ -77,7 +77,7 @@
 		E26493D524553453009D759F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E26493D824553453009D759F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E26493DA24553453009D759F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = SOURCE_ROOT; };
+		E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandingScreenViewController.swift; path = "AnywhereFitness/View Controllers/New Group/LandingScreenViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E266C156245860CF00FC8E7D /* setBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = setBackground.swift; path = AnywhereFitness/Resources/setBackground.swift; sourceTree = SOURCE_ROOT; };
 		E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InstructorMaster.storyboard; sourceTree = "<group>"; };
 		E266C15A245881B300FC8E7D /* ClientMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClientMaster.storyboard; sourceTree = "<group>"; };
@@ -208,8 +208,7 @@
 			children = (
 				E266C15D2458891900FC8E7D /* Client */,
 				E266C15C2458890E00FC8E7D /* Instructor */,
-				18366C7E2457C58700CB28DC /* LoginViewController.swift */,
-				E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */,
+				E27555FC245B742F000EB0DE /* Main */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -262,6 +261,15 @@
 				E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		E27555FC245B742F000EB0DE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18366C7E2457C58700CB28DC /* LoginViewController.swift */,
+				E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		E27747D0245A195600C5D0AB /* AnywhereFitnessTests */ = {
