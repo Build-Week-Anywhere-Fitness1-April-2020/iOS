@@ -10,18 +10,17 @@
         <attribute name="days" attributeType="String"/>
         <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="equipmentRequired" attributeType="String"/>
-        <attribute name="identifier" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="imageURL" attributeType="String"/>
+        <attribute name="identifier" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imgURL" attributeType="String"/>
         <attribute name="instructor" attributeType="String"/>
         <attribute name="intensity" attributeType="String"/>
         <attribute name="location" attributeType="String"/>
         <attribute name="maxSize" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="registeredAttendees" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
         <attribute name="startDate" attributeType="String"/>
         <attribute name="time" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-54" positionY="-9" width="128" height="328"/>
+        <element name="Course" positionX="-54" positionY="-9" width="128" height="313"/>
     </elements>
 </model>

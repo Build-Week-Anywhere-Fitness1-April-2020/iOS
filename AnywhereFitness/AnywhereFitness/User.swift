@@ -20,7 +20,7 @@ struct User: Codable {
 
 struct UserLogin: Codable {
     let username: String
-    let email: String?
+    let email: String
     let password: String
     let gender: String
     let displayName: String
@@ -28,9 +28,9 @@ struct UserLogin: Codable {
 }
 
 struct UserSignIn: Codable {
-    let userName: String
+    let username: String
     let password: String
-    let roles: [String]
+    let role: String
 }
 
 enum Role: String, Codable {

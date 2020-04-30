@@ -26,6 +26,7 @@ class UserController {
     // MARK: - Properties
     var courses: [Course] = []
     var bearer: Bearer?
+    static let shared = UserController()
 
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
     private lazy var signUpURL = baseURL.appendingPathComponent("auth/register")
@@ -45,12 +46,14 @@ class UserController {
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //request.setValue("application/json", forHTTPHeaderField: "Accept")
 
         let jsonEncoder = JSONEncoder()
 
         do {
             let jsonData = try jsonEncoder.encode(user)
             request.httpBody = jsonData
+            print(jsonData)
         } catch {
             NSLog("Error encoding user object: \(error)")
             completion(error)
@@ -74,13 +77,10 @@ class UserController {
     }
 
     func signIn(with user: UserSignIn, completion: @escaping (Error?) -> Void) {
-        let signInURL = baseURL.appendingPathComponent("auth/login")
 
         var request = URLRequest(url: signInURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let jsonEncoder = JSONEncoder()
 
         do {
             let jsonData = try jsonEncoder.encode(user)
@@ -93,7 +93,7 @@ class UserController {
 
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode != 201 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
@@ -108,13 +108,11 @@ class UserController {
                 return
             }
 
-            let jsonDecoder = JSONDecoder()
-
             do {
-                let bearer = try jsonDecoder.decode(Bearer.self, from: data)
-                self.bearer = bearer
+                let bearer = try self.jsonDecoder.decode(Bearer.self, from: data)
+                UserController.shared.bearer = bearer
 
-                print(self.bearer!)
+                //print(self.bearer!)
 
                 completion(nil)
 
