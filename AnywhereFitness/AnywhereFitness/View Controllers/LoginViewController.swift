@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
             let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
                 name.isEmpty == false else { return }
             UserDefaults.standard.set("\(name)", forKey: UserDefaultKeys.user.rawValue)
-            let user = UserLogin(username: username, email: email, password: password, roles: [role.rawValue])
+            let user = UserLogin(username: username, email: email, password: password, gender: Gender.male.rawValue, displayName: name, roles: [role.rawValue])
 
             userController.signUp(with: user) { (error) in
 
