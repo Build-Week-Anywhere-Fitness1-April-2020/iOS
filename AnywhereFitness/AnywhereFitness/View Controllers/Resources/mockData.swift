@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable line_length
 let jsonData = """
 [
     {
@@ -45,7 +45,7 @@ let jsonData = """
         "classType": "Yoga",
         "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "Yoga Mat",
-        "arrivalDescription": "We get a little more intense and focused on form during this session.  Make sure you've taken our introductory course first.",
+        "arrivalDescription": "We get a little more intense and focused on form during this session. Make sure you've taken our introductory course first.",
         "additionalInfo": null,
         "cost": 5.00,
         "courseDescription": "Intermediate yoga session",
@@ -118,7 +118,7 @@ let jsonData = """
         "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "Weight lifting belt",
         "arrivalDescription": "None",
-        "additionalInfo": "We're going to focusing on deadlifts with the proper form and technique.  It is important to master the movement before moving up to very heavy lifts.",
+        "additionalInfo": "We're going to focusing on deadlifts with the proper form and technique. It is important to master the movement before moving up to very heavy lifts.",
         "cost": 5.00,
         "courseDescription": "Intermediate session",
         "address": "706 Hart Dr. Pompton Lakes, NJ 07442",
@@ -238,7 +238,7 @@ let jsonData = """
             "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
             "equipmentRequired": "None",
             "arrivalDescription": "Make sure not disturb class in session if you arrive early.",
-            "additionalInfo": "Need help getting started with Pilates?  We specialize in Pilates and are experienced with clients at all levels.",
+            "additionalInfo": "Need help getting started with Pilates? We specialize in Pilates and are experienced with clients at all levels.",
             "cost": 30.99,
             "courseDescription": "Introductory Pilates session",
             "address": "706 Hart Dr. Pompton Lakes, NJ 07442",
@@ -252,3 +252,4 @@ let jsonData = """
     }
 ]
 """.data(using: .utf8)!
+// swiftlint:enable line_length

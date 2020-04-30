@@ -110,10 +110,11 @@ class UserController {
                 struct Identifier: Decodable {
                     let identifier: Int
 
+                    // swiftlint:disable nesting
                     enum CodingKeys: String, CodingKey {
                         case identifier = "id"
-
                     }
+                    // swiftlint:enable nesting
                 }
             }
 

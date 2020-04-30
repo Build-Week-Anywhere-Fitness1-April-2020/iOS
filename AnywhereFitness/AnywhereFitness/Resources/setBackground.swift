@@ -17,5 +17,4 @@ extension UIView {
         backgroundImageView.alpha = CGFloat(exactly: NSNumber(value: 0.75))!
         self.insertSubview(backgroundImageView, at: 0)
     }
-
 }

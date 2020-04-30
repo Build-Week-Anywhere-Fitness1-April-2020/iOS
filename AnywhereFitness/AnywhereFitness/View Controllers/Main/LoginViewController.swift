@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var signupLabel: UILabel!
 
     // MARK: - Properties
     var userController = UserController()
@@ -37,6 +38,7 @@ class LoginViewController: UIViewController {
             nameTextField.isHidden = true
             nameLabel.isHidden = true
             emailLabel.isHidden = true
+            signupLabel.text = "Sign In"
         }
     }
 
@@ -45,8 +47,7 @@ class LoginViewController: UIViewController {
         guard let username = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             username.isEmpty == false,
             let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            password.isEmpty == false,
-            let role = role
+            password.isEmpty == false, let role = role
             else { return }
 
         if loginType == .signUp {
@@ -81,6 +82,13 @@ class LoginViewController: UIViewController {
             let user = UserSignIn(username: username, password: password, role: role.rawValue)
             userController.signIn(with: user) { (error) in
                 if let error = error {
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Sign In Failed",
+                                message: "Please try again later.", preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "OK", style: .default)
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                     print(error)
                     return
                 }
