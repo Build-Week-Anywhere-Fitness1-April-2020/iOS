@@ -44,7 +44,7 @@ extension Course {
                                     arrivalDescription: arrivalDescription ?? "Come ready and excited for class!!",
                                     additionalInfo: additionalInfo ?? "None")}
 
-    @discardableResult convenience init(identifier: Int = 0,
+    @discardableResult convenience init(identifier: String,
                                         name: String,
                                         time: String,
                                         duration: Double,
@@ -63,14 +63,32 @@ extension Course {
                                         arrivalDescription: String,
                                         additionalInfo: String?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-
+        
         self.init(context: context)
+        self.identifier = identifier
+        self.name = name
+        self.time = time
+        self.duration = duration
+        self.startDate = startDate
+        self.intensity = intensity
+        self.location = location
+        self.maxSize = Int16(maxSize)
+        self.classType = classType
+        self.imgURL = imgURL
+        self.courseDescription = courseDescription
+        self.cost = cost
+        self.instructor = instructor
+        self.days = days
+        self.address = address
+        self.equipmentRequired = equipmentRequired
+        self.arrivalDescription = arrivalDescription
+        self.additionalInfo = additionalInfo
     }
 
     @discardableResult convenience init?(courseRepresentation: CourseRepresentation,
                                          context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
-        let identifier = courseRepresentation.identifier
+        let identifier = String(courseRepresentation.identifier)
         let days = courseRepresentation.days.joined(separator: ",")
 
         self.init(identifier: identifier,

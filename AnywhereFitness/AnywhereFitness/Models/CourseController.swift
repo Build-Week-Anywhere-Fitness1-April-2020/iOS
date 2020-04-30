@@ -186,11 +186,11 @@ class CourseController {
 
     private func updateCourses(with representations: [CourseRepresentation]) throws {
 
-        let identifiersToFetch = representations.compactMap {(String($0.identifier)) }
+        let identifiersToFetch = representations.compactMap {String($0.identifier) }
 
         print(identifiersToFetch)
 
-        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
+        var representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
 
         var coursesToCreate = representationsByID
 
@@ -207,7 +207,7 @@ class CourseController {
                     guard let identifier = course.identifier,
                         let representation = representationsByID[identifier] else { continue }
                     self.update(course: course, with: representation)
-                    //                    coursesToCreate.removeValue(forKey: identifier)
+                    coursesToCreate.removeValue(forKey: identifier)
                 }
 
                 for representation in coursesToCreate {
