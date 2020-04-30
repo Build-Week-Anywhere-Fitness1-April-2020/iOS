@@ -24,7 +24,7 @@ class SearchConfirmationViewController: UIViewController {
     @IBAction func doneButtonTapped(_ sender: Any) {
         tabBarController?.selectedIndex = 0
     }
-    
+
     @IBAction func addAnotherClassButtonTapped(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }

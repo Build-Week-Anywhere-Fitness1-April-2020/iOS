@@ -77,7 +77,6 @@
 		E26493D524553453009D759F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E26493D824553453009D759F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E26493DA24553453009D759F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandingScreenViewController.swift; path = "AnywhereFitness/View Controllers/New Group/LandingScreenViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E266C156245860CF00FC8E7D /* setBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = setBackground.swift; path = AnywhereFitness/Resources/setBackground.swift; sourceTree = SOURCE_ROOT; };
 		E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InstructorMaster.storyboard; sourceTree = "<group>"; };
 		E266C15A245881B300FC8E7D /* ClientMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClientMaster.storyboard; sourceTree = "<group>"; };
@@ -87,7 +86,7 @@
 		E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6CreateCourseViewController.swift; sourceTree = "<group>"; };
-		E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandingScreenViewController.swift; path = "AnywhereFitness/View Controllers/Main/LandingScreenViewController.swift"; sourceTree = "<group>"; };
+		E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = "<group>"; };
 		E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeScreenViewController.swift; sourceTree = "<group>"; };
 		E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage1ViewController.swift; sourceTree = "<group>"; };
 		E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail1ViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +150,6 @@
 		E26493C024553451009D759F = {
 			isa = PBXGroup;
 			children = (
-				E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */,
 				E26493CB24553451009D759F /* AnywhereFitness */,
 				E27747D0245A195600C5D0AB /* AnywhereFitnessTests */,
 				E26493CA24553451009D759F /* Products */,
@@ -269,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				18366C7E2457C58700CB28DC /* LoginViewController.swift */,
-				E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */,
+				E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";

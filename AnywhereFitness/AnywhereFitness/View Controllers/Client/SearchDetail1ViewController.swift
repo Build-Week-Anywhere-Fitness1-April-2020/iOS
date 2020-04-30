@@ -29,7 +29,7 @@ class SearchDetail1ViewController: UIViewController {
     @IBOutlet weak var equipmentLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var backgroundView: UIView!
-    
+
     // MARK: - IBActions
     @IBAction func viewScheduleTapped(_ sender: Any) {
         performSegue(withIdentifier: "SearchSegue3", sender: self)
@@ -67,5 +67,4 @@ class SearchDetail1ViewController: UIViewController {
             searchScheduleVC.course = course
         }
     }
-
 }

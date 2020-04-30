@@ -16,7 +16,6 @@ class LandingScreenViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var signinLabel: UILabel!
-    
 
     // MARK: - IBActions
     @IBAction func clientSignup(_ sender: Any) {
@@ -51,7 +50,6 @@ class LandingScreenViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
     }
 
     // MARK: - Navigation

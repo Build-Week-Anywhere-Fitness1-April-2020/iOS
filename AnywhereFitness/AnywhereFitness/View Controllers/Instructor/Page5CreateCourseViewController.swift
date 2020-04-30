@@ -18,22 +18,20 @@ class Page5CreateCourseViewController: UIViewController {
     @IBOutlet weak var additionalInfo: UITextView!
 
     // MARK: - IBOutlets
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     @IBAction func finishButtonTapped(_ sender: Any) {
         guard let classArrive = classArrive.text,
             !classArrive.isEmpty,
             let additionalInfo = additionalInfo.text,
-            !additionalInfo.isEmpty else { return }
-        course?.arrivalDescription = classArrive
-        course?.additionalInfo = additionalInfo
-        guard let course = course else { return }
-        //print("Make a class")
-        //print(course)
+            !additionalInfo.isEmpty,
+            var course = course else { return }
+
+        course.arrivalDescription = classArrive
+        course.additionalInfo = additionalInfo
+
         courseController?.postClass(course: course)
         performSegue(withIdentifier: "CreateClassLastSegue", sender: self)
     }

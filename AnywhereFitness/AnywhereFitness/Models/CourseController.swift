@@ -38,7 +38,7 @@ class CourseController {
 
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
 
-    let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit"]]
+    let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit", "Pilates"]]
     let courseIntensityArray: [[String]] = [["Class Level"], ["Beginner", "Intermediate", "Advanced"]]
 
     // MARK: - Methods

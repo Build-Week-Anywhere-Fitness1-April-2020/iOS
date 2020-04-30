@@ -12,7 +12,6 @@ class SearchScheduleViewController: UIViewController {
 
     // MARK: - Properties
       var course: CourseRepresentation?
-    //let courseController = CourseController.shared
 
     // MARK: - IBOutlets
     @IBOutlet var backgroundView: UIView!
@@ -46,7 +45,8 @@ class SearchScheduleViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SearchSegue4" {
-            guard let searchReserveVC = segue.destination as? SearchReserveViewController, let index = scheduleTableView.indexPathForSelectedRow?.row else { return }
+            guard let searchReserveVC = segue.destination as? SearchReserveViewController,
+                let index = scheduleTableView.indexPathForSelectedRow?.row else { return }
             searchReserveVC.course = course
             searchReserveVC.day = course?.days[index]
         }

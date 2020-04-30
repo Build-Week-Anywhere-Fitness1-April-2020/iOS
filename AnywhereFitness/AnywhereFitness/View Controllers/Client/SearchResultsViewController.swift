@@ -27,7 +27,7 @@ class SearchResultsViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var searchResultsTableView: UITableView!
     @IBOutlet var backgroundView: UIView!
-    
+
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,6 @@ class SearchResultsViewController: UIViewController {
             guard let searchDetailVC = segue.destination as? SearchDetail1ViewController,
                 let index = searchResultsTableView.indexPathForSelectedRow?.row,
                 let course = courses?[index] else { return }
-            
             searchDetailVC.course = course
         }
     }
@@ -63,7 +62,7 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
 
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "SearchSegue2", sender: self)
     }

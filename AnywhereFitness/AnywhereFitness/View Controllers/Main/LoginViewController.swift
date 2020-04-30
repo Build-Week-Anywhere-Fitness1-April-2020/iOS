@@ -82,6 +82,7 @@ class LoginViewController: UIViewController {
             userController.signIn(with: user) { (error) in
                 if let error = error {
                     print(error)
+                    return
                 }
 
                 DispatchQueue.main.async {

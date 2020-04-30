@@ -26,7 +26,6 @@ class Page4CreateCourseViewController: UIViewController {
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let page5VC = segue.destination as? Page5CreateCourseViewController else { return }
         page5VC.course = course

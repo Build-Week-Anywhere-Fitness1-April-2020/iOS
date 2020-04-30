@@ -106,10 +106,10 @@ class UserController {
 
             struct UserIdentifier: Decodable {
                 let user: Identifier
-                
+
                 struct Identifier: Decodable {
                     let identifier: Int
-                    
+
                     enum CodingKeys: String, CodingKey {
                         case identifier = "id"
 

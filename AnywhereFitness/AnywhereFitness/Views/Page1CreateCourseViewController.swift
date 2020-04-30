@@ -30,7 +30,6 @@ class Page1CreateCourseViewController: UIViewController {
     }
 
      // MARK: - Navigation
-
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let page2VC = segue.destination as? Page2CreateCourseViewController else { return }
         page2VC.course = course
@@ -47,7 +46,8 @@ class Page1CreateCourseViewController: UIViewController {
             let maxSize = Int(maxSizeString) else { return }
 
         let classType = classTypeUIPicker.selectedRow(inComponent: 1)
-        guard let instructorName: String = UserDefaults.standard.value(forKey: UserDefaultKeys.user.rawValue) as? String else { return }
+        let userValue = UserDefaults.standard.value(forKey: UserDefaultKeys.user.rawValue)
+        guard let instructorName: String = userValue as? String else { return }
 
         course = courseController.createCourse(name: className,
                                                duration: duration,
@@ -56,6 +56,7 @@ class Page1CreateCourseViewController: UIViewController {
         performSegue(withIdentifier: "CreateClassFirstSegue", sender: self)
     }
 }
+
 extension Page1CreateCourseViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -23,7 +23,7 @@ class SearchPage1ViewController: UIViewController {
     @IBOutlet weak var courseLevel: UIPickerView!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet var backgroundView: UIView!
-    
+
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
