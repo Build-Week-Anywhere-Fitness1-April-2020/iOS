@@ -32,8 +32,8 @@ class Page5CreateCourseViewController: UIViewController {
         course?.arrivalDescription = classArrive
         course?.additionalInfo = additionalInfo
         guard let course = course else { return }
-        print("Make a class")
-        print(course)
+        //print("Make a class")
+        //print(course)
         courseController?.postClass(course: course)
         performSegue(withIdentifier: "CreateClassLastSegue", sender: self)
     }

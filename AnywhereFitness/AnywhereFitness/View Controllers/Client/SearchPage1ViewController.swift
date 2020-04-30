@@ -40,7 +40,9 @@ class SearchPage1ViewController: UIViewController {
         let myClassType = classTypeArray[1][classType]
         let myLocation = locationTextField.text
         searchResults = courseController.allCourses
-        mySearchResults = searchResults.filter { $0.classType == myClassType && $0.intensity == myLevel && $0.location == myLocation }
+        mySearchResults = searchResults.filter { $0.classType == myClassType
+            && $0.intensity == myLevel
+            && $0.location == myLocation }
         print(mySearchResults)
 
     }
@@ -48,7 +50,7 @@ class SearchPage1ViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let page2VC = segue.destination as? SearchResultsViewController else { return }
-        page2VC.course = course
+        page2VC.courses = mySearchResults
     }
 }
 
