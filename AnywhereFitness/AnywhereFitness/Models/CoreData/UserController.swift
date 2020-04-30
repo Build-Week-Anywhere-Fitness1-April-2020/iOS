@@ -53,7 +53,6 @@ class UserController {
         do {
             let jsonData = try jsonEncoder.encode(user)
             request.httpBody = jsonData
-            print(jsonData)
         } catch {
             NSLog("Error encoding user object: \(error)")
             completion(error)
@@ -111,8 +110,6 @@ class UserController {
             do {
                 let bearer = try self.jsonDecoder.decode(Bearer.self, from: data)
                 UserController.shared.bearer = bearer
-
-                //print(self.bearer!)
 
                 completion(nil)
 

@@ -60,7 +60,7 @@ class CourseController {
          do {
             let data = jsonData
             let courseRepresentations = try jsonDecoder.decode([CourseRepresentation].self, from: data)
-            print(courseRepresentations)
+            //print(courseRepresentations)
             completion(.success(courseRepresentations))
          } catch {
             NSLog("Error decoding classes from server: \(error)")

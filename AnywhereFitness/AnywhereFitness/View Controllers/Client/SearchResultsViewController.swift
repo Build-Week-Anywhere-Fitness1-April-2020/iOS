@@ -11,14 +11,19 @@ import UIKit
 class SearchResultsViewController: UIViewController {
 
     // MARK: - Properties
-      var course: CourseRepresentation?
-      let courseController = CourseController()
+    var course: CourseRepresentation?
+    var courses: [CourseRepresentation]?
+    let courseController = CourseController()
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var searchResultsTableView: UITableView!
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        searchResultsTableView.dataSource = self
+        searchResultsTableView.delegate = self
+        searchResultsTableView.reloadData()
     }
     /*
     // MARK: - Navigation
@@ -32,7 +37,19 @@ class SearchResultsViewController: UIViewController {
 
 }
 
-//extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegate {
-//
-//
-//}
+extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        courses?.count ?? 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath)
+
+        guard let course = courses?[indexPath.row] else { return UITableViewCell() }
+        cell.textLabel?.text = "\(course.name)"
+        cell.detailTextLabel?.text = "$\(course.cost)"
+
+        return cell
+    }
+
+}
