@@ -240,6 +240,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KYC-E8-x3e"/>
                     <connections>
+                        <outlet property="searchResultsTableView" destination="P1d-3C-O8U" id="Y43-L0-tkE"/>
                         <segue destination="xO3-QJ-WRj" kind="show" identifier="SearchSegue2" id="TRL-Sk-MSQ"/>
                     </connections>
                 </viewController>

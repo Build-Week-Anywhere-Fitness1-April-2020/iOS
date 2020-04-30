@@ -61,7 +61,6 @@ class CourseController {
 
             let courseRepresentations = try jsonDecoder.decode([ CourseRepresentation].self, from: data)
             try self.updateCourses(with: courseRepresentations)
-
             completion(.success(courseRepresentations))
         } catch {
             NSLog("Error decoding classes from server: \(error)")

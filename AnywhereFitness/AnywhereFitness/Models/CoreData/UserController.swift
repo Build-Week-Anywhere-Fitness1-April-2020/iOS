@@ -52,7 +52,6 @@ class UserController {
         do {
             let jsonData = try jsonEncoder.encode(user)
             request.httpBody = jsonData
-            print(jsonData)
         } catch {
             NSLog("Error encoding user object: \(error)")
             completion(error)
