@@ -32,6 +32,7 @@ class CourseController {
     var allCourses: [CourseRepresentation] = []
     static let shared = CourseController()
     let jsonDecoder = JSONDecoder()
+
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
 
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
@@ -54,37 +55,48 @@ class CourseController {
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+ let jsonDecoder = JSONDecoder()
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
+         do {
+            let data = jsonData
+            let courseRepresentations = try jsonDecoder.decode([CourseRepresentation].self, from: data)
+            print(courseRepresentations)
+            completion(.success(courseRepresentations))
+         } catch {
+            NSLog("Error decoding classes from server: \(error)")
+            completion(.failure(.noDecode))
+        }
 
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(.failure(.noRep))
-            }
-
-            if let error = error {
-                NSLog("Error fetching classes: \(error)")
-                completion(.failure(.otherError))
-                return
-            }
-
-            guard let data = data else {
-                NSLog("No data returned from fetch")
-                completion(.failure(.noData))
-
-                return
-            }
-
-            do {
-                print("\(data)")
-                let courseRepresentations = try self.jsonDecoder.decode([CourseRepresentation].self, from: data)
-                print(courseRepresentations)
-                completion(.success(courseRepresentations))
-            } catch {
-                NSLog("Error decoding classes from server: \(error)")
-                completion(.failure(.noDecode))
-            }
-        }.resume()
+//        URLSession.shared.dataTask(with: request) { data, response, error in
+//
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode != 200 {
+//                completion(.failure(.noRep))
+//            }
+//
+//            if let error = error {
+//                NSLog("Error fetching classes: \(error)")
+//                completion(.failure(.otherError))
+//                return
+//            }
+//
+//            guard let data = data else {
+//                NSLog("No data returned from fetch")
+//                completion(.failure(.noData))
+//
+//                return
+//            }
+//
+//            do {
+//                print("\(data)")
+//                let courseRepresentations = try self.jsonDecoder.decode([CourseRepresentation].self, from: data)
+//                print(courseRepresentations)
+//                completion(.success(courseRepresentations))
+//            } catch {
+//                NSLog("Error decoding classes from server: \(error)")
+//                completion(.failure(.noDecode))
+//            }
+//        }.resume()
     }
 
     func searchForCourse(with searchTerm: String, completion: @escaping CompletionHandler = { _ in }) {
