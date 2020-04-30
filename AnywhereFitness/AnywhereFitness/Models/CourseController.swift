@@ -42,65 +42,65 @@ class CourseController {
 
     // MARK: - Methods
     func fetchCourses(completion: @escaping (Result<[CourseRepresentation], NetworkError>) -> Void) {
+        //        guard let bearer = UserController.shared.bearer else {
+        //            print("bearer for fetching courses is missing")
+        //            return
+        //        }
+        //
+        //        let requestURL = baseURL.appendingPathExtension("classes")
+        //
+        //        var request = URLRequest(url: requestURL)
+        //
+        //        request.httpMethod = HTTPMethod.get.rawValue
+        //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+        let jsonDecoder = JSONDecoder()
 
-        guard let bearer = UserController.shared.bearer else {
-            print("bearer for fetching courses is missing")
-            return
-        }
-
-        let requestURL = baseURL.appendingPathExtension("classes")
-
-        var request = URLRequest(url: requestURL)
-
-        request.httpMethod = HTTPMethod.get.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
- let jsonDecoder = JSONDecoder()
-
-         do {
+        do {
             let data = jsonData
-            let courseRepresentations = try jsonDecoder.decode([CourseRepresentation].self, from: data)
-            print(courseRepresentations)
+
+            let courseRepresentations = try jsonDecoder.decode([ CourseRepresentation].self, from: data)
+            try self.updateCourses(with: courseRepresentations)
+
             completion(.success(courseRepresentations))
-         } catch {
+        } catch {
             NSLog("Error decoding classes from server: \(error)")
             completion(.failure(.noDecode))
         }
 
-//        URLSession.shared.dataTask(with: request) { data, response, error in
-//
-//            if let response = response as? HTTPURLResponse,
-//                response.statusCode != 200 {
-//                completion(.failure(.noRep))
-//            }
-//
-//            if let error = error {
-//                NSLog("Error fetching classes: \(error)")
-//                completion(.failure(.otherError))
-//                return
-//            }
-//
-//            guard let data = data else {
-//                NSLog("No data returned from fetch")
-//                completion(.failure(.noData))
-//
-//                return
-//            }
-//
-//            do {
-//                print("\(data)")
-//                let courseRepresentations = try self.jsonDecoder.decode([CourseRepresentation].self, from: data)
-//                print(courseRepresentations)
-//                completion(.success(courseRepresentations))
-//            } catch {
-//                NSLog("Error decoding classes from server: \(error)")
-//                completion(.failure(.noDecode))
-//            }
-//        }.resume()
+        //        URLSession.shared.dataTask(with: request) { data, response, error in
+        //
+        //            if let response = response as? HTTPURLResponse,
+        //                response.statusCode != 200 {
+        //                completion(.failure(.noRep))
+        //            }
+        //
+        //            if let error = error {
+        //                NSLog("Error fetching classes: \(error)")
+        //                completion(.failure(.otherError))
+        //                return
+        //            }
+        //
+        //            guard let data = data else {
+        //                NSLog("No data returned from fetch")
+        //                completion(.failure(.noData))
+        //
+        //                return
+        //            }
+        //
+        //            do {
+        //                print("\(data)")
+        //                let courseRepresentations = try self.jsonDecoder.decode([CourseRepresentation].self, from: data)
+        //                print(courseRepresentations)
+        //                completion(.success(courseRepresentations))
+        //            } catch {
+        //                NSLog("Error decoding classes from server: \(error)")
+        //                completion(.failure(.noDecode))
+        //            }
+        //        }.resume()
     }
 
     func searchForCourse(with searchTerm: String, completion: @escaping CompletionHandler = { _ in }) {
-
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let queryParameters = ["classes": searchTerm]
         components?.queryItems = queryParameters.map({URLQueryItem(name: $0.key, value: $0.value)})
@@ -109,20 +109,17 @@ class CourseController {
             completion(.failure(.otherError))
             return
         }
-
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             if let error = error {
                 NSLog("Error searching for class with search term \(searchTerm): \(error)")
                 completion(.failure(.otherError))
                 return
             }
-
             guard let data = data else {
                 NSLog("No data returned from data task")
                 completion(.failure(.noData))
                 return
             }
-
             do {
                 let courseRepresentations = try JSONDecoder().decode(CourseRepresentations.self, from: data).results
                 self.courses = courseRepresentations
@@ -188,35 +185,41 @@ class CourseController {
         } .resume()
     }
 
-//    private func updateCourses(with representations: [CourseRepresentation]) throws {
-//        let identifiersToFetch = representations.compactMap {($0.identifier) }
-//        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
-//
-//        var coursesToCreate = representationsByID
-//        let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
-//        fetchRequest.predicate = NSPredicate(format: "identifier IN %@", identifiersToFetch)
-//
-//        let context = CoreDataStack.shared.container.newBackgroundContext()
-//
-//        context.perform {
-//            do {
-//                let existingCourses = try context.fetch(fetchRequest)
-//                for course in existingCourses {
-//                    guard let identifier = course.identifier,
-//                        let representation = representationsByID[identifier] else { continue }
-//                    self.update(course: course, with: representation)
-//                    coursesToCreate.removeValue(forKey: identifier)
-//                }
-//
-//                for representation in coursesToCreate.values {
-//                    Course(courseRepresentation: representation, context: context)
-//                }
-//                try context.save()
-//            } catch {
-//                NSLog("error fetching courses with UUIDs: \(identifiersToFetch), with error: \(error)")
-//            }
-//        }
-//    }
+    private func updateCourses(with representations: [CourseRepresentation]) throws {
+
+        let identifiersToFetch = representations.compactMap {(String($0.identifier)) }
+
+        print(identifiersToFetch)
+
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
+
+        var coursesToCreate = representationsByID
+
+        let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "identifier IN %@", identifiersToFetch)
+
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+
+        context.perform {
+            do {
+                let existingCourses = try context.fetch(fetchRequest)
+
+                for course in existingCourses {
+                    guard let identifier = course.identifier,
+                        let representation = representationsByID[identifier] else { continue }
+                    self.update(course: course, with: representation)
+                    //                    coursesToCreate.removeValue(forKey: identifier)
+                }
+
+                for representation in coursesToCreate {
+                    Course(courseRepresentation: representation.value, context: context)
+                }
+                try context.save()
+            } catch {
+                NSLog("error fetching courses with UUIDs: \(identifiersToFetch), with error: \(error)")
+            }
+        }
+    }
 
     private func update(course: Course, with representation: CourseRepresentation) {
         course.name = representation.name
