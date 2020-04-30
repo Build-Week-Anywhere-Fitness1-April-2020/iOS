@@ -10,13 +10,16 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
 
+    // MARK: - Properties
+      var course: CourseRepresentation?
+      let courseController = CourseController()
+
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 
@@ -28,3 +31,8 @@ class SearchResultsViewController: UIViewController {
     */
 
 }
+
+//extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegate {
+//
+//
+//}

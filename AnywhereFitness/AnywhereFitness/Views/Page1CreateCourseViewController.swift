@@ -10,10 +10,12 @@ import UIKit
 
 class Page1CreateCourseViewController: UIViewController {
 
+    // MARK: - Properties
     var course: CourseRepresentation?
-    let courseController = CourseController()
-    let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit"]]
+    let courseController = CourseController.shared
+    var classTypeArray = CourseController.shared.classTypeArray
 
+    // MARK: - IBOutlets
     @IBOutlet weak var classTypeUIPicker: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var className: UITextField!
@@ -22,6 +24,7 @@ class Page1CreateCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        classTypeArray = courseController.classTypeArray
         classTypeUIPicker.dataSource = self
         classTypeUIPicker.delegate = self
     }
@@ -31,7 +34,6 @@ class Page1CreateCourseViewController: UIViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let page2VC = segue.destination as? Page2CreateCourseViewController else { return }
         page2VC.course = course
-        page2VC.courseController = courseController
      }
 
     @IBAction func nextButtonTapped(_ sender: Any) {
