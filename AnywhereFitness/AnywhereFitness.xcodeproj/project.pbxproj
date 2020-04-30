@@ -43,7 +43,6 @@
 		E27747D2245A195600C5D0AB /* AnywhereFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747D1245A195600C5D0AB /* AnywhereFitnessTests.swift */; };
 		E27747DA245A1AB600C5D0AB /* UserControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747D9245A1AB600C5D0AB /* UserControllerTests.swift */; };
 		E27747DC245A1AC800C5D0AB /* CourseControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DB245A1AC800C5D0AB /* CourseControllerTests.swift */; };
-		E27747DE245A4C2600C5D0AB /* classes.json in Resources */ = {isa = PBXBuildFile; fileRef = E27747DD245A4C2600C5D0AB /* classes.json */; };
 		E27747E0245A4E9C00C5D0AB /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DF245A4E9C00C5D0AB /* mockData.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +99,6 @@
 		E27747D3245A195600C5D0AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E27747D9245A1AB600C5D0AB /* UserControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserControllerTests.swift; sourceTree = "<group>"; };
 		E27747DB245A1AC800C5D0AB /* CourseControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseControllerTests.swift; sourceTree = "<group>"; };
-		E27747DD245A4C2600C5D0AB /* classes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classes.json; sourceTree = "<group>"; };
 		E27747DF245A4E9C00C5D0AB /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +188,6 @@
 				E26493D524553453009D759F /* Assets.xcassets */,
 				E26493D724553453009D759F /* LaunchScreen.storyboard */,
 				E26493DA24553453009D759F /* Info.plist */,
-				E27747DD245A4C2600C5D0AB /* classes.json */,
 				E27747DF245A4E9C00C5D0AB /* mockData.swift */,
 			);
 			name = Resources;
@@ -363,7 +360,6 @@
 			files = (
 				E26493D924553453009D759F /* LaunchScreen.storyboard in Resources */,
 				E266C15B245881B300FC8E7D /* ClientMaster.storyboard in Resources */,
-				E27747DE245A4C2600C5D0AB /* classes.json in Resources */,
 				E26493D624553453009D759F /* Assets.xcassets in Resources */,
 				E26493D424553451009D759F /* Main.storyboard in Resources */,
 				E266C1592458819D00FC8E7D /* InstructorMaster.storyboard in Resources */,
