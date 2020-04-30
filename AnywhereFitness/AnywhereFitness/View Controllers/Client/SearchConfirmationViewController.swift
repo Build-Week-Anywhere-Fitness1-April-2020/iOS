@@ -10,14 +10,41 @@ import UIKit
 
 class SearchConfirmationViewController: UIViewController {
 
+    // MARK: - Properties
+    var course: CourseRepresentation?
+    var day: String?
+
+    // MARK: - IBOutlets
+    @IBOutlet weak var classTitleLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var backgroundView: UIView!
+
+    // MARK: - IBActions
+    @IBAction func doneButtonTapped(_ sender: Any) {
+    }
+    @IBAction func addAnotherClassButtonTapped(_ sender: Any) {
+    }
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
     }
-    
 
-   
-
+    func updateViews() {
+        guard let course = course else { return }
+        classTitleLabel.text = course.name
+        dayLabel.text = day
+        timeLabel.text = course.time
+        if course.classType == "Yoga" {
+            backgroundView.setBackground(toImageNamed: "YogaImage")
+        } else if course.classType == "Weightlifting" {
+            backgroundView.setBackground(toImageNamed: "WeightliftingImage")
+        } else if course.classType == "Crossfit" {
+            backgroundView.setBackground(toImageNamed: "BoxingImage")
+        } else {
+            backgroundView.setBackground()
+        }
+    }
 }

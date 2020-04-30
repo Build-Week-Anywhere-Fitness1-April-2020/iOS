@@ -106,9 +106,27 @@ class UserController {
                 return
             }
 
+            struct UserIdentifier: Decodable {
+                let user: Identifier
+                
+                struct Identifier: Decodable {
+                    let identifier: Int
+                    
+                    enum CodingKeys: String, CodingKey {
+                        case identifier = "id"
+
+                    }
+                }
+
+                
+            }
+
             do {
                 let bearer = try self.jsonDecoder.decode(Bearer.self, from: data)
+                let identification = try self.jsonDecoder.decode(UserIdentifier.self, from: data)
                 UserController.shared.bearer = bearer
+                let identifier = identification.user.identifier
+                UserDefaults.standard.set(identifier, forKey: "userID")
 
                 completion(nil)
 

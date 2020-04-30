@@ -183,6 +183,49 @@ class CourseController {
             self.courses.append(course)
         } .resume()
     }
+    
+    func postAttendee(courseID: Int, completion: @escaping CompletionHandler = { _ in }) {
+
+        let addAttendeeURL = self.baseURL.appendingPathComponent("classes/add-attendee")
+
+        guard let bearer = UserController.shared.bearer else {
+            completion(.failure(.noRep))
+            return
+        }
+
+        var request = URLRequest(url: addAttendeeURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+
+        let jsonEncoder = JSONEncoder()
+
+        let accountID = UserDefaults.standard.integer(forKey: "userID")
+        let attendee = AddAttendee(accountID: accountID, classID: courseID)
+
+        do {
+            let jsonData = try jsonEncoder.encode(attendee)
+            request.httpBody = jsonData
+        } catch {
+            NSLog("Error enconding user objects: \(error)")
+            completion(.failure(.noEncode))
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 201 {
+                completion(.failure(.noRep))
+                return
+            }
+            if let error = error {
+                NSLog("print \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            completion(.success(true))
+        } .resume()
+    }
 
     private func updateCourses(with representations: [CourseRepresentation]) throws {
 
@@ -190,7 +233,7 @@ class CourseController {
 
         print(identifiersToFetch)
 
-        var representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
 
         var coursesToCreate = representationsByID
 

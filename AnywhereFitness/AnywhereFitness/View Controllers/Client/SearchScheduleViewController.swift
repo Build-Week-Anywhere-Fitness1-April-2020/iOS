@@ -10,27 +10,63 @@ import UIKit
 
 class SearchScheduleViewController: UIViewController {
 
-
     // MARK: - Properties
       var course: CourseRepresentation?
-      let courseController = CourseController()
+    //let courseController = CourseController.shared
+
+    // MARK: - IBOutlets
+    @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var scheduleTableView: UITableView!
+    @IBOutlet weak var classNameLabel: UILabel!
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        scheduleTableView.dataSource = self
+        scheduleTableView.delegate = self
+        updateViews()
     }
-    
 
-    /*
+    func updateViews() {
+        guard let course = course else { return }
+        classNameLabel.text = course.name
+        if course.classType == "Yoga" {
+            backgroundView.setBackground(toImageNamed: "YogaImage")
+        } else if course.classType == "Weightlifting" {
+            backgroundView.setBackground(toImageNamed: "WeightliftingImage")
+        } else if course.classType == "Crossfit" {
+            backgroundView.setBackground(toImageNamed: "BoxingImage")
+        } else {
+            backgroundView.setBackground()
+        }
+    }
+
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "SearchSegue4" {
+            guard let searchReserveVC = segue.destination as? SearchReserveViewController, let index = scheduleTableView.indexPathForSelectedRow?.row else { return }
+            searchReserveVC.course = course
+            searchReserveVC.day = course?.days[index]
+        }
     }
-    */
+}
 
+extension SearchScheduleViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        course?.days.count ?? 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath)
+
+        guard let course = course else { return UITableViewCell() }
+        cell.textLabel?.text = "\(course.days[indexPath.row])"
+        cell.detailTextLabel?.text = course.time
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "SearchSegue4", sender: self)
+    }
 }

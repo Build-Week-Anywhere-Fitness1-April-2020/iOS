@@ -110,7 +110,6 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="e9R-8a-SKP" eventType="touchUpInside" id="kbl-5P-rAU"/>
-                                    <segue destination="wu8-yf-7d8" kind="show" identifier="SearchSegue1" id="pUu-Mm-nil"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="okx-5h-EXW">
@@ -164,9 +163,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Anywhere Fitness" id="1lF-MA-uLV"/>
                     <connections>
+                        <outlet property="backgroundView" destination="MRb-oq-uuZ" id="NnP-7A-u59"/>
                         <outlet property="classTypeUIPicker" destination="Gps-Mn-LA7" id="N1t-Ob-7sY"/>
                         <outlet property="courseLevel" destination="xyB-yL-TJd" id="Jph-q8-DaP"/>
                         <outlet property="locationTextField" destination="vcz-rx-dgG" id="AcT-VP-A1H"/>
+                        <segue destination="wu8-yf-7d8" kind="show" identifier="SearchSegue1" id="eco-mq-5yh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTz-yl-CtF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -240,6 +241,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KYC-E8-x3e"/>
                     <connections>
+                        <outlet property="backgroundView" destination="cE9-a6-GwH" id="UwZ-UX-YXw"/>
                         <outlet property="searchResultsTableView" destination="P1d-3C-O8U" id="Y43-L0-tkE"/>
                         <segue destination="xO3-QJ-WRj" kind="show" identifier="SearchSegue2" id="TRL-Sk-MSQ"/>
                     </connections>
@@ -321,7 +323,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="0Li-cV-Drb" kind="show" identifier="SearchSegue3" id="Ua4-LP-w3f"/>
+                                            <action selector="viewScheduleTapped:" destination="xO3-QJ-WRj" eventType="touchUpInside" id="1GG-CJ-2xa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -357,6 +359,14 @@
                         <viewLayoutGuide key="safeArea" id="7Gj-IY-77Q"/>
                     </view>
                     <navigationItem key="navigationItem" id="1D5-PW-Hv8"/>
+                    <connections>
+                        <outlet property="aboutClassLabel" destination="mfJ-3h-rUk" id="eIG-rH-G3A"/>
+                        <outlet property="backgroundView" destination="RWM-6Q-XNg" id="QkB-aQ-s3H"/>
+                        <outlet property="classTitleLabel" destination="clH-cz-AQt" id="aWD-B8-TPA"/>
+                        <outlet property="costLabel" destination="LFV-eq-HcD" id="pHX-Yv-bdI"/>
+                        <outlet property="equipmentLabel" destination="IvZ-kG-sT7" id="d1r-dh-vNz"/>
+                        <segue destination="0Li-cV-Drb" kind="show" identifier="SearchSegue3" id="Tzx-32-9ch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7e-HQ-hpD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -380,7 +390,7 @@
                                 <rect key="frame" x="0.0" y="185.5" width="414" height="627.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vHx-cI-9mc" detailTextLabel="fcZ-lv-L8H" style="IBUITableViewCellStyleValue1" id="Z6f-tn-oMf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DayCell" textLabel="vHx-cI-9mc" detailTextLabel="fcZ-lv-L8H" style="IBUITableViewCellStyleValue1" id="Z6f-tn-oMf">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z6f-tn-oMf" id="8xh-Im-Wy3">
@@ -421,6 +431,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Nf7-Kg-plV"/>
                     <connections>
+                        <outlet property="backgroundView" destination="iEq-rW-OLK" id="dya-hK-mW8"/>
+                        <outlet property="classNameLabel" destination="K8m-Um-rL2" id="yup-ur-Vim"/>
+                        <outlet property="scheduleTableView" destination="Nek-aO-Ztb" id="hGd-8Z-lRr"/>
                         <segue destination="8DX-pz-VXR" kind="show" identifier="SearchSegue4" id="FaM-4z-nRk"/>
                     </connections>
                 </viewController>
@@ -617,7 +630,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="u40-H1-KJX" kind="show" identifier="SearchSegue5" id="qxV-uk-xUS"/>
+                                                    <action selector="reserveButtonTapped:" destination="8DX-pz-VXR" eventType="touchUpInside" id="xWE-mw-EMC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -666,6 +679,16 @@
                         <viewLayoutGuide key="safeArea" id="Kel-q4-GZm"/>
                     </view>
                     <navigationItem key="navigationItem" id="yv8-LW-2X6"/>
+                    <connections>
+                        <outlet property="additionalInfoLabel" destination="esN-hR-89G" id="W50-Fe-Wzc"/>
+                        <outlet property="addressLabel" destination="hCy-xG-r0W" id="Xym-Bn-x5t"/>
+                        <outlet property="backgroundView" destination="DxX-pL-UdG" id="PgJ-um-KCq"/>
+                        <outlet property="classTitleLabel" destination="Nwq-NX-X4B" id="nXm-aV-Amh"/>
+                        <outlet property="dayLabel" destination="S0z-Wb-yGs" id="Atx-86-uMB"/>
+                        <outlet property="timeLabel" destination="k9R-B8-1GK" id="320-BB-wZ1"/>
+                        <outlet property="whenToArriveLabel" destination="TUy-6g-AqA" id="oj7-jj-wZX"/>
+                        <segue destination="u40-H1-KJX" kind="show" identifier="SearchSegue5" id="lJV-FG-mcu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nep-oF-JbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -691,6 +714,9 @@
                                         <state key="normal" title="Add Another Class">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addAnotherClassButtonTapped:" destination="u40-H1-KJX" eventType="touchUpInside" id="3K7-mE-9SP"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00 am - 7:50 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cs-gS-qco">
                                         <rect key="frame" x="136.5" y="248.5" width="141" height="21"/>
@@ -719,6 +745,9 @@
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="u40-H1-KJX" eventType="touchUpInside" id="l33-ny-8v8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -749,6 +778,12 @@
                         <viewLayoutGuide key="safeArea" id="yTe-oL-NQe"/>
                     </view>
                     <navigationItem key="navigationItem" id="YV7-s4-2p9"/>
+                    <connections>
+                        <outlet property="backgroundVIew" destination="kom-2u-QkJ" id="cbo-8m-gxt"/>
+                        <outlet property="classTitleLabel" destination="iwg-fZ-OgZ" id="TLj-qk-kFi"/>
+                        <outlet property="dayLabel" destination="GqJ-WQ-bHQ" id="8zg-7k-ixT"/>
+                        <outlet property="timeLabel" destination="0cs-gS-qco" id="1Qj-hs-foI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlB-pH-OCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

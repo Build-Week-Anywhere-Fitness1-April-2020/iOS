@@ -33,6 +33,11 @@ struct UserSignIn: Codable {
     let role: String
 }
 
+struct AddAttendee: Codable {
+    let accountID: Int
+    let classID: Int
+}
+
 enum Role: String, Codable {
     case instructor
     case client
