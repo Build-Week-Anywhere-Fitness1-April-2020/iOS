@@ -261,8 +261,8 @@
 			children = (
 				E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */,
 				E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */,
-				E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */,
 				E27747C3245A16D500C5D0AB /* SearchResultsViewController.swift */,
+				E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */,
 				E27747C5245A16F200C5D0AB /* SearchScheduleViewController.swift */,
 				E27747C7245A170600C5D0AB /* SearchReserveViewController.swift */,
 				E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */,

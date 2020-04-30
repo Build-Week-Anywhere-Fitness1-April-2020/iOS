@@ -109,6 +109,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="searchButtonTapped:" destination="e9R-8a-SKP" eventType="touchUpInside" id="kbl-5P-rAU"/>
                                     <segue destination="wu8-yf-7d8" kind="show" identifier="SearchSegue1" id="pUu-Mm-nil"/>
                                 </connections>
                             </button>
@@ -128,7 +129,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyB-yL-TJd">
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyB-yL-TJd">
                                 <rect key="frame" x="20" y="364.5" width="374" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="vFa-uL-pFK"/>
@@ -162,6 +163,11 @@
                         <viewLayoutGuide key="safeArea" id="qpn-S4-NIJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Anywhere Fitness" id="1lF-MA-uLV"/>
+                    <connections>
+                        <outlet property="classTypeUIPicker" destination="Gps-Mn-LA7" id="N1t-Ob-7sY"/>
+                        <outlet property="courseLevel" destination="xyB-yL-TJd" id="Jph-q8-DaP"/>
+                        <outlet property="locationTextField" destination="vcz-rx-dgG" id="AcT-VP-A1H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTz-yl-CtF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

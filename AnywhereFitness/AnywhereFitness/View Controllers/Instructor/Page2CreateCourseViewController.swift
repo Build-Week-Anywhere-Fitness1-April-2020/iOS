@@ -12,9 +12,9 @@ class Page2CreateCourseViewController: UIViewController {
 
     // MARK: - Properties
     var course: CourseRepresentation?
-    var courseController: CourseController?
-    let courseIntensityArray: [[String]] = [["Class Level"], ["Beginner", "Intermediate", "Advanced"]]
-
+    let courseController = CourseController.shared
+    var courseIntensityArray = CourseController.shared.courseIntensityArray
+    
     // MARK: - IBOutlets
     @IBOutlet weak var courseDescriptions: UITextView!
     @IBOutlet weak var courseLevel: UIPickerView!

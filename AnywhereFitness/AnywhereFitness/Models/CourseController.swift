@@ -30,12 +30,17 @@ class CourseController {
     // MARK: - Properties
     var courses: [CourseRepresentation] = []
     var bearer: Bearer?
+    var allCourses: [CourseRepresentation] = []
+    static let shared = CourseController()
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
-
+    
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
 
+    let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit"]]
+    let courseIntensityArray: [[String]] = [["Class Level"], ["Beginner", "Intermediate", "Advanced"]]
+
     // MARK: - Methods
-    func fetchCourses(completion: @escaping CompletionHandler = { _ in }) {
+    func fetchCourses(completion: @escaping (Result<[CourseRepresentation], NetworkError>) -> Void) {
 
         guard let bearer = bearer else {
             print("bearer for fetching courses is missing")
@@ -49,6 +54,7 @@ class CourseController {
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+
 
 //        URLSession.shared.dataTask(with: request) { data, response, error in
 //
@@ -89,6 +95,7 @@ class CourseController {
             NSLog("Error decoding classes from server: \(error)")
             completion(.failure(.noDecode))
         }
+
     }
 
     func searchForCourse(with searchTerm: String, completion: @escaping CompletionHandler = { _ in }) {
@@ -142,43 +149,43 @@ class CourseController {
 
     func postClass(course: CourseRepresentation, completion: @escaping CompletionHandler = { _ in }) {
 
-            let createClassURL = self.baseURL.appendingPathComponent("classes")
+        let createClassURL = self.baseURL.appendingPathComponent("classes")
 
-            guard let bearer = self.bearer else {
+        guard let bearer = self.bearer else {
+            completion(.failure(.noRep))
+            return
+        }
+
+        var request = URLRequest(url: createClassURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+
+        let jsonEncoder = JSONEncoder()
+
+        do {
+            let jsonData = try jsonEncoder.encode(course)
+            request.httpBody = jsonData
+        } catch {
+            NSLog("Error enconding user objects: \(error)")
+            completion(.failure(.noEncode))
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
                 completion(.failure(.noRep))
                 return
             }
-
-            var request = URLRequest(url: createClassURL)
-            request.httpMethod = HTTPMethod.post.rawValue
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
-
-            let jsonEncoder = JSONEncoder()
-
-            do {
-                let jsonData = try jsonEncoder.encode(course)
-                request.httpBody = jsonData
-            } catch {
-                NSLog("Error enconding user objects: \(error)")
-                completion(.failure(.noEncode))
+            if let error = error {
+                NSLog("print \(error)")
+                completion(.failure(.otherError))
                 return
             }
-
-            URLSession.shared.dataTask(with: request) { (_, response, error) in
-                if let response = response as? HTTPURLResponse,
-                    response.statusCode != 200 {
-                    completion(.failure(.noRep))
-                    return
-                }
-                if let error = error {
-                    NSLog("print \(error)")
-                    completion(.failure(.otherError))
-                    return
-                }
-                self.courses.append(course)
-            } .resume()
-        }
+            self.courses.append(course)
+        } .resume()
+    }
 
     private func updateCourses(with representations: [CourseRepresentation]) throws {
         let identifiersToFetch = representations.compactMap {UUID(uuidString: $0.identifier) }
