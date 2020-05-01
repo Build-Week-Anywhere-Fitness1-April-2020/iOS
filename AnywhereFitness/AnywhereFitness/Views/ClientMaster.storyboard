@@ -122,6 +122,7 @@
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gps-Mn-LA7">
                                 <rect key="frame" x="20" y="244.5" width="374" height="100"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="gqp-VE-Bka"/>
                                 </constraints>
@@ -648,6 +649,7 @@
                                         </state>
                                         <connections>
                                             <action selector="addAnotherClassButtonTapped:" destination="u40-H1-KJX" eventType="touchUpInside" id="3K7-mE-9SP"/>
+                                            <segue destination="bui-NL-U8K" kind="unwind" unwindAction="unwindAndClearWithUnwindSegue:" id="ERk-qd-HC5"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00 am - 7:50 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cs-gS-qco">
@@ -679,6 +681,7 @@
                                         </state>
                                         <connections>
                                             <action selector="doneButtonTapped:" destination="u40-H1-KJX" eventType="touchUpInside" id="l33-ny-8v8"/>
+                                            <segue destination="bui-NL-U8K" kind="unwind" unwindAction="unwindAndTabWithUnwindSegue:" id="kwD-w2-E1t"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -718,6 +721,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlB-pH-OCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bui-NL-U8K" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5662" y="529"/>
         </scene>

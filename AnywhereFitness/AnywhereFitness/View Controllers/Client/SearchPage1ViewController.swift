@@ -31,6 +31,7 @@ class SearchPage1ViewController: UIViewController {
         courseLevel.delegate = self
         classTypeUIPicker.dataSource = self
         classTypeUIPicker.delegate = self
+        locationTextField.layer.borderWidth = 1
         backgroundView.setBackground()
     }
 
@@ -39,14 +40,26 @@ class SearchPage1ViewController: UIViewController {
         let classType = classTypeUIPicker.selectedRow(inComponent: 1)
         let courseIntensity = courseLevel.selectedRow(inComponent: 1)
         let myLevel = courseLevelArray[1][courseIntensity]
-        let myClassType = classTypeArray[1][classType]
         let myLocation = locationTextField.text
         searchResults = courseController.allCourses
-        mySearchResults = searchResults.filter { $0.classType == myClassType
+        mySearchResults = searchResults.filter { $0.classType == classType
             && $0.intensity == myLevel
             && $0.location == myLocation }
         print(mySearchResults)
         performSegue(withIdentifier: "SearchSegue1", sender: self)
+    }
+
+    @IBAction func unwindAndClear(unwindSegue: UIStoryboardSegue) {
+        locationTextField.text = ""
+        classTypeUIPicker.selectRow(0, inComponent: 1, animated: true)
+        courseLevel.selectRow(0, inComponent: 1, animated: true)
+    }
+
+    @IBAction func unwindAndTab(unwindSegue: UIStoryboardSegue) {
+        locationTextField.text = ""
+        classTypeUIPicker.selectRow(0, inComponent: 1, animated: true)
+        courseLevel.selectRow(0, inComponent: 1, animated: true)
+        tabBarController?.selectedIndex = 0
     }
 
     // MARK: - Navigation

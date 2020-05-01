@@ -29,6 +29,30 @@ class LoginViewController: UIViewController {
     var userController = UserController()
     var loginType: LoginType?
     var role: Role?
+    lazy var successTitle: String = {
+        if let loginType = self.loginType {
+            let message = loginType == LoginType.signIn ? "Sign In" : "Sign Up"
+            let success = "\(message) Successful"
+            return success
+        }
+        return " "
+    }()
+    lazy var failureTitle: String = {
+        if let loginType = self.loginType {
+            let message = loginType == LoginType.signIn ? "Sign In" : "Sign Up"
+            let success = "\(message) Failed"
+            return success
+        }
+        return " "
+    }()
+    lazy var successMessage: String = {
+        if let loginType = self.loginType {
+            let message = loginType == LoginType.signUp ? "Now please log in" : "Lets go work out!"
+            return message
+        }
+        return " "
+    }()
+    lazy var failureMessage: String = "Please try again later."
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -63,18 +87,13 @@ class LoginViewController: UIViewController {
 
                 if let error = error {
                     NSLog("Error occurred during sign up: \(error)")
+                    self.presentAlert(title: self.failureTitle,
+                                      message: self.failureMessage, success: false)
                 } else {
                     DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Sign Up Successful",
-                                                                message: "Now please log in", preferredStyle: .alert)
-                        let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
-                            self.dismiss(animated: true, completion: nil)
-                        }
-                        alertController.addAction(alertAction)
-                        self.present(alertController, animated: true, completion: {
-                            self.loginType = .signIn
-                        })
                         UserDefaults.standard.set("token", forKey: "bearerToken")
+                        self.presentAlert(title: self.successTitle,
+                                          message: self.successMessage, success: true)
                     }
                 }
             }
@@ -83,27 +102,42 @@ class LoginViewController: UIViewController {
             userController.signIn(with: user) { (error) in
                 if let error = error {
                     DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Sign In Failed",
-                                message: "Please try again later.", preferredStyle: .alert)
-                        let alertAction = UIAlertAction(title: "OK", style: .default)
-                        alertController.addAction(alertAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        self.presentAlert(title: self.failureTitle,
+                                          message: self.failureMessage, success: false)
                     }
                     print(error)
                     return
                 }
 
                 DispatchQueue.main.async {
-                    let alertController = UIAlertController(title: "Sign In Successful",
-                                                            message: "Lets go work out!", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
-                    self.performSegue(withIdentifier: (role == Role.client) ? "ClientSegue" : "InstructorSegue",
-                                      sender: self)
-                    }
-                    alertController.addAction(alertAction)
-                    self.present(alertController, animated: true, completion: nil)
+                    self.presentAlert(title: self.successTitle,
+                                      message: self.successMessage, success: true)
                 }
             }
         }
+    }
+
+    func presentAlert(title: String, message: String, success: Bool) {
+        let alertController = UIAlertController(title: title,
+                                                message: message, preferredStyle: .alert)
+        let alertActionFailure = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertActionSuccess = UIAlertAction(title: "OK", style: .default) { _ in
+            if self.loginType == LoginType.signIn {
+                self.performSegue(withIdentifier: (self.role == Role.client) ? "ClientSegue" : "InstructorSegue",
+                sender: self)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        if success {
+            alertController.addAction(alertActionSuccess)
+        } else {
+            alertController.addAction(alertActionFailure)
+        }
+        self.present(alertController, animated: true, completion: {
+            if self.loginType == LoginType.signUp {
+                self.loginType = .signIn
+            }
+        })
     }
 }

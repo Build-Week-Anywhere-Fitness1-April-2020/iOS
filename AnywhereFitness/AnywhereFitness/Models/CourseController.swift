@@ -16,6 +16,7 @@ enum NetworkError: Error {
     case noDecode
     case noEncode
     case noRep
+    case wrongResponse
 }
 
 enum HTTPMethod: String {
@@ -39,6 +40,7 @@ class CourseController {
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
 
     let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit", "Pilates"]]
+    let classTypeIntArray: [[Int]] = [[], [1, 2, 3, 4]]
     let courseIntensityArray: [[String]] = [["Class Level"], ["Beginner", "Intermediate", "Advanced"]]
 
     // MARK: - Methods
@@ -47,7 +49,7 @@ class CourseController {
         do {
             let data = jsonData
 
-            let courseRepresentations = try jsonDecoder.decode([ CourseRepresentation].self, from: data)
+            let courseRepresentations = try jsonDecoder.decode([CourseRepresentation].self, from: data)
             try self.updateCourses(with: courseRepresentations)
             completion(.success(courseRepresentations))
         } catch {
@@ -100,42 +102,11 @@ class CourseController {
         //        }.resume()
     }
 
-    func searchForCourse(with searchTerm: String, completion: @escaping CompletionHandler = { _ in }) {
-        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let queryParameters = ["classes": searchTerm]
-        components?.queryItems = queryParameters.map({URLQueryItem(name: $0.key, value: $0.value)})
-
-        guard let requestURL = components?.url else {
-            completion(.failure(.otherError))
-            return
-        }
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
-            if let error = error {
-                NSLog("Error searching for class with search term \(searchTerm): \(error)")
-                completion(.failure(.otherError))
-                return
-            }
-            guard let data = data else {
-                NSLog("No data returned from data task")
-                completion(.failure(.noData))
-                return
-            }
-            do {
-                let courseRepresentations = try JSONDecoder().decode(CourseRepresentations.self, from: data).results
-                self.courses = courseRepresentations
-                completion(.success(true))
-            } catch {
-                NSLog("Error decoding JSON data: \(error)")
-                completion(.failure(.noDecode))
-            }
-        }.resume()
-    }
-
     func createCourse(name: String,
                       duration: Double,
                       maxSize: Int,
-                      classType: String,
-                      instructor: String) -> CourseRepresentation {
+                      classType: Int,
+                      instructor: Int) -> CourseRepresentation {
 
         let course = CourseRepresentation(name: name,
                                           duration: duration,
@@ -170,8 +141,8 @@ class CourseController {
 
         URLSession.shared.dataTask(with: request) { (_, response, error) in
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(.failure(.noRep))
+                response.statusCode != 201 {
+                completion(.failure(.wrongResponse))
                 return
             }
             if let error = error {
@@ -266,11 +237,11 @@ class CourseController {
         course.intensity = representation.intensity
         course.location = representation.location
         course.maxSize = Int16(representation.maxSize)
-        course.classType = representation.classType
-        course.imgURL = representation.imgURL
+        course.classType = Int32(representation.classType)
+        course.imgURL = Int32(representation.imgURL)
         course.courseDescription = representation.courseDescription
         course.cost = representation.cost
-        course.instructor = representation.instructor
+        course.instructor = Int32(representation.instructor)
         let days = representation.days.joined(separator: ",")
         course.days = days
         course.address = representation.address

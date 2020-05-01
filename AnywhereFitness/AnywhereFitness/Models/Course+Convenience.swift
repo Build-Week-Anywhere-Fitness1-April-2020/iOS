@@ -16,10 +16,7 @@ extension Course {
             let time = time,
             let startDate = startDate,
             let location = location,
-            let classType = classType,
-            let imgURL = imgURL,
             let courseDescription = courseDescription,
-            let instructor = instructor,
             let days = days,
             let address = address
             else { return nil }
@@ -33,11 +30,11 @@ extension Course {
                                     intensity: intensity ?? "medium",
                                     location: location,
                                     maxSize: Int(maxSize),
-                                    classType: classType,
-                                    imgURL: imgURL,
+                                    classType: Int(classType),
+                                    imgURL: Int(imgURL),
                                     courseDescription: courseDescription,
                                     cost: cost,
-                                    instructor: instructor,
+                                    instructor: Int(instructor),
                                     days: daysArray,
                                     address: address,
                                     equipmentRequired: equipmentRequired ?? "None",
@@ -52,11 +49,11 @@ extension Course {
                                         intensity: String,
                                         location: String,
                                         maxSize: Int,
-                                        classType: String,
-                                        imgURL: String,
+                                        classType: Int,
+                                        imgURL: Int,
                                         courseDescription: String,
                                         cost: Double,
-                                        instructor: String,
+                                        instructor: Int,
                                         days: String,
                                         address: String,
                                         equipmentRequired: String,
@@ -73,11 +70,11 @@ extension Course {
         self.intensity = intensity
         self.location = location
         self.maxSize = Int16(maxSize)
-        self.classType = classType
-        self.imgURL = imgURL
+        self.classType = Int32(classType)
+        self.imgURL = Int32(imgURL)
         self.courseDescription = courseDescription
         self.cost = cost
-        self.instructor = instructor
+        self.instructor = Int32(instructor)
         self.days = days
         self.address = address
         self.equipmentRequired = equipmentRequired
