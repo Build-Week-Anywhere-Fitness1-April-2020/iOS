@@ -27,9 +27,6 @@ class Page1CreateCourseViewController: UIViewController {
         classTypeArray = courseController.classTypeArray
         classTypeUIPicker.dataSource = self
         classTypeUIPicker.delegate = self
-        className.layer.borderWidth = 1
-        classSize.layer.borderWidth = 1
-        classLength.layer.borderWidth = 1
     }
 
      // MARK: - Navigation
@@ -64,13 +61,13 @@ class Page1CreateCourseViewController: UIViewController {
             let maxSize = Int(maxSizeString) else { return }
 
         let classType = classTypeUIPicker.selectedRow(inComponent: 1)
-        let userValue = UserDefaults.standard.value(forKey: "userID")
-        guard let instructorID = userValue as? Int else { return }
+        let userValue = UserDefaults.standard.value(forKey: UserDefaultKeys.user.rawValue)
+        guard let instructorName: String = userValue as? String else { return }
 
         course = courseController.createCourse(name: className,
                                                duration: duration,
                                                maxSize: maxSize,
-                                               classType: classType, instructor: instructorID)
+                                               classType: classTypeArray[1][classType], instructor: instructorName)
         performSegue(withIdentifier: "CreateClassFirstSegue", sender: self)
     }
 }

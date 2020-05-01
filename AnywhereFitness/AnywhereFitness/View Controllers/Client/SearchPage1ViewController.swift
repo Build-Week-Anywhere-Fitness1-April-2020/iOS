@@ -31,7 +31,6 @@ class SearchPage1ViewController: UIViewController {
         courseLevel.delegate = self
         classTypeUIPicker.dataSource = self
         classTypeUIPicker.delegate = self
-        locationTextField.layer.borderWidth = 1
         backgroundView.setBackground()
     }
 
@@ -40,9 +39,10 @@ class SearchPage1ViewController: UIViewController {
         let classType = classTypeUIPicker.selectedRow(inComponent: 1)
         let courseIntensity = courseLevel.selectedRow(inComponent: 1)
         let myLevel = courseLevelArray[1][courseIntensity]
+        let myClassType = classTypeArray[1][classType]
         let myLocation = locationTextField.text
         searchResults = courseController.allCourses
-        mySearchResults = searchResults.filter { $0.classType == classType
+        mySearchResults = searchResults.filter { $0.classType == myClassType
             && $0.intensity == myLevel
             && $0.location == myLocation }
         print(mySearchResults)

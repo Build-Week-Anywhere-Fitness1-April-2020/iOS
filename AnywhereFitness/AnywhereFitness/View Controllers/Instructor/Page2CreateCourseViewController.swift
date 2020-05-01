@@ -24,7 +24,6 @@ class Page2CreateCourseViewController: UIViewController {
         super.viewDidLoad()
         courseLevel.dataSource = self
         courseLevel.delegate = self
-        courseDescriptions.layer.borderWidth = 1
     }
 
     // MARK: - IBActions

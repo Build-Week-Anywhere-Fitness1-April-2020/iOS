@@ -27,19 +27,6 @@ struct UserLogin: Codable {
     let roles: [String]
 }
 
-//struct UserReturn: Codable {
-//    let identifier: Int
-//    let username: String
-//    let email: String
-//    let displayName: String
-//    let gender: String
-//    
-//    enum UserReturnKeys: String, CodingKeys {
-//        case identifier = "id"
-//        case username, email, displayName, gender
-//    }
-//}
-
 struct UserSignIn: Codable {
     let username: String
     let password: String

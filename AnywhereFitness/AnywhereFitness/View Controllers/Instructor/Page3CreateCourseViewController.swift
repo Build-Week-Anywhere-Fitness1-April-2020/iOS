@@ -46,9 +46,6 @@ class Page3CreateCourseViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        classStartTime.layer.borderWidth = 1
-        classEquipment.layer.borderWidth = 1
-        classCost.layer.borderWidth = 1
     }
 
     // MARK: - IBAction

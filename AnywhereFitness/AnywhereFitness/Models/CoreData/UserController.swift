@@ -67,7 +67,6 @@ class UserController {
                 completion(error)
                 return
             }
-
             completion(nil)
             print("passed sign in")
         }.resume()

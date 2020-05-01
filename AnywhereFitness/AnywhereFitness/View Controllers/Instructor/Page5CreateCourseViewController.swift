@@ -20,8 +20,6 @@ class Page5CreateCourseViewController: UIViewController {
     // MARK: - IBOutlets
     override func viewDidLoad() {
         super.viewDidLoad()
-        classArrive.layer.borderWidth = 1
-        additionalInfo.layer.borderWidth = 1
     }
 
     @IBAction func finishButtonTapped(_ sender: Any) {
@@ -34,13 +32,7 @@ class Page5CreateCourseViewController: UIViewController {
         course.arrivalDescription = classArrive
         course.additionalInfo = additionalInfo
 
-        courseController?.postClass(course: course, completion: { (result) in
-            if result == .success(true) {
-                self.performSegue(withIdentifier: "CreateClassLastSegue", sender: self)
-            } else {
-                print("\(result)")
-                print("\(course)")
-            }
-        })
+        courseController?.postClass(course: course)
+        performSegue(withIdentifier: "CreateClassLastSegue", sender: self)
     }
 }

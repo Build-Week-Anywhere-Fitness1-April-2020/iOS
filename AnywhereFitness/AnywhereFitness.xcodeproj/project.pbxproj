@@ -45,7 +45,6 @@
 		E27747DC245A1AC800C5D0AB /* CourseControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DB245A1AC800C5D0AB /* CourseControllerTests.swift */; };
 		E27747E0245A4E9C00C5D0AB /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DF245A4E9C00C5D0AB /* mockData.swift */; };
 		E27AA053245C6CF900CF79E7 /* AnywhereFitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27AA052245C6CF900CF79E7 /* AnywhereFitnessUITests.swift */; };
-		E27AA05B245C7F9300CF79E7 /* ClassType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27AA05A245C7F9300CF79E7 /* ClassType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +111,6 @@
 		E27AA050245C6CF900CF79E7 /* AnywhereFitnessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnywhereFitnessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27AA052245C6CF900CF79E7 /* AnywhereFitnessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnywhereFitnessUITests.swift; sourceTree = "<group>"; };
 		E27AA054245C6CF900CF79E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E27AA05A245C7F9300CF79E7 /* ClassType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,7 +251,6 @@
 				1874F0CC24573B970026023D /* User.swift */,
 				1874F0CE24573BB80026023D /* Bearer.swift */,
 				18EF9ADE2457496C00BD0C9E /* CoreData */,
-				E27AA05A245C7F9300CF79E7 /* ClassType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -517,7 +514,6 @@
 				E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */,
 				E27747CA245A171C00C5D0AB /* SearchConfirmationViewController.swift in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
-				E27AA05B245C7F9300CF79E7 /* ClassType.swift in Sources */,
 				E266C157245860CF00FC8E7D /* setBackground.swift in Sources */,
 				E27747C2245A16B500C5D0AB /* SearchDetail1ViewController.swift in Sources */,
 				E27747C4245A16D500C5D0AB /* SearchResultsViewController.swift in Sources */,

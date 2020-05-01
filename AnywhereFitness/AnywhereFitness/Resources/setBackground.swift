@@ -14,7 +14,7 @@ extension UIView {
         let backgroundImageView = UIImageView(frame: self.bounds)
         backgroundImageView.image = backgroundImage
         backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.alpha = CGFloat(exactly: NSNumber(value: 0.6))!
+        backgroundImageView.alpha = CGFloat(exactly: NSNumber(value: 0.75))!
         self.insertSubview(backgroundImageView, at: 0)
     }
 }

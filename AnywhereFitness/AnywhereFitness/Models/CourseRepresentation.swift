@@ -18,11 +18,11 @@ struct CourseRepresentation: Equatable, Codable {
     var intensity: String
     var location: String
     var maxSize: Int
-    var classType: Int
-    var imgURL: Int
+    var classType: String
+    var imgURL: String
     var courseDescription: String
     var cost: Double
-    var instructor: Int
+    var instructor: String
     var days: [String]
     var address: String
     var equipmentRequired: String
@@ -44,12 +44,12 @@ struct CourseRepresentation: Equatable, Codable {
                   startDate: String = "",
                   intensity: String = "",
                   location: String = "",
-                  maxSize: Int = 0,
-                  classType: Int = 0,
-                  imgURL: Int = 1,
+                  maxSize: Int,
+                  classType: String,
+                  imgURL: String = "",
                   courseDescription: String = "",
                   cost: Double = 0,
-                  instructor: Int = 0,
+                  instructor: String = "",
                   days: [String] = [],
                   address: String = "",
                   equipmentRequired: String = "",
