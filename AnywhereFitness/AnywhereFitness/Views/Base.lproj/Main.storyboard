@@ -90,7 +90,14 @@
                                 </constraints>
                                 <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Anwhere Fitness" id="uxd-qE-2L1"/>
+                                    <navigationItem title="Anwhere Fitness" id="uxd-qE-2L1">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrow.left" catalog="system" id="9gr-06-sNr">
+                                            <connections>
+                                                <action selector="backButton:" destination="HeZ-a9-Esn" id="ba3-av-xz9"/>
+                                                <segue destination="zfI-Ms-fV5" kind="unwind" unwindAction="unwindSegueWithUnwindSegue:" id="Cae-Tl-SoG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -147,6 +154,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H3-4S-cTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="zfI-Ms-fV5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="404" y="41"/>
         </scene>
@@ -336,4 +344,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="5SP-s1-Eza"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+    </resources>
 </document>

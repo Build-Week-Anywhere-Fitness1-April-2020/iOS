@@ -25,6 +25,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var signupLabel: UILabel!
 
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+
     // MARK: - Properties
     var userController = UserController()
     var loginType: LoginType?
