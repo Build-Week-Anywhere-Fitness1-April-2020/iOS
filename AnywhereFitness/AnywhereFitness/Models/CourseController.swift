@@ -100,37 +100,6 @@ class CourseController {
         //        }.resume()
     }
 
-    func searchForCourse(with searchTerm: String, completion: @escaping CompletionHandler = { _ in }) {
-        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let queryParameters = ["classes": searchTerm]
-        components?.queryItems = queryParameters.map({URLQueryItem(name: $0.key, value: $0.value)})
-
-        guard let requestURL = components?.url else {
-            completion(.failure(.otherError))
-            return
-        }
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
-            if let error = error {
-                NSLog("Error searching for class with search term \(searchTerm): \(error)")
-                completion(.failure(.otherError))
-                return
-            }
-            guard let data = data else {
-                NSLog("No data returned from data task")
-                completion(.failure(.noData))
-                return
-            }
-            do {
-                let courseRepresentations = try JSONDecoder().decode(CourseRepresentations.self, from: data).results
-                self.courses = courseRepresentations
-                completion(.success(true))
-            } catch {
-                NSLog("Error decoding JSON data: \(error)")
-                completion(.failure(.noDecode))
-            }
-        }.resume()
-    }
-
     func createCourse(name: String,
                       duration: Double,
                       maxSize: Int,
@@ -170,7 +139,7 @@ class CourseController {
 
         URLSession.shared.dataTask(with: request) { (_, response, error) in
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode != 201 {
                 completion(.failure(.noRep))
                 return
             }
