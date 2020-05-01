@@ -10,7 +10,6 @@ import Foundation
 
 struct CourseRepresentation: Equatable, Codable {
 
-    var identifier: Int
     var name: String
     var time: String
     var duration: Double
@@ -30,15 +29,13 @@ struct CourseRepresentation: Equatable, Codable {
     var additionalInfo: String?
 
     private enum CodingKeys: String, CodingKey {
-        case identifier = "id"
         case name, time, duration, intensity, location, maxSize, classType
         case imgURL = "imgUrl"
         case equipmentRequired, arrivalDescription, additionalInfo,
         cost, courseDescription, address, startDate, instructor, days
     }
 
-    internal init(identifier: Int = 0,
-                  name: String,
+    internal init(name: String,
                   time: String = "",
                   duration: Double,
                   startDate: String = "",
@@ -56,7 +53,6 @@ struct CourseRepresentation: Equatable, Codable {
                   arrivalDescription: String = "",
                   additionalInfo: String = "") {
 
-        self.identifier = identifier
         self.name = name
         self.time = time
         self.duration = duration

@@ -11,8 +11,7 @@ import CoreData
 
 extension Course {
     var courseRepresentation: CourseRepresentation? {
-        guard let identifier = Int(identifier ?? "0"),
-            let name = name,
+        guard let name = name,
             let time = time,
             let startDate = startDate,
             let location = location,
@@ -25,8 +24,7 @@ extension Course {
             else { return nil }
 
         let daysArray = days.components(separatedBy: ",")
-        return CourseRepresentation(identifier: identifier,
-                                    name: name,
+        return CourseRepresentation(name: name,
                                     time: time,
                                     duration: duration,
                                     startDate: startDate,
@@ -44,8 +42,7 @@ extension Course {
                                     arrivalDescription: arrivalDescription ?? "Come ready and excited for class!!",
                                     additionalInfo: additionalInfo ?? "None")}
 
-    @discardableResult convenience init(identifier: String,
-                                        name: String,
+    @discardableResult convenience init(name: String,
                                         time: String,
                                         duration: Double,
                                         startDate: String,
@@ -65,7 +62,6 @@ extension Course {
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
         self.init(context: context)
-        self.identifier = identifier
         self.name = name
         self.time = time
         self.duration = duration
@@ -88,11 +84,9 @@ extension Course {
     @discardableResult convenience init?(courseRepresentation: CourseRepresentation,
                                          context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
-        let identifier = String(courseRepresentation.identifier)
         let days = courseRepresentation.days.joined(separator: ",")
 
-        self.init(identifier: identifier,
-                  name: courseRepresentation.name,
+        self.init(name: courseRepresentation.name,
                   time: courseRepresentation.time,
                   duration: courseRepresentation.duration,
                   startDate: courseRepresentation.startDate,
@@ -108,7 +102,7 @@ extension Course {
                   address: courseRepresentation.address,
                   equipmentRequired: courseRepresentation.equipmentRequired,
                   arrivalDescription: courseRepresentation.arrivalDescription,
-                  additionalInfo: courseRepresentation.additionalInfo,
+                  additionalInfo: courseRepresentation.self.additionalInfo,
                   context: context)
     }
 }
