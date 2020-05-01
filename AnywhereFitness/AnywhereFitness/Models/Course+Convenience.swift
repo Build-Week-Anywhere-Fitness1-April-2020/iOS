@@ -63,7 +63,7 @@ extension Course {
                                         arrivalDescription: String,
                                         additionalInfo: String?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        
+
         self.init(context: context)
         self.identifier = identifier
         self.name = name

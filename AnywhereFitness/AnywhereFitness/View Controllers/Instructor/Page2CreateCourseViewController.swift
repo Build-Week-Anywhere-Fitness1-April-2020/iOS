@@ -14,25 +14,22 @@ class Page2CreateCourseViewController: UIViewController {
     var course: CourseRepresentation?
     let courseController = CourseController.shared
     var courseIntensityArray = CourseController.shared.courseIntensityArray
-    
+
     // MARK: - IBOutlets
     @IBOutlet weak var courseDescriptions: UITextView!
     @IBOutlet weak var courseLevel: UIPickerView!
 
     // MARK: - View Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         courseLevel.dataSource = self
         courseLevel.delegate = self
-        // Do any additional setup after loading the view.
     }
 
     // MARK: - IBActions
     @IBAction func nextButtonTapped(_ sender: Any) {
         guard let courseDescription = courseDescriptions.text,
             !courseDescription.isEmpty else { return }
-
         let courseIntensity = courseLevel.selectedRow(inComponent: 1)
 
         course?.courseDescription = courseDescription
@@ -42,13 +39,11 @@ class Page2CreateCourseViewController: UIViewController {
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        guard let page3VC = segue.destination as? Page3CreateCourseViewController else { return }
        page3VC.course = course
        page3VC.courseController = courseController
     }
-
 }
 
 extension Page2CreateCourseViewController: UIPickerViewDataSource, UIPickerViewDelegate {

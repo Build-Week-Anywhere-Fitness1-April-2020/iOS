@@ -100,11 +100,9 @@ class Page3CreateCourseViewController: UIViewController {
         course?.equipmentRequired = classEquipment.text
         course?.time = timeStartString
         performSegue(withIdentifier: "CreateClassThirdSegue", sender: self)
-
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let page4VC = segue.destination as? Page4CreateCourseViewController else { return }
         page4VC.course = course

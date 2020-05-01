@@ -23,7 +23,6 @@
 		E26493D424553451009D759F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26493D224553451009D759F /* Main.storyboard */; };
 		E26493D624553453009D759F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26493D524553453009D759F /* Assets.xcassets */; };
 		E26493D924553453009D759F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26493D724553453009D759F /* LaunchScreen.storyboard */; };
-		E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */; };
 		E266C157245860CF00FC8E7D /* setBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C156245860CF00FC8E7D /* setBackground.swift */; };
 		E266C1592458819D00FC8E7D /* InstructorMaster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */; };
 		E266C15B245881B300FC8E7D /* ClientMaster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E266C15A245881B300FC8E7D /* ClientMaster.storyboard */; };
@@ -33,7 +32,7 @@
 		E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */; };
 		E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */; };
 		E266C16D2459288300FC8E7D /* Page6CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */; };
-		E27747BA2459BE9000C5D0AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747B92459BE9000C5D0AB /* ProfileViewController.swift */; };
+		E27555FE245B760A000EB0DE /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */; };
 		E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */; };
 		E27747C0245A163E00C5D0AB /* SearchPage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */; };
 		E27747C2245A16B500C5D0AB /* SearchDetail1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */; };
@@ -44,7 +43,6 @@
 		E27747D2245A195600C5D0AB /* AnywhereFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747D1245A195600C5D0AB /* AnywhereFitnessTests.swift */; };
 		E27747DA245A1AB600C5D0AB /* UserControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747D9245A1AB600C5D0AB /* UserControllerTests.swift */; };
 		E27747DC245A1AC800C5D0AB /* CourseControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DB245A1AC800C5D0AB /* CourseControllerTests.swift */; };
-		E27747DE245A4C2600C5D0AB /* classes.json in Resources */ = {isa = PBXBuildFile; fileRef = E27747DD245A4C2600C5D0AB /* classes.json */; };
 		E27747E0245A4E9C00C5D0AB /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DF245A4E9C00C5D0AB /* mockData.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +77,6 @@
 		E26493D524553453009D759F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E26493D824553453009D759F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E26493DA24553453009D759F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = SOURCE_ROOT; };
 		E266C156245860CF00FC8E7D /* setBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = setBackground.swift; path = AnywhereFitness/Resources/setBackground.swift; sourceTree = SOURCE_ROOT; };
 		E266C1582458819D00FC8E7D /* InstructorMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InstructorMaster.storyboard; sourceTree = "<group>"; };
 		E266C15A245881B300FC8E7D /* ClientMaster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClientMaster.storyboard; sourceTree = "<group>"; };
@@ -89,7 +86,7 @@
 		E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5CreateCourseViewController.swift; sourceTree = "<group>"; };
 		E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6CreateCourseViewController.swift; sourceTree = "<group>"; };
-		E27747B92459BE9000C5D0AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = "<group>"; };
 		E27747BB2459EBB200C5D0AB /* ClientHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeScreenViewController.swift; sourceTree = "<group>"; };
 		E27747BF245A163E00C5D0AB /* SearchPage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage1ViewController.swift; sourceTree = "<group>"; };
 		E27747C1245A16B500C5D0AB /* SearchDetail1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail1ViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +99,6 @@
 		E27747D3245A195600C5D0AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E27747D9245A1AB600C5D0AB /* UserControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserControllerTests.swift; sourceTree = "<group>"; };
 		E27747DB245A1AC800C5D0AB /* CourseControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseControllerTests.swift; sourceTree = "<group>"; };
-		E27747DD245A4C2600C5D0AB /* classes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classes.json; sourceTree = "<group>"; };
 		E27747DF245A4E9C00C5D0AB /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,7 +188,6 @@
 				E26493D524553453009D759F /* Assets.xcassets */,
 				E26493D724553453009D759F /* LaunchScreen.storyboard */,
 				E26493DA24553453009D759F /* Info.plist */,
-				E27747DD245A4C2600C5D0AB /* classes.json */,
 				E27747DF245A4E9C00C5D0AB /* mockData.swift */,
 			);
 			name = Resources;
@@ -213,8 +208,7 @@
 			children = (
 				E266C15D2458891900FC8E7D /* Client */,
 				E266C15C2458890E00FC8E7D /* Instructor */,
-				18366C7E2457C58700CB28DC /* LoginViewController.swift */,
-				E266C15424585F5B00FC8E7D /* LandingScreenViewController.swift */,
+				E27555FC245B742F000EB0DE /* Main */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -251,7 +245,6 @@
 				E266C1682459284300FC8E7D /* Page4CreateCourseViewController.swift */,
 				E266C16A2459286800FC8E7D /* Page5CreateCourseViewController.swift */,
 				E266C16C2459288300FC8E7D /* Page6CreateCourseViewController.swift */,
-				E27747B92459BE9000C5D0AB /* ProfileViewController.swift */,
 			);
 			path = Instructor;
 			sourceTree = "<group>";
@@ -268,6 +261,15 @@
 				E27747C9245A171C00C5D0AB /* SearchConfirmationViewController.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		E27555FC245B742F000EB0DE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18366C7E2457C58700CB28DC /* LoginViewController.swift */,
+				E27555FD245B760A000EB0DE /* LandingScreenViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		E27747D0245A195600C5D0AB /* AnywhereFitnessTests */ = {
@@ -366,7 +368,6 @@
 			files = (
 				E26493D924553453009D759F /* LaunchScreen.storyboard in Resources */,
 				E266C15B245881B300FC8E7D /* ClientMaster.storyboard in Resources */,
-				E27747DE245A4C2600C5D0AB /* classes.json in Resources */,
 				E26493D624553453009D759F /* Assets.xcassets in Resources */,
 				E26493D424553451009D759F /* Main.storyboard in Resources */,
 				E266C1592458819D00FC8E7D /* InstructorMaster.storyboard in Resources */,
@@ -429,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E27555FE245B760A000EB0DE /* LandingScreenViewController.swift in Sources */,
 				18366C7F2457C58700CB28DC /* LoginViewController.swift in Sources */,
 				18EF9AE9245753DA00BD0C9E /* Course+Convenience.swift in Sources */,
 				E27747E0245A4E9C00C5D0AB /* mockData.swift in Sources */,
@@ -439,7 +441,6 @@
 				18EF9AE324574A7000BD0C9E /* CoreDataStack.swift in Sources */,
 				18E1DE8F24590B29004BABA3 /* Page1CreateCourseViewController.swift in Sources */,
 				E27747C8245A170600C5D0AB /* SearchReserveViewController.swift in Sources */,
-				E266C15524585F5B00FC8E7D /* LandingScreenViewController.swift in Sources */,
 				1874F0CF24573BB80026023D /* Bearer.swift in Sources */,
 				E27747BC2459EBB200C5D0AB /* ClientHomeScreenViewController.swift in Sources */,
 				E266C16B2459286800FC8E7D /* Page5CreateCourseViewController.swift in Sources */,
@@ -452,7 +453,6 @@
 				E26493CD24553451009D759F /* AppDelegate.swift in Sources */,
 				18EF9AEC24576A4800BD0C9E /* Course.xcdatamodeld in Sources */,
 				E266C1692459284400FC8E7D /* Page4CreateCourseViewController.swift in Sources */,
-				E27747BA2459BE9000C5D0AB /* ProfileViewController.swift in Sources */,
 				E27747CA245A171C00C5D0AB /* SearchConfirmationViewController.swift in Sources */,
 				E26493CF24553451009D759F /* SceneDelegate.swift in Sources */,
 				E266C157245860CF00FC8E7D /* setBackground.swift in Sources */,

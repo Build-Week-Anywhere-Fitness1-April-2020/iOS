@@ -47,8 +47,6 @@ class UserController {
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let jsonEncoder = JSONEncoder()
-
         do {
             let jsonData = try jsonEncoder.encode(user)
             request.httpBody = jsonData
@@ -106,9 +104,26 @@ class UserController {
                 return
             }
 
+            struct UserIdentifier: Decodable {
+                let user: Identifier
+
+                struct Identifier: Decodable {
+                    let identifier: Int
+
+                    // swiftlint:disable nesting
+                    enum CodingKeys: String, CodingKey {
+                        case identifier = "id"
+                    }
+                    // swiftlint:enable nesting
+                }
+            }
+
             do {
                 let bearer = try self.jsonDecoder.decode(Bearer.self, from: data)
+                let identification = try self.jsonDecoder.decode(UserIdentifier.self, from: data)
                 UserController.shared.bearer = bearer
+                let identifier = identification.user.identifier
+                UserDefaults.standard.set(identifier, forKey: "userID")
 
                 completion(nil)
 

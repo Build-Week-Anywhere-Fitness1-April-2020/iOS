@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable line_length
 let jsonData = """
 [
     {
@@ -19,7 +19,7 @@ let jsonData = """
         "location": "New Jersey",
         "maxSize": 16,
         "classType": "Yoga",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "Yoga Mat",
         "arrivalDescription": "Please come on time and ready for a great introduction to Yoga.",
         "additionalInfo": null,
@@ -43,9 +43,9 @@ let jsonData = """
         "location": "New Jersey",
         "maxSize": 16,
         "classType": "Yoga",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "Yoga Mat",
-        "arrivalDescription": "We get a little more intense and focused on form during this session.  Make sure you've taken our introductory course first.",
+        "arrivalDescription": "We get a little more intense and focused on form during this session. Make sure you've taken our introductory course first.",
         "additionalInfo": null,
         "cost": 5.00,
         "courseDescription": "Intermediate yoga session",
@@ -67,7 +67,7 @@ let jsonData = """
         "location": "New Jersey",
         "maxSize": 16,
         "classType": "Crossfit",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "Nothing to bring but yourself and a good attitude.",
         "arrivalDescription": "We're in a large open space near the Safeway. Call if you have trouble finding us.",
         "additionalInfo": "None",
@@ -91,7 +91,7 @@ let jsonData = """
         "location": "New Jersey",
         "maxSize": 16,
         "classType": "Crossfit",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "Nothing",
         "arrivalDescription": "This is where your life changes.",
         "additionalInfo": "This course is for begnniners.  Crossfit can be intense, but we make it easy to get started.",
@@ -115,10 +115,10 @@ let jsonData = """
         "location": "New Jersey",
         "maxSize": 16,
         "classType": "Weightlifting",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "Weight lifting belt",
         "arrivalDescription": "None",
-        "additionalInfo": "We're going to focusing on deadlifts with the proper form and technique.  It is important to master the movement before moving up to very heavy lifts.",
+        "additionalInfo": "We're going to focusing on deadlifts with the proper form and technique. It is important to master the movement before moving up to very heavy lifts.",
         "cost": 5.00,
         "courseDescription": "Intermediate session",
         "address": "706 Hart Dr. Pompton Lakes, NJ 07442",
@@ -139,7 +139,7 @@ let jsonData = """
         "location": "New Jersey",
         "maxSize": 16,
         "classType": "Weightlifting",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "None",
         "arrivalDescription": "None",
         "additionalInfo": "This is where we separate the pretenders from the champions.  Be prepared.",
@@ -163,7 +163,7 @@ let jsonData = """
         "location": "New Jersey",
         "maxSize": 16,
         "classType": "Crossfit",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "None",
         "arrivalDescription": "Make sure to fill out the forms on the website before arrival.",
         "additionalInfo": "This course is for begnniners.  Crossfit can be intense, but we make it easy to get started.",
@@ -187,7 +187,7 @@ let jsonData = """
         "location": "New Jersey",
         "maxSize": 16,
         "classType": "Crossfit",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
         "equipmentRequired": "None",
         "arrivalDescription": "Sign in at the front desk and go through the first door on the right.",
         "additionalInfo": "If you've made it this far, you know what to expect.",
@@ -211,7 +211,7 @@ let jsonData = """
            "location": "New Jersey",
            "maxSize": 16,
            "classType": "Pilates",
-           "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+           "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
            "equipmentRequired": "None",
            "arrivalDescription": "Make sure not disturb class in session if you arrive early.",
            "additionalInfo": "We have expert instructors and the latest equipment.",
@@ -235,10 +235,10 @@ let jsonData = """
             "location": "New Jersey",
             "maxSize": 16,
             "classType": "Pilates",
-            "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
             "equipmentRequired": "None",
             "arrivalDescription": "Make sure not disturb class in session if you arrive early.",
-            "additionalInfo": "Need help getting started with Pilates?  We specialize in Pilates and are experienced with clients at all levels.",
+            "additionalInfo": "Need help getting started with Pilates? We specialize in Pilates and are experienced with clients at all levels.",
             "cost": 30.99,
             "courseDescription": "Introductory Pilates session",
             "address": "706 Hart Dr. Pompton Lakes, NJ 07442",
@@ -252,34 +252,4 @@ let jsonData = """
     }
 ]
 """.data(using: .utf8)!
-
-let smallJsonData = """
-[
-{
-        "id": 8,
-        "name": "Crossfit",
-        "time": "2020-11-7 9AM",
-        "duration": 1.5,
-        "intensity": "Expert",
-        "location": "New Jersey",
-        "maxSize": 16,
-        "classType": "Crossfit",
-        "imgUrl": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "equipmentRequired": "Yoga Mat",
-        "arrivalDescription": "Sign in at the front desk and go through the first door on the right.",
-        "additionalInfo": null,
-        "cost": 30.99,
-        "courseDescription": "Intense yoga session",
-        "address": "706 Hart Dr. Pompton Lakes, NJ 07442",
-        "startDate": "01-01-2020",
-        "instructor": "instructor1",
-        "days": [
-            "Monday",
-            "Wednesday",
-            "Friday"
-        ]
-    }
-]
-""".data(using: .utf8)!
-
-
+// swiftlint:enable line_length

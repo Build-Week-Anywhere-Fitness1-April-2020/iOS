@@ -32,29 +32,17 @@ class CourseController {
     var allCourses: [CourseRepresentation] = []
     static let shared = CourseController()
     let jsonDecoder = JSONDecoder()
+    let jsonEncoder = JSONEncoder()
 
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
 
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
 
-    let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit"]]
+    let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit", "Pilates"]]
     let courseIntensityArray: [[String]] = [["Class Level"], ["Beginner", "Intermediate", "Advanced"]]
 
     // MARK: - Methods
     func fetchCourses(completion: @escaping (Result<[CourseRepresentation], NetworkError>) -> Void) {
-        //        guard let bearer = UserController.shared.bearer else {
-        //            print("bearer for fetching courses is missing")
-        //            return
-        //        }
-        //
-        //        let requestURL = baseURL.appendingPathExtension("classes")
-        //
-        //        var request = URLRequest(url: requestURL)
-        //
-        //        request.httpMethod = HTTPMethod.get.rawValue
-        //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        //        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
-        let jsonDecoder = JSONDecoder()
 
         do {
             let data = jsonData
@@ -67,6 +55,18 @@ class CourseController {
             completion(.failure(.noDecode))
         }
 
+        //        guard let bearer = UserController.shared.bearer else {
+        //            print("bearer for fetching courses is missing")
+        //            return
+        //        }
+        //
+        //        let requestURL = baseURL.appendingPathExtension("classes")
+        //
+        //        var request = URLRequest(url: requestURL)
+        //
+        //        request.httpMethod = HTTPMethod.get.rawValue
+        //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
         //        URLSession.shared.dataTask(with: request) { data, response, error in
         //
         //            if let response = response as? HTTPURLResponse,
@@ -89,7 +89,8 @@ class CourseController {
         //
         //            do {
         //                print("\(data)")
-        //                let courseRepresentations = try self.jsonDecoder.decode([CourseRepresentation].self, from: data)
+        //                let courseRepresentations = try self.jsonDecoder.decode([CourseRepresentation].self,
+        //                        from: data)
         //                print(courseRepresentations)
         //                completion(.success(courseRepresentations))
         //            } catch {
@@ -158,8 +159,6 @@ class CourseController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
 
-        let jsonEncoder = JSONEncoder()
-
         do {
             let jsonData = try jsonEncoder.encode(course)
             request.httpBody = jsonData
@@ -184,13 +183,52 @@ class CourseController {
         } .resume()
     }
 
+    func postAttendee(courseID: Int, completion: @escaping CompletionHandler = { _ in }) {
+
+        let addAttendeeURL = self.baseURL.appendingPathComponent("classes/add-attendee")
+
+        guard let bearer = UserController.shared.bearer else {
+            completion(.failure(.noRep))
+            return
+        }
+
+        var request = URLRequest(url: addAttendeeURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(bearer.token, forHTTPHeaderField: "Authorization")
+
+        let accountID = UserDefaults.standard.integer(forKey: "userID")
+        let attendee = AddAttendee(accountID: accountID, classID: courseID)
+
+        do {
+            let jsonData = try jsonEncoder.encode(attendee)
+            request.httpBody = jsonData
+        } catch {
+            NSLog("Error enconding user objects: \(error)")
+            completion(.failure(.noEncode))
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 201 {
+                completion(.failure(.noRep))
+                return
+            }
+            if let error = error {
+                NSLog("print \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            completion(.success(true))
+        } .resume()
+    }
+
     private func updateCourses(with representations: [CourseRepresentation]) throws {
 
         let identifiersToFetch = representations.compactMap {String($0.identifier) }
 
-        print(identifiersToFetch)
-
-        var representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
 
         var coursesToCreate = representationsByID
 
@@ -215,7 +253,7 @@ class CourseController {
                 }
                 try context.save()
             } catch {
-                NSLog("error fetching courses with UUIDs: \(identifiersToFetch), with error: \(error)")
+                NSLog("error fetching courses with id's: \(identifiersToFetch), with error: \(error)")
             }
         }
     }

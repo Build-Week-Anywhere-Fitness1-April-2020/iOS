@@ -27,5 +27,4 @@ class Page6CreateCourseViewController: UIViewController {
     @IBAction func addClassTapped(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
-
 }

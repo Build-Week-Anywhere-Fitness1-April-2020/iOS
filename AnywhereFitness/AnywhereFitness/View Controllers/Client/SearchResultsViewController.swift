@@ -11,12 +11,22 @@ import UIKit
 class SearchResultsViewController: UIViewController {
 
     // MARK: - Properties
-    var course: CourseRepresentation?
     var courses: [CourseRepresentation]?
-    let courseController = CourseController()
-    
+    let courseController = CourseController.shared
+    var formatter: NumberFormatter =  {
+        let formatter = NumberFormatter()
+        formatter.alwaysShowsDecimalSeparator = true
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        formatter.currencyGroupingSeparator = ","
+        formatter.currencySymbol = "$"
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
+
     // MARK: - IBOutlets
     @IBOutlet weak var searchResultsTableView: UITableView!
+    @IBOutlet var backgroundView: UIView!
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -24,17 +34,18 @@ class SearchResultsViewController: UIViewController {
         searchResultsTableView.dataSource = self
         searchResultsTableView.delegate = self
         searchResultsTableView.reloadData()
+        backgroundView.setBackground()
     }
-    /*
+
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "SearchSegue2" {
+            guard let searchDetailVC = segue.destination as? SearchDetail1ViewController,
+                let index = searchResultsTableView.indexPathForSelectedRow?.row,
+                let course = courses?[index] else { return }
+            searchDetailVC.course = course
+        }
     }
-    */
-
 }
 
 extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -47,9 +58,12 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
 
         guard let course = courses?[indexPath.row] else { return UITableViewCell() }
         cell.textLabel?.text = "\(course.name)"
-        cell.detailTextLabel?.text = "$\(course.cost)"
+        cell.detailTextLabel?.text = formatter.string(from: NSNumber(value: course.cost))
 
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "SearchSegue2", sender: self)
+    }
 }
