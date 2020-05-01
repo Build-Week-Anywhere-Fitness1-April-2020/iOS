@@ -49,7 +49,7 @@ class CourseController {
         do {
             let data = jsonData
 
-            let courseRepresentations = try jsonDecoder.decode([ CourseRepresentation].self, from: data)
+            let courseRepresentations = try jsonDecoder.decode([CourseRepresentation].self, from: data)
             try self.updateCourses(with: courseRepresentations)
             completion(.success(courseRepresentations))
         } catch {

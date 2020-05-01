@@ -41,7 +41,7 @@ struct CourseRepresentation: Equatable, Codable {
                   name: String,
                   time: String = "",
                   duration: Double,
-                  startDate: String = "",
+                  startDate: String = "01-01-2020",
                   intensity: String = "",
                   location: String = "",
                   maxSize: Int = 0,

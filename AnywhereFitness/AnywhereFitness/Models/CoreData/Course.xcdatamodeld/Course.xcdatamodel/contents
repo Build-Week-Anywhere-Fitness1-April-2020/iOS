@@ -10,6 +10,7 @@
         <attribute name="days" attributeType="String"/>
         <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="equipmentRequired" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="imgURL" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="instructor" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="intensity" attributeType="String"/>
@@ -20,6 +21,6 @@
         <attribute name="time" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-54" positionY="-9" width="128" height="298"/>
+        <element name="Course" positionX="-54" positionY="-9" width="128" height="313"/>
     </elements>
 </model>
