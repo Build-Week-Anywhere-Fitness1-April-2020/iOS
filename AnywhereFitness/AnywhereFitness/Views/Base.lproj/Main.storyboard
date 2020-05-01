@@ -263,16 +263,20 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="52"/>
                                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <state key="normal" title="For Clients"/>
+                                                                <state key="normal" title="For Clients">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="clientSignup:" destination="Rbc-9F-GPL" eventType="touchUpInside" id="L7I-hP-GYc"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2O-OO-23K">
                                                                 <rect key="frame" x="170" y="0.0" width="150" height="52"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <state key="normal" title="For Instructors"/>
+                                                                <state key="normal" title="For Instructors">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="instructorSignup:" destination="Rbc-9F-GPL" eventType="touchUpInside" id="pLb-TT-BVC"/>
                                                                 </connections>

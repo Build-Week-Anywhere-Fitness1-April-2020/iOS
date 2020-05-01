@@ -63,6 +63,8 @@ class LoginViewController: UIViewController {
             nameLabel.isHidden = true
             emailLabel.isHidden = true
             signupLabel.text = "Sign In"
+            emailTextField.layer.borderWidth = 1
+            nameTextField.layer.borderWidth = 1
         }
     }
 
