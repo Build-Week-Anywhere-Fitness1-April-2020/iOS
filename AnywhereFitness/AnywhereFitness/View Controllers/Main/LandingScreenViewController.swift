@@ -36,6 +36,10 @@ class LandingScreenViewController: UIViewController {
         }
     }
 
+    @IBAction func unwindSegue(unwindSegue: UIStoryboardSegue) {
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

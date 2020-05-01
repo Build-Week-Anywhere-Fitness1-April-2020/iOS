@@ -254,7 +254,6 @@ let jsonData = """
 """.data(using: .utf8)!
 // swiftlint:enable line_length
 
-// swiftlint:disable line_length
 let smallJsonData = """
 [
     {
@@ -283,4 +282,3 @@ let smallJsonData = """
     }
 ]
 """.data(using: .utf8)!
-// swiftlint:enable line_length
