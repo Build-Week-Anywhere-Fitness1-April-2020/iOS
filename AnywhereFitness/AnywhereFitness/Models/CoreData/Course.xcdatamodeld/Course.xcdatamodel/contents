@@ -4,15 +4,14 @@
         <attribute name="additionalInfo" optional="YES" attributeType="String"/>
         <attribute name="address" attributeType="String"/>
         <attribute name="arrivalDescription" attributeType="String"/>
-        <attribute name="classType" attributeType="String"/>
+        <attribute name="classType" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="cost" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="courseDescription" attributeType="String"/>
         <attribute name="days" attributeType="String"/>
         <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="equipmentRequired" attributeType="String"/>
-        <attribute name="identifier" attributeType="String"/>
-        <attribute name="imgURL" attributeType="String"/>
-        <attribute name="instructor" attributeType="String"/>
+        <attribute name="imgURL" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="instructor" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="intensity" attributeType="String"/>
         <attribute name="location" attributeType="String"/>
         <attribute name="maxSize" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -21,6 +20,6 @@
         <attribute name="time" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-54" positionY="-9" width="128" height="313"/>
+        <element name="Course" positionX="-54" positionY="-9" width="128" height="298"/>
     </elements>
 </model>

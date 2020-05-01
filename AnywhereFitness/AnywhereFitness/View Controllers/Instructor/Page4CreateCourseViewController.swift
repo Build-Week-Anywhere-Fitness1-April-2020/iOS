@@ -23,6 +23,10 @@ class Page4CreateCourseViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        classAddress.layer.borderWidth = 1
+        cityTextField.layer.borderWidth = 1
+        stateTextField.layer.borderWidth = 1
+        zipCodeTextField.layer.borderWidth = 1
     }
 
     // MARK: - Navigation

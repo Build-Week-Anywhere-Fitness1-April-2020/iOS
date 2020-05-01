@@ -47,13 +47,13 @@ class SearchDetail1ViewController: UIViewController {
         aboutClassLabel.text = course.courseDescription
         equipmentLabel.text = course.equipmentRequired
         costLabel.text = formatter.string(from: NSNumber(value: course.cost))
-        if course.classType == "Yoga" {
+        if course.classType == 0 {
             backgroundView.setBackground(toImageNamed: "YogaImage")
-        } else if course.classType == "Weightlifting" {
+        } else if course.classType == 1 {
             backgroundView.setBackground(toImageNamed: "WeightliftingImage")
-        } else if course.classType == "Crossfit" {
+        } else if course.classType == 2 {
             backgroundView.setBackground(toImageNamed: "BoxingImage")
-        } else if course.classType == "Pilates" {
+        } else if course.classType == 3 {
             backgroundView.setBackground(toImageNamed: "PilatesImage")
         } else {
             backgroundView.setBackground()

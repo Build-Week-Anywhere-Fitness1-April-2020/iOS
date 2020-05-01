@@ -40,13 +40,13 @@ class SearchConfirmationViewController: UIViewController {
         classTitleLabel.text = course.name
         dayLabel.text = day
         timeLabel.text = course.time
-        if course.classType == "Yoga" {
+        if course.classType == 0 {
             backgroundView.setBackground(toImageNamed: "YogaImage")
-        } else if course.classType == "Weightlifting" {
+        } else if course.classType == 1 {
             backgroundView.setBackground(toImageNamed: "WeightliftingImage")
-        } else if course.classType == "Crossfit" {
+        } else if course.classType == 2 {
             backgroundView.setBackground(toImageNamed: "BoxingImage")
-        } else if course.classType == "Pilates" {
+        } else if course.classType == 3 {
             backgroundView.setBackground(toImageNamed: "PilatesImage")
         } else {
             backgroundView.setBackground()

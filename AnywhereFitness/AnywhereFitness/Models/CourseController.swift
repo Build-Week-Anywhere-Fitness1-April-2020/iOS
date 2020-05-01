@@ -16,6 +16,7 @@ enum NetworkError: Error {
     case noDecode
     case noEncode
     case noRep
+    case wrongResponse
 }
 
 enum HTTPMethod: String {
@@ -39,6 +40,7 @@ class CourseController {
     private let baseURL = URL(string: "https://anywherefitness-api.herokuapp.com/")!
 
     let classTypeArray: [[String]] = [["Class Type"], ["Yoga", "Weightlifting", "Crossfit", "Pilates"]]
+    let classTypeIntArray: [[Int]] = [[], [1, 2, 3, 4]]
     let courseIntensityArray: [[String]] = [["Class Level"], ["Beginner", "Intermediate", "Advanced"]]
 
     // MARK: - Methods
@@ -103,8 +105,8 @@ class CourseController {
     func createCourse(name: String,
                       duration: Double,
                       maxSize: Int,
-                      classType: String,
-                      instructor: String) -> CourseRepresentation {
+                      classType: Int,
+                      instructor: Int) -> CourseRepresentation {
 
         let course = CourseRepresentation(name: name,
                                           duration: duration,
@@ -140,7 +142,7 @@ class CourseController {
         URLSession.shared.dataTask(with: request) { (_, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 201 {
-                completion(.failure(.noRep))
+                completion(.failure(.wrongResponse))
                 return
             }
             if let error = error {
@@ -235,11 +237,11 @@ class CourseController {
         course.intensity = representation.intensity
         course.location = representation.location
         course.maxSize = Int16(representation.maxSize)
-        course.classType = representation.classType
-        course.imgURL = representation.imgURL
+        course.classType = Int32(representation.classType)
+        course.imgURL = Int32(representation.imgURL)
         course.courseDescription = representation.courseDescription
         course.cost = representation.cost
-        course.instructor = representation.instructor
+        course.instructor = Int32(representation.instructor)
         let days = representation.days.joined(separator: ",")
         course.days = days
         course.address = representation.address
