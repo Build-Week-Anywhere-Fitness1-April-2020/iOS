@@ -35,6 +35,21 @@ class Page1CreateCourseViewController: UIViewController {
         page2VC.course = course
      }
 
+    @IBAction func unwindAndClear(unwindSegue: UIStoryboardSegue) {
+        className.text = ""
+        classSize.text = ""
+        classLength.text = ""
+        classTypeUIPicker.selectRow(0, inComponent: 1, animated: true)
+    }
+
+    @IBAction func unwindAndTab(unwindSegue: UIStoryboardSegue) {
+        className.text = ""
+        classSize.text = ""
+        classLength.text = ""
+        classTypeUIPicker.selectRow(0, inComponent: 1, animated: true)
+        tabBarController?.selectedIndex = 0
+    }
+
     @IBAction func nextButtonTapped(_ sender: Any) {
         guard let className = className.text,
             !className.isEmpty,

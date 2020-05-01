@@ -817,6 +817,7 @@
                                         </state>
                                         <connections>
                                             <action selector="viewClassesTapped:" destination="3UL-46-EzX" eventType="touchUpInside" id="avY-Nb-9qb"/>
+                                            <segue destination="QLx-nV-6by" kind="unwind" unwindAction="unwindAndTabWithUnwindSegue:" id="5Dd-Ny-1ia"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9Q-nG-n45">
@@ -830,6 +831,7 @@
                                         </state>
                                         <connections>
                                             <action selector="addClassTapped:" destination="3UL-46-EzX" eventType="touchUpInside" id="l7C-yv-kQr"/>
+                                            <segue destination="QLx-nV-6by" kind="unwind" unwindAction="unwindAndClearWithUnwindSegue:" id="lv7-ze-bkI"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Steps: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-3W-r9A">
@@ -894,6 +896,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdI-a5-jqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="QLx-nV-6by" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5125" y="449"/>
         </scene>

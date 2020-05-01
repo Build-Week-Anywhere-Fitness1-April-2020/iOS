@@ -49,6 +49,19 @@ class SearchPage1ViewController: UIViewController {
         performSegue(withIdentifier: "SearchSegue1", sender: self)
     }
 
+    @IBAction func unwindAndClear(unwindSegue: UIStoryboardSegue) {
+        locationTextField.text = ""
+        classTypeUIPicker.selectRow(0, inComponent: 1, animated: true)
+        courseLevel.selectRow(0, inComponent: 1, animated: true)
+    }
+
+    @IBAction func unwindAndTab(unwindSegue: UIStoryboardSegue) {
+        locationTextField.text = ""
+        classTypeUIPicker.selectRow(0, inComponent: 1, animated: true)
+        courseLevel.selectRow(0, inComponent: 1, animated: true)
+        tabBarController?.selectedIndex = 0
+    }
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SearchSegue1" {

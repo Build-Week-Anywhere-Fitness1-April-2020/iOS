@@ -22,11 +22,11 @@ class SearchConfirmationViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func doneButtonTapped(_ sender: Any) {
-        tabBarController?.selectedIndex = 0
+        //tabBarController?.selectedIndex = 0
     }
 
     @IBAction func addAnotherClassButtonTapped(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        //self.navigationController?.popToRootViewController(animated: true)
     }
 
     // MARK: - View Lifecycle

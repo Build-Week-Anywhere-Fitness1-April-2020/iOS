@@ -20,11 +20,10 @@ class Page6CreateCourseViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func viewClassesTapped(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: false)
-        performSegue(withIdentifier: "ManageClassesSegue", sender: self)
+
     }
 
     @IBAction func addClassTapped(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+
     }
 }
