@@ -23,7 +23,7 @@ class ClientHomeScreenViewController: UIViewController {
     }
 
     func updateViews() {
-        backgroundView.setBackground()
+        backgroundView.setBackgroundDark()
         courseController.fetchCourses { (result) in
             if let courses = try? result.get() {
                 DispatchQueue.main.async {

@@ -15,6 +15,6 @@ class InstructorHomeScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundImage.setBackground()
+        backgroundImage.setBackgroundDark()
     }
 }

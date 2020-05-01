@@ -45,7 +45,7 @@ class LandingScreenViewController: UIViewController {
             signinLabel.text = "Sign Up"
         }
 
-        backgroundView.setBackground()
+        backgroundView.setBackgroundDark()
     }
 
     override func viewDidAppear(_ animated: Bool) {
