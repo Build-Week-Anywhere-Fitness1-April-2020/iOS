@@ -69,6 +69,8 @@ class LoginViewController: UIViewController {
             signupLabel.text = "Sign In"
             emailTextField.layer.borderWidth = 1
             nameTextField.layer.borderWidth = 1
+            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+            view.addGestureRecognizer(tap)
         }
     }
 

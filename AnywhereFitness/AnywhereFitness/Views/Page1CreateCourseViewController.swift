@@ -30,6 +30,8 @@ class Page1CreateCourseViewController: UIViewController {
         className.layer.borderWidth = 1
         classSize.layer.borderWidth = 1
         classLength.layer.borderWidth = 1
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 
      // MARK: - Navigation

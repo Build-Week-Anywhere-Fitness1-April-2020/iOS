@@ -63,8 +63,8 @@ class CourseControllerTests: XCTestCase {
         let newCourse: CourseRepresentation?
         newCourse = courseController.createCourse(name: "Advanced Yoga",
                                                   duration: 45.00, maxSize: 5,
-                                                  classType: "Yoga",
-                                                  instructor: "4")
+                                                  classType: 0,
+                                                  instructor: 4)
         XCTAssert(newCourse != nil)
     }
 
@@ -73,8 +73,8 @@ class CourseControllerTests: XCTestCase {
         let startNumber = courseController.courses.count
         newCourse = courseController.createCourse(name: "Advanced Yoga2",
                                                   duration: 45.00, maxSize: 5,
-                                                  classType: "Yoga",
-                                                  instructor: "4")
+                                                  classType: 0,
+                                                  instructor: 4)
         let expectation = self.expectation(description: "Waiting for postClass")
         let signInExpectation = self.expectation(description: "Waiting for signin")
 
@@ -94,8 +94,8 @@ class CourseControllerTests: XCTestCase {
         let newCourse: CourseRepresentation
         newCourse = courseController.createCourse(name: "Advanced Yoga2",
                                                   duration: 45.00, maxSize: 5,
-                                                  classType: "Yoga",
-                                                  instructor: "4")
+                                                  classType: 0,
+                                                  instructor: 4)
         let expectation = self.expectation(description: "Waiting for postClass")
 
         courseController.postClass(course: newCourse) { result in

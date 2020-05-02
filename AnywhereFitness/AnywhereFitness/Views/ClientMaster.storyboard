@@ -10,7 +10,7 @@
         <!--Home-->
         <scene sceneID="vQe-nE-APh">
             <objects>
-                <viewController id="QJ8-DF-kog" customClass="ClientHomeScreenViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="QJ8-DF-kog" customClass="ClientHomeScreenViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2F-GA-CXf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,6 +20,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anywhere Fitness" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oh6-zb-ZNx">
                                         <rect key="frame" x="20" y="50" width="374" height="58.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="anywhereFitnessC"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="49"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -74,7 +75,7 @@
         <!--Anywhere Fitness-->
         <scene sceneID="LEu-Pv-9SJ">
             <objects>
-                <viewController id="e9R-8a-SKP" customClass="SearchPage1ViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="e9R-8a-SKP" customClass="SearchPage1ViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MRb-oq-uuZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,6 +89,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuL-cT-YEi">
                                 <rect key="frame" x="20" y="753" width="374" height="40"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="searchButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7q9-ZO-fNx"/>
                                 </constraints>
@@ -109,6 +111,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcz-rx-dgG">
                                         <rect key="frame" x="0.0" y="26.5" width="374" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="locationSearch"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -116,6 +119,7 @@
                             </stackView>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyB-yL-TJd">
                                 <rect key="frame" x="20" y="364.5" width="374" height="100"/>
+                                <accessibility key="accessibilityConfiguration" identifier="intensity"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="vFa-uL-pFK"/>
                                 </constraints>
@@ -123,6 +127,7 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gps-Mn-LA7">
                                 <rect key="frame" x="20" y="244.5" width="374" height="100"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="classType"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="gqp-VE-Bka"/>
                                 </constraints>
@@ -164,7 +169,7 @@
         <!--Search Results View Controller-->
         <scene sceneID="HSV-I4-2Qu">
             <objects>
-                <viewController id="wu8-yf-7d8" customClass="SearchResultsViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="wu8-yf-7d8" customClass="SearchResultsViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cE9-a6-GwH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,6 +213,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="classCell"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -240,7 +246,7 @@
         <!--Search Detail1 View Controller-->
         <scene sceneID="Wa4-2W-Efx">
             <objects>
-                <viewController id="xO3-QJ-WRj" customClass="SearchDetail1ViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="xO3-QJ-WRj" customClass="SearchDetail1ViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xsc-zL-4C0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,6 +309,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vat-gT-41X">
                                         <rect key="frame" x="20" y="665" width="374" height="40"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="viewSchedule"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="qV7-ce-IPU"/>
                                         </constraints>
@@ -362,7 +369,7 @@
         <!--Search Schedule View Controller-->
         <scene sceneID="KIk-fI-L05">
             <objects>
-                <viewController id="0Li-cV-Drb" customClass="SearchScheduleViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="0Li-cV-Drb" customClass="SearchScheduleViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iEq-rW-OLK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,6 +407,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="scheduleCell"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -546,6 +554,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diI-H9-PjK">
                                         <rect key="frame" x="20" y="665" width="374" height="40"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="reserve"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="y8R-Rc-Lyc"/>
                                         </constraints>
@@ -630,7 +639,7 @@
         <!--Search Confirmation View Controller-->
         <scene sceneID="cfh-Nb-uLa">
             <objects>
-                <viewController id="u40-H1-KJX" customClass="SearchConfirmationViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="u40-H1-KJX" customClass="SearchConfirmationViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u92-S7-dvg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,6 +675,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boxing in an abandoned ring with Chris" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwg-fZ-OgZ">
                                         <rect key="frame" x="20" y="20" width="374" height="179.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="className"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

@@ -22,6 +22,8 @@ class Page5CreateCourseViewController: UIViewController {
         super.viewDidLoad()
         classArrive.layer.borderWidth = 1
         additionalInfo.layer.borderWidth = 1
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 
     @IBAction func finishButtonTapped(_ sender: Any) {

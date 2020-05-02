@@ -27,6 +27,8 @@ class Page4CreateCourseViewController: UIViewController {
         cityTextField.layer.borderWidth = 1
         stateTextField.layer.borderWidth = 1
         zipCodeTextField.layer.borderWidth = 1
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 
     // MARK: - Navigation

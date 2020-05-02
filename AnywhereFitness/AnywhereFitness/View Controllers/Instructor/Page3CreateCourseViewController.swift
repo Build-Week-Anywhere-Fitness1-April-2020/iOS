@@ -49,6 +49,8 @@ class Page3CreateCourseViewController: UIViewController {
         classStartTime.layer.borderWidth = 1
         classEquipment.layer.borderWidth = 1
         classCost.layer.borderWidth = 1
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 
     // MARK: - IBAction

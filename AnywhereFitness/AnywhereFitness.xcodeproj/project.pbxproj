@@ -46,6 +46,8 @@
 		E27747E0245A4E9C00C5D0AB /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27747DF245A4E9C00C5D0AB /* mockData.swift */; };
 		E27AA053245C6CF900CF79E7 /* AnywhereFitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27AA052245C6CF900CF79E7 /* AnywhereFitnessUITests.swift */; };
 		E27AA05B245C7F9300CF79E7 /* ClassType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27AA05A245C7F9300CF79E7 /* ClassType.swift */; };
+		E2C42A99245D0D7400305FE9 /* AnywhereFitnessCreateClassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C42A98245D0D7400305FE9 /* AnywhereFitnessCreateClassUITests.swift */; };
+		E2C42A9B245D153600305FE9 /* AnywhereFitnessSearchClassUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C42A9A245D153600305FE9 /* AnywhereFitnessSearchClassUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		E27AA052245C6CF900CF79E7 /* AnywhereFitnessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnywhereFitnessUITests.swift; sourceTree = "<group>"; };
 		E27AA054245C6CF900CF79E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E27AA05A245C7F9300CF79E7 /* ClassType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassType.swift; sourceTree = "<group>"; };
+		E2C42A98245D0D7400305FE9 /* AnywhereFitnessCreateClassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnywhereFitnessCreateClassUITests.swift; sourceTree = "<group>"; };
+		E2C42A9A245D153600305FE9 /* AnywhereFitnessSearchClassUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnywhereFitnessSearchClassUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +315,8 @@
 			children = (
 				E27AA052245C6CF900CF79E7 /* AnywhereFitnessUITests.swift */,
 				E27AA054245C6CF900CF79E7 /* Info.plist */,
+				E2C42A98245D0D7400305FE9 /* AnywhereFitnessCreateClassUITests.swift */,
+				E2C42A9A245D153600305FE9 /* AnywhereFitnessSearchClassUITest.swift */,
 			);
 			path = AnywhereFitnessUITests;
 			sourceTree = "<group>";
@@ -538,6 +544,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C42A99245D0D7400305FE9 /* AnywhereFitnessCreateClassUITests.swift in Sources */,
+				E2C42A9B245D153600305FE9 /* AnywhereFitnessSearchClassUITest.swift in Sources */,
 				E27AA053245C6CF900CF79E7 /* AnywhereFitnessUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

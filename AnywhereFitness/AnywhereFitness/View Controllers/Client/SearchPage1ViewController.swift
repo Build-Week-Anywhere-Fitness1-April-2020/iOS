@@ -33,6 +33,8 @@ class SearchPage1ViewController: UIViewController {
         classTypeUIPicker.delegate = self
         locationTextField.layer.borderWidth = 1
         backgroundView.setBackground()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 
     // MARK: - IBActions

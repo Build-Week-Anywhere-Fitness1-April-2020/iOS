@@ -25,6 +25,8 @@ class Page2CreateCourseViewController: UIViewController {
         courseLevel.dataSource = self
         courseLevel.delegate = self
         courseDescriptions.layer.borderWidth = 1
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 
     // MARK: - IBActions
